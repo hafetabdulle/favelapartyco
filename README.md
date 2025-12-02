@@ -8,6 +8,7 @@ A modern, mobile-first tour booking website for Favela Party Co, showcasing auth
 
 ## 🚀 Quick Start
 
+
 ```bash
 # Install dependencies
 npm install
