@@ -160,7 +160,7 @@ Message: ${formData.message}`;
                   </div>
 
                   <div className="space-y-3 mb-8">
-                    <p className="font-semibold text-neutral-900 text-sm">What's Included:</p>
+                    <p className="font-semibold text-neutral-900 text-sm">What&apos;s Included:</p>
                     <ul className="space-y-2">
                       {pkg.includes.map((item, i) => (
                         <li key={i} className="text-sm text-neutral-600 flex items-start">

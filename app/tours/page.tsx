@@ -346,7 +346,7 @@ export default function ToursPage() {
             className="space-y-4 sm:space-y-8"
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-neutral-900 px-4">
-              Can't Decide? Get a Custom Package
+              Can&apos;t Decide? Get a Custom Package
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-neutral-600 leading-relaxed px-4">
               Want to experience multiple tours? We offer custom multi-day packages with everything included.

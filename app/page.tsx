@@ -133,7 +133,7 @@ export default function Home() {
               Why Choose Favela Party Co?
             </h2>
             <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed px-4">
-              We're not just another tour company. Our local guides live in the favelas and know Rio inside out.
+              We&apos;re not just another tour company. Our local guides live in the favelas and know Rio inside out.
             </p>
           </motion.div>
 
@@ -325,7 +325,7 @@ export default function Home() {
               Ready for an Adventure?
             </h2>
             <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed px-4">
-              Whether you want a single day tour or a complete multi-day Rio experience, we've got you covered.
+              Whether you want a single day tour or a complete multi-day Rio experience, we&apos;ve got you covered.
             </p>
           </motion.div>
 

@@ -56,7 +56,7 @@ ${formData.message}`;
               Get in Touch
             </h1>
             <p className="text-xl sm:text-2xl text-neutral-600 leading-relaxed">
-              Have questions? Want to book a tour? We're here to help and respond quickly!
+              Have questions? Want to book a tour? We&apos;re here to help and respond quickly!
             </p>
           </motion.div>
         </div>
@@ -147,7 +147,7 @@ ${formData.message}`;
             <h2 className="text-4xl sm:text-5xl font-semibold text-neutral-900 mb-4">
               Send Us a Message
             </h2>
-            <p className="text-xl text-neutral-600">We'll get back to you as soon as possible</p>
+            <p className="text-xl text-neutral-600">We&apos;ll get back to you as soon as possible</p>
           </motion.div>
 
           <motion.div
@@ -241,7 +241,7 @@ ${formData.message}`;
               </div>
 
               <p className="text-center text-sm text-neutral-500">
-                Prefer instant messaging? Click "Send via WhatsApp" to continue the conversation on WhatsApp
+                Prefer instant messaging? Click &quot;Send via WhatsApp&quot; to continue the conversation on WhatsApp
               </p>
             </form>
           </motion.div>
@@ -351,7 +351,7 @@ ${formData.message}`;
                 <br />
                 Email: Within 24 hours
                 <br />
-                <span className="text-sm text-brazilian-green font-medium">We're always here to help!</span>
+                <span className="text-sm text-brazilian-green font-medium">We&apos;re always here to help!</span>
               </p>
             </motion.div>
           </div>
