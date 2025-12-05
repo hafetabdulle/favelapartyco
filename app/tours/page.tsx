@@ -58,7 +58,7 @@ const tours: Tour[] = [
     description: 'The complete Rio experience! Starting from Cardeal Arcoverde station in Copacabana, we visit all the main attractions with comfort and safety.',
     emoji: '✨',
     highlight: 'Complete Experience',
-    image: '/images/IMG_1123.PNG'
+    image: '/images/IMG_0903.PNG'
   },
   {
     id: 'pedra-sal',
@@ -88,7 +88,7 @@ const tours: Tour[] = [
     includes: ['Match ticket', 'Transport (round trip)', 'Welcome drink', 'Guide included'],
     description: 'Experience Brazilian football passion! Watch the game at the legendary Maracanã stadium. Feel the energy and passion of Rio\'s football culture. Price varies by match.',
     emoji: '⚽',
-    image: '/images/IMG_0903.PNG'
+    image: '/images/IMG_1123.PNG'
   },
   {
     id: 'hang-gliding',
