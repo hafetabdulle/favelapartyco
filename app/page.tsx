@@ -130,10 +130,13 @@ export default function Home() {
             className="text-center max-w-3xl mx-auto mb-12 sm:mb-20"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-neutral-900 mb-4 sm:mb-6 px-4">
-              Why Choose Favela Party Co?
+              Why choose me?
             </h2>
             <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed px-4">
-              We&apos;re not just another tour company. Our local guides live in the favelas and know Rio inside out.
+              I&apos;ve traveled to more than 20 countries around the world, and I know exactly what it feels like to arrive in a city like this—so much to do, so many people to meet, and so many moments waiting to happen.
+            </p>
+            <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed px-4 mt-4">
+              With my help, you&apos;ll make the most of your vacation and connect with Rio at its fullest. Get ready to experience the city, the energy, the culture, and the vibe in the best possible way!
             </p>
           </motion.div>
 
@@ -233,14 +236,14 @@ export default function Home() {
                 price: '150R',
                 includes: 'Transport & shots',
                 emoji: '🎉',
-                image: '/images/IMG_0899.PNG'
+                image: '/images/IMG_1118.PNG'
               },
               {
                 title: 'Hang Gliding',
-                price: '750R',
-                includes: 'Video included',
+                price: '850R',
+                includes: 'Video +200R',
                 emoji: '🪂',
-                image: '/images/IMG_9230.JPG'
+                image: '/images/IMG_1126.PNG'
               }
             ].map((tour, index) => (
               <motion.div

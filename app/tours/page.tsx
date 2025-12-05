@@ -47,7 +47,7 @@ const tours: Tour[] = [
     includes: ['Transport included', 'Free shots', 'Rooftop bars', 'Party guide'],
     description: 'Dive into Rio\'s nightlife like a local! Experience rooftop bars, music, drinks, and a real party inside the favela streets — an experience like no other.',
     emoji: '🎉',
-    image: '/images/IMG_0899.PNG'
+    image: '/images/IMG_1118.PNG'
   },
   {
     id: 'city-tour',
@@ -58,7 +58,7 @@ const tours: Tour[] = [
     description: 'The complete Rio experience! Starting from Cardeal Arcoverde station in Copacabana, we visit all the main attractions with comfort and safety.',
     emoji: '✨',
     highlight: 'Complete Experience',
-    image: '/images/IMG_9229.JPG'
+    image: '/images/IMG_1123.PNG'
   },
   {
     id: 'pedra-sal',
@@ -68,7 +68,7 @@ const tours: Tour[] = [
     includes: ['Transport included', 'Welcome beer', 'Local guide', 'Cultural experience'],
     description: 'Feel the soul of Rio with live samba, street parties, and caipirinhas at the city\'s most iconic Monday night spot. The best way to experience authentic Brazilian culture!',
     emoji: '🍹',
-    image: '/images/IMG_0900.PNG'
+    image: '/images/IMG_0904.PNG'
   },
   {
     id: 'sunrise-hike',
@@ -78,7 +78,7 @@ const tours: Tour[] = [
     includes: ['Early morning transport', 'Mini Vidigal tour', 'Snacks & water', 'Local breakfast after hike', 'Professional guide'],
     description: 'Start early to witness a magical sunrise above Rio\'s skyline 🌅. Begin with a mini tour through Vidigal\'s vibrant streets, then hike up for unforgettable panoramic views.',
     emoji: '🌄',
-    image: '/images/IMG_9230.JPG'
+    image: '/images/IMG_1127.PNG'
   },
   {
     id: 'football',
@@ -93,13 +93,13 @@ const tours: Tour[] = [
   {
     id: 'hang-gliding',
     title: 'Hang Gliding',
-    price: '750R',
+    price: '850R',
     duration: '2-3 hours',
-    includes: ['Professional pilot', 'Video included', 'All equipment', 'Hotel pickup'],
-    description: 'Soar above Rio\'s beaches and mountains for a once-in-a-lifetime flight — pure adrenaline and breathtaking scenery. Video of your flight included!',
+    includes: ['Professional pilot', 'All equipment', 'Hotel pickup', 'Video available (+200R)'],
+    description: 'Soar above Rio\'s beaches and mountains for a once-in-a-lifetime flight — pure adrenaline and breathtaking scenery. Professional video of your flight available for 200R extra.',
     emoji: '🪂',
     highlight: 'Top Adventure',
-    image: '/images/IMG_0904.PNG'
+    image: '/images/IMG_1126.PNG'
   },
   {
     id: 'helicopter',
@@ -110,7 +110,7 @@ const tours: Tour[] = [
     description: 'Experience Rio from above with the wind in your hair! See Christ, Sugarloaf, and the beaches like never before. The ultimate aerial adventure.',
     emoji: '🚁',
     highlight: 'Premium',
-    image: '/images/IMG_9229.JPG'
+    image: '/images/IMG_1116.PNG'
   },
   {
     id: 'moto-tour',
@@ -120,7 +120,7 @@ const tours: Tour[] = [
     includes: ['Moto-taxi rides', 'Local guide', 'Viewpoint stops', 'Explore narrow streets', 'Authentic favela experience'],
     description: 'Hop on a moto and explore Vidigal\'s narrow streets, stunning viewpoints, and local vibes with a trusted local guide. Feel the authentic favela energy!',
     emoji: '🏍️',
-    image: '/images/IMG_9155.JPG'
+    image: '/images/IMG_9230.JPG'
   }
 ];
 
