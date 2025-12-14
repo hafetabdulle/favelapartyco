@@ -127,15 +127,33 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto mb-12 sm:mb-20"
+            className="max-w-3xl mx-auto mb-12 sm:mb-20"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-neutral-900 mb-4 sm:mb-6 px-4">
-              Why choose me?
-            </h2>
-            <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed px-4">
+            {/* Heading with Tom's image */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 mb-8 sm:mb-12">
+              {/* Tom's circular image */}
+              <div className="relative flex-shrink-0">
+                <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-brazilian-green shadow-lg">
+                  <Image
+                    src="/images/tom.jpg"
+                    alt="Tom"
+                    width={160}
+                    height={160}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Heading */}
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-neutral-900 text-center sm:text-left">
+                Why choose me?
+              </h2>
+            </div>
+
+            <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed px-4 text-center">
               I&apos;ve traveled to more than 20 countries around the world, and I know exactly what it feels like to arrive in a city like this—so much to do, so many people to meet, and so many moments waiting to happen.
             </p>
-            <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed px-4 mt-4">
+            <p className="text-lg sm:text-xl text-neutral-600 leading-relaxed px-4 mt-4 text-center">
               With my help, you&apos;ll make the most of your vacation and connect with Rio at its fullest. Get ready to experience the city, the energy, the culture, and the vibe in the best possible way!
             </p>
           </motion.div>
