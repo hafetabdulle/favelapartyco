@@ -43,7 +43,7 @@ export default function Navigation() {
             {/* Logo */}
             <Link href="/" className="flex items-center">
               <span className="text-2xl font-semibold text-neutral-900">
-                Favela Party Co
+                Best of Rio De Janeiro
               </span>
             </Link>
 
