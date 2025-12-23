@@ -15,6 +15,11 @@ interface Tour {
   emoji: string;
   highlight?: string;
   image?: string;
+  accentColor?: string;
+  addon?: {
+    name: string;
+    price: string;
+  };
 }
 
 const tours: Tour[] = [
@@ -42,23 +47,28 @@ const tours: Tour[] = [
   },
   {
     id: 'pubcrawl-party',
-    title: 'Pubcrawl & Favela Party',
+    title: 'Live the Best of Rio de Janeiro',
     price: '150R',
     includes: ['Transport included', 'Free shots', 'Rooftop bars', 'Party guide'],
     description: 'Dive into Rio\'s nightlife like a local! Experience rooftop bars, music, drinks, and a real party inside the favela streets — an experience like no other.',
     emoji: '🎉',
-    image: '/images/IMG_1118.PNG'
+    image: '/images/IMG_1118.PNG',
+    accentColor: 'red'
   },
   {
     id: 'city-tour',
-    title: 'Rio de Janeiro City Tour',
-    price: '590R',
+    title: 'Christ the Redeemer & Selarón Steps',
+    price: '600R',
     duration: 'Full day',
-    includes: ['Christ the Redeemer visit', 'Selarón Steps', 'Lapa neighborhood', 'Maracanã stadium', 'Comfortable transport', 'Professional guide'],
-    description: 'The complete Rio experience! Starting from Cardeal Arcoverde station in Copacabana, we visit all the main attractions with comfort and safety.',
+    includes: ['Tickets', 'Tour guide', 'Public transportation', 'Option to upgrade to private transfer (+extra cost)'],
+    description: 'Explore two of Rio\'s most iconic landmarks! Visit the magnificent Christ the Redeemer statue and discover the colorful Selarón Steps with their 250+ staircase tiles. Perfect blend of culture and views.',
     emoji: '✨',
     highlight: 'Complete Experience',
-    image: '/images/IMG_0903.PNG'
+    image: '/images/IMG_0903.PNG',
+    addon: {
+      name: 'Maracanã Stadium Tour',
+      price: '200R per person'
+    }
   },
   {
     id: 'pedra-sal',
@@ -79,6 +89,15 @@ const tours: Tour[] = [
     description: 'Start early to witness a magical sunrise above Rio\'s skyline 🌅. Begin with a mini tour through Vidigal\'s vibrant streets, then hike up for unforgettable panoramic views.',
     emoji: '🌄',
     image: '/images/IMG_1127.PNG'
+  },
+  {
+    id: 'sugarloaf-hike',
+    title: 'Sugar Loaf Hike',
+    price: '300R (private) / 150R per person (group)',
+    duration: '30 minutes',
+    includes: ['Professional guide', 'Scenic hiking trail', 'Panoramic views', 'Water & snacks'],
+    description: 'Experience a refreshing 30-minute hike with breathtaking views of Rio\'s iconic Sugar Loaf mountain and surrounding beaches. Perfect for a quick adventure or as part of a larger tour.',
+    emoji: '🏔️'
   },
   {
     id: 'football',
@@ -158,7 +177,11 @@ export default function ToursPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-white rounded-2xl sm:rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border-2 border-neutral-200 hover:border-brazilian-yellow/60 flex flex-col"
+                className={`bg-white rounded-2xl sm:rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border-2 flex flex-col ${
+                  tour.accentColor === 'red'
+                    ? 'border-red-300 hover:border-red-400'
+                    : 'border-neutral-200 hover:border-brazilian-yellow/60'
+                }`}
               >
                 {/* Tour Image */}
                 {tour.image && (
@@ -231,6 +254,16 @@ export default function ToursPage() {
                           </li>
                         ))}
                       </ul>
+                    </div>
+                  )}
+
+                  {/* Optional Add-on */}
+                  {tour.addon && (
+                    <div className="mb-5 sm:mb-6 p-3 sm:p-4 bg-yellow-50 rounded-xl border border-brazilian-yellow/30">
+                      <p className="text-xs sm:text-sm font-semibold text-neutral-900 mb-1">Optional Add-on:</p>
+                      <p className="text-xs sm:text-sm text-neutral-700">
+                        {tour.addon.name}: <span className="font-semibold text-brazilian-green">{tour.addon.price}</span>
+                      </p>
                     </div>
                   )}
 

@@ -23,23 +23,23 @@ export default function PrivateExperiencesPage() {
     {
       duration: '3 Days',
       description: 'Perfect weekend getaway',
-      includes: ['2 nights accommodation', '3 daily activities', 'All meals', 'Airport transfers', 'Local guide'],
-      price: 'From 2,500R per person',
+      includes: ['3 daily activities', 'All meals', 'Airport transfers', 'Local guide'],
+      price: 'Price on request',
       emoji: '🌟'
     },
     {
       duration: '7 Days',
       description: 'Complete Rio experience',
-      includes: ['6 nights accommodation', '7 daily activities', 'All meals', 'Airport transfers', 'Local guide', 'Rio highlights tour'],
-      price: 'From 5,500R per person',
+      includes: ['7 daily activities', 'All meals', 'Airport transfers', 'Local guide', 'Rio highlights tour'],
+      price: 'Price on request',
       emoji: '✨',
       popular: true
     },
     {
       duration: '10 Days',
       description: 'Ultimate Brazilian adventure',
-      includes: ['9 nights accommodation', '10 daily activities', 'All meals', 'Airport transfers', 'Local guide', 'Extended trips available'],
-      price: 'From 7,500R per person',
+      includes: ['10 daily activities', 'All meals', 'Airport transfers', 'Local guide', 'Extended trips available'],
+      price: 'Price on request',
       emoji: '🌴'
     }
   ];
