@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-neutral-900">
-              Best of Rio De Janeiro
+              Rio Explore
             </h3>
             <p className="text-neutral-600 text-sm leading-relaxed">
               Experience the authentic Rio de Janeiro with local guides and unforgettable adventures.
@@ -102,7 +102,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-neutral-200 text-center">
           <p className="text-neutral-500 text-sm">
-            © {new Date().getFullYear()} Best of Rio De Janeiro. All rights reserved.
+            © {new Date().getFullYear()} Rio Explore. All rights reserved.
           </p>
         </div>
       </div>
