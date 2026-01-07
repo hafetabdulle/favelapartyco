@@ -112,7 +112,7 @@ const tours: Tour[] = [
   {
     id: 'hang-gliding',
     title: 'Hang Gliding',
-    price: '850R',
+    price: '950R',
     duration: '2-3 hours',
     includes: ['Professional pilot', 'All equipment', 'Hotel pickup', 'Video available (+200R)'],
     description: 'Soar above Rio\'s beaches and mountains for a once-in-a-lifetime flight — pure adrenaline and breathtaking scenery. Professional video of your flight available for 200R extra.',
@@ -130,6 +130,26 @@ const tours: Tour[] = [
     emoji: '🚁',
     highlight: 'Premium',
     image: '/images/IMG_1116.PNG'
+  },
+  {
+    id: 'helicopter-doors-off',
+    title: 'Helicopter Tour with Doors Off – All Above Rio',
+    price: '1850R for two people',
+    duration: '30 minutes',
+    includes: ['Doorless helicopter', 'Professional pilot', 'Epic photo ops', 'Views of all Rio landmarks'],
+    description: 'The ultimate aerial adventure for two! Soar above Rio with the doors completely off for unobstructed 360° views of Christ the Redeemer, Sugarloaf, Copacabana, and more.',
+    emoji: '🚁',
+    highlight: 'Premium Duo',
+    image: '/images/IMG_1116.PNG'
+  },
+  {
+    id: 'christ-visit-only',
+    title: 'Christ the Redeemer Visit Only',
+    price: '450R per person',
+    duration: '3-4 hours',
+    includes: ['Transportation', 'Entrance ticket', 'Professional guide'],
+    description: 'Visit the iconic Christ the Redeemer statue with hassle-free transportation and skip-the-line entrance. Perfect for those who want to focus on this world-famous landmark.',
+    emoji: '✝️'
   },
   {
     id: 'moto-tour',

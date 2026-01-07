@@ -4,7 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Favela Party Co - Authentic Rio de Janeiro Tours & Experiences",
+  title: "Rio Explore - Authentic Rio de Janeiro Tours & Experiences",
   description: "Experience the real Rio with guided favela tours, pubcrawls, hiking, hang gliding, and custom multi-day adventures. Book your unforgettable Brazilian experience today.",
 };
 
