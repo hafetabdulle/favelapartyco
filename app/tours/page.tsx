@@ -121,12 +121,22 @@ const tours: Tour[] = [
     image: '/images/IMG_1126.PNG'
   },
   {
-    id: 'helicopter',
-    title: 'Helicopter Tour (No Doors)',
-    price: '1150R per person',
+    id: 'helicopter-doors-on',
+    title: 'Helicopter Tour (Doors ON)',
+    price: '1850R',
     duration: '30 minutes',
-    includes: ['Doorless helicopter', 'Professional pilot', 'Epic photo ops', 'Christ the Redeemer views'],
-    description: 'Experience Rio from above with the wind in your hair! See Christ, Sugarloaf, and the beaches like never before. The ultimate aerial adventure.',
+    includes: ['Helicopter with doors', 'Professional pilot', 'Perfect for 2 or 3 people', 'Christ the Redeemer views', 'Panoramic views of beaches and mountains'],
+    description: 'Experience Rio from above in comfort and safety! See Christ, Sugarloaf, and the beaches with doors on. Total price for 2 or 3 people.',
+    emoji: '🚁',
+    image: '/images/IMG_1116.PNG'
+  },
+  {
+    id: 'helicopter-doors-off',
+    title: 'Helicopter Tour (Doors OFF)',
+    price: '1200R per person',
+    duration: '30 minutes',
+    includes: ['Doorless helicopter', 'Professional pilot', 'Epic photo ops', 'Christ the Redeemer views', 'Maximum 3 people', 'Wind-in-your-hair experience'],
+    description: 'Experience Rio from above with the wind in your hair! See Christ, Sugarloaf, and the beaches like never before. The ultimate open-air aerial adventure.',
     emoji: '🚁',
     highlight: 'Premium',
     image: '/images/IMG_1116.PNG'
@@ -160,6 +170,17 @@ const tours: Tour[] = [
     description: 'Hop on a moto and explore Vidigal\'s narrow streets, stunning viewpoints, and local vibes with a trusted local guide. Feel the authentic favela energy!',
     emoji: '🏍️',
     image: '/images/IMG_9230.JPG'
+  },
+  {
+    id: 'concierge-service',
+    title: 'Concierge Service',
+    price: 'Custom Pricing',
+    duration: '24/7 during your stay',
+    includes: ['Full-time personal assistance', 'Pre-arrival trip planning & analysis', 'Personalized recommendations', 'Tour booking & organization', 'Restaurant & nightlife reservations', 'Social events coordination', 'Emergency support'],
+    description: '24/7 full-time assistance during your stay (or for the days you choose). I personally take care of you with recommendations, support, planning, and guide you in any tours you want to book. The service starts before you arrive in Rio — I analyze and organize your trip objectives to arrange everything: parties, social events, restaurants, bars, nightlife, meetings, experiences... whatever you want, I\'ll make it happen and be fully available for you.',
+    emoji: '🎯',
+    highlight: 'VIP Service',
+    accentColor: 'red'
   }
 ];
 
@@ -180,7 +201,7 @@ export default function ToursPage() {
               Our Tours
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-neutral-600 leading-relaxed px-4">
-              From cultural experiences to adrenaline-pumping adventures, find your perfect Rio experience.
+              Top adventures, iconic parties, and unforgettable experiences in Rio
             </p>
           </motion.div>
         </div>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -7,9 +8,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-neutral-900">
-              Rio Explore
-            </h3>
+            <Image
+              src="/images/rio.png"
+              alt="Rio Explore"
+              width={160}
+              height={53}
+              className="h-10 w-auto"
+            />
             <p className="text-neutral-600 text-sm leading-relaxed">
               Experience the authentic Rio de Janeiro with local guides and unforgettable adventures.
             </p>

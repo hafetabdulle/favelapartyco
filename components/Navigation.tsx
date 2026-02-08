@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navigation() {
@@ -42,9 +43,14 @@ export default function Navigation() {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-semibold text-neutral-900">
-                Rio Explore
-              </span>
+              <Image
+                src="/images/rio.png"
+                alt="Rio Explore"
+                width={180}
+                height={60}
+                className="h-12 w-auto"
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation */}
