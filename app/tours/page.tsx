@@ -128,28 +128,7 @@ const tours: Tour[] = [
     includes: ['Helicopter with doors', 'Professional pilot', 'Perfect for 2 or 3 people', 'Christ the Redeemer views', 'Panoramic views of beaches and mountains'],
     description: 'Experience Rio from above in comfort and safety! See Christ, Sugarloaf, and the beaches with doors on. Total price for 2 or 3 people.',
     emoji: '🚁',
-    image: '/images/IMG_1116.PNG'
-  },
-  {
-    id: 'helicopter-doors-off',
-    title: 'Helicopter Tour (Doors OFF)',
-    price: '1200R per person',
-    duration: '30 minutes',
-    includes: ['Doorless helicopter', 'Professional pilot', 'Epic photo ops', 'Christ the Redeemer views', 'Maximum 3 people', 'Wind-in-your-hair experience'],
-    description: 'Experience Rio from above with the wind in your hair! See Christ, Sugarloaf, and the beaches like never before. The ultimate open-air aerial adventure.',
-    emoji: '🚁',
     highlight: 'Premium',
-    image: '/images/IMG_1116.PNG'
-  },
-  {
-    id: 'helicopter-doors-off',
-    title: 'Helicopter Tour with Doors Off – All Above Rio',
-    price: '1850R for two people',
-    duration: '30 minutes',
-    includes: ['Doorless helicopter', 'Professional pilot', 'Epic photo ops', 'Views of all Rio landmarks'],
-    description: 'The ultimate aerial adventure for two! Soar above Rio with the doors completely off for unobstructed 360° views of Christ the Redeemer, Sugarloaf, Copacabana, and more.',
-    emoji: '🚁',
-    highlight: 'Premium Duo',
     image: '/images/IMG_1116.PNG'
   },
   {
