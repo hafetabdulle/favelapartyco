@@ -46,9 +46,9 @@ export default function Navigation() {
               <Image
                 src="/images/rio.png"
                 alt="Rio Explore"
-                width={240}
-                height={80}
-                className="h-16 w-auto"
+                width={180}
+                height={60}
+                className="h-12 w-auto"
                 priority
               />
             </Link>
