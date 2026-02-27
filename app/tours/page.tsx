@@ -16,10 +16,10 @@ interface Tour {
   highlight?: string;
   image?: string;
   accentColor?: string;
-  addon?: {
+  addons?: {
     name: string;
     price: string;
-  };
+  }[];
 }
 
 const tours: Tour[] = [
@@ -32,18 +32,26 @@ const tours: Tour[] = [
     description: 'Discover the Real Rocinha! Explore the largest favela in Brazil with an authentic experience that connects you directly with local life, art, and culture.',
     emoji: '🛵',
     highlight: 'Best Value',
-    image: '/images/IMG_9154.JPG'
+    image: '/images/IMG_9154.JPG',
+    addons: [
+      { name: 'Professional Photographer (Canon G7X Mark III)', price: 'Contact us' },
+      { name: 'Drone Video (unique aerial footage)', price: 'R$150 per person' }
+    ]
   },
   {
     id: 'favela-tour-complete',
     title: 'Favela Tour – Complete (Rocinha)',
-    price: '250R',
+    price: 'R$200',
     duration: '3 hours',
     includes: ['Motorcycle ride to the top', '2 panoramic viewpoints with stunning views', 'Visit to Joana\'s house inside Rua 1', 'Street art gallery visit', 'Local football court experience', 'Deep insight into favela life & history'],
     description: 'The full Rocinha experience! Everything from the Standard Tour plus exclusive stops, deeper cultural insights, and more time to truly connect with the community.',
     emoji: '🏘️',
     highlight: 'Most Popular',
-    image: '/images/IMG_9155.JPG'
+    image: '/images/IMG_9155.JPG',
+    addons: [
+      { name: 'Professional Photographer (Canon G7X Mark III)', price: 'Contact us' },
+      { name: 'Drone Video (unique aerial footage)', price: 'R$150 per person' }
+    ]
   },
   {
     id: 'pubcrawl-party',
@@ -64,11 +72,10 @@ const tours: Tour[] = [
     description: 'Explore two of Rio\'s most iconic landmarks! Visit the magnificent Christ the Redeemer statue and discover the colorful Selarón Steps with their 250+ staircase tiles. Perfect blend of culture and views.',
     emoji: '✨',
     highlight: 'Complete Experience',
-    image: '/images/IMG_0903.PNG',
-    addon: {
-      name: 'Maracanã Stadium Tour',
-      price: '200R per person'
-    }
+    image: '/images/christtheredeemer.jpg',
+    addons: [
+      { name: 'Maracanã Stadium Tour', price: '200R per person' }
+    ]
   },
   {
     id: 'pedra-sal',
@@ -118,39 +125,28 @@ const tours: Tour[] = [
     description: 'Soar above Rio\'s beaches and mountains for a once-in-a-lifetime flight — pure adrenaline and breathtaking scenery. Professional video of your flight available for 200R extra.',
     emoji: '🪂',
     highlight: 'Top Adventure',
-    image: '/images/IMG_1126.PNG'
+    image: '/images/hanggliding.jpg'
   },
   {
     id: 'helicopter-doors-on',
-    title: 'Helicopter Tour (Doors ON)',
-    price: '1850R',
-    duration: '30 minutes',
-    includes: ['Helicopter with doors', 'Professional pilot', 'Perfect for 2 or 3 people', 'Christ the Redeemer views', 'Panoramic views of beaches and mountains'],
-    description: 'Experience Rio from above in comfort and safety! See Christ, Sugarloaf, and the beaches with doors on. Total price for 2 or 3 people.',
+    title: 'Helicopter Tour – With Doors',
+    price: 'R$1,890 total',
+    duration: '20 minutes',
+    includes: ['Helicopter with doors', 'Professional pilot', 'Up to 3 people', 'Christ the Redeemer views', 'Panoramic views of beaches and mountains'],
+    description: 'Experience Rio from above in comfort and safety! See Christ, Sugarloaf, and the beaches with doors on. Total price for up to 3 people.',
     emoji: '🚁',
-    image: '/images/IMG_1116.PNG'
+    image: '/images/helicopter.jpg'
   },
   {
     id: 'helicopter-doors-off',
-    title: 'Helicopter Tour (Doors OFF)',
-    price: '1200R per person',
+    title: 'Helicopter Tour – Without Doors',
+    price: 'R$1,200 per person',
     duration: '30 minutes',
-    includes: ['Doorless helicopter', 'Professional pilot', 'Epic photo ops', 'Christ the Redeemer views', 'Maximum 3 people', 'Wind-in-your-hair experience'],
+    includes: ['Doorless helicopter', 'Professional pilot', 'Epic photo ops', 'Christ the Redeemer views', 'Up to 3 people', 'Wind-in-your-hair experience'],
     description: 'Experience Rio from above with the wind in your hair! See Christ, Sugarloaf, and the beaches like never before. The ultimate open-air aerial adventure.',
     emoji: '🚁',
     highlight: 'Premium',
-    image: '/images/IMG_1116.PNG'
-  },
-  {
-    id: 'helicopter-doors-off',
-    title: 'Helicopter Tour with Doors Off – All Above Rio',
-    price: '1850R for two people',
-    duration: '30 minutes',
-    includes: ['Doorless helicopter', 'Professional pilot', 'Epic photo ops', 'Views of all Rio landmarks'],
-    description: 'The ultimate aerial adventure for two! Soar above Rio with the doors completely off for unobstructed 360° views of Christ the Redeemer, Sugarloaf, Copacabana, and more.',
-    emoji: '🚁',
-    highlight: 'Premium Duo',
-    image: '/images/IMG_1116.PNG'
+    image: '/images/helicopter.jpg'
   },
   {
     id: 'christ-visit-only',
@@ -159,7 +155,8 @@ const tours: Tour[] = [
     duration: '3-4 hours',
     includes: ['Transportation', 'Entrance ticket', 'Professional guide'],
     description: 'Visit the iconic Christ the Redeemer statue with hassle-free transportation and skip-the-line entrance. Perfect for those who want to focus on this world-famous landmark.',
-    emoji: '✝️'
+    emoji: '✝️',
+    image: '/images/christtheredeemer.jpg'
   },
   {
     id: 'moto-tour',
@@ -198,7 +195,7 @@ export default function ToursPage() {
             className="text-center max-w-3xl mx-auto"
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-neutral-900 mb-4 sm:mb-6 px-4">
-              Our Tours
+              What&apos;s Your Next Experience?
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-neutral-600 leading-relaxed px-4">
               Top adventures, iconic parties, and unforgettable experiences in Rio
@@ -298,13 +295,17 @@ export default function ToursPage() {
                     </div>
                   )}
 
-                  {/* Optional Add-on */}
-                  {tour.addon && (
+                  {/* Optional Add-ons */}
+                  {tour.addons && tour.addons.length > 0 && (
                     <div className="mb-5 sm:mb-6 p-3 sm:p-4 bg-yellow-50 rounded-xl border border-brazilian-yellow/30">
-                      <p className="text-xs sm:text-sm font-semibold text-neutral-900 mb-1">Optional Add-on:</p>
-                      <p className="text-xs sm:text-sm text-neutral-700">
-                        {tour.addon.name}: <span className="font-semibold text-brazilian-green">{tour.addon.price}</span>
-                      </p>
+                      <p className="text-xs sm:text-sm font-semibold text-neutral-900 mb-2">Optional Add-ons:</p>
+                      <div className="space-y-1">
+                        {tour.addons.map((addon, i) => (
+                          <p key={i} className="text-xs sm:text-sm text-neutral-700">
+                            {addon.name}: <span className="font-semibold text-brazilian-green">{addon.price}</span>
+                          </p>
+                        ))}
+                      </div>
                     </div>
                   )}
 

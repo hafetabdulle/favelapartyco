@@ -11,9 +11,9 @@ export default function Footer() {
             <Image
               src="/images/rio.png"
               alt="Rio Explore"
-              width={160}
-              height={53}
-              className="h-10 w-auto"
+              width={200}
+              height={67}
+              className="h-14 w-auto"
             />
             <p className="text-neutral-600 text-sm leading-relaxed">
               Experience the authentic Rio de Janeiro with local guides and unforgettable adventures.

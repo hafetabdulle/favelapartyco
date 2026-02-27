@@ -57,7 +57,7 @@ export default function Home() {
               variants={fadeInUp}
               className="text-lg sm:text-xl md:text-2xl text-white/95 max-w-3xl mx-auto leading-relaxed drop-shadow-lg px-4"
             >
-              Authentic favela tours, epic adventures, and unforgettable experiences with local guides who know Rio inside out.
+              Authentic experiences that connect travelers with the true spirit of Rio de Janeiro.
             </motion.p>
 
             <motion.div
@@ -219,6 +219,99 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Meet The Team Section */}
+      <section className="py-16 sm:py-24 bg-neutral-50 relative">
+        <div className="absolute top-0 left-0 w-64 h-64 bg-brazilian-yellow/5 rounded-full blur-3xl" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12 sm:mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-neutral-900 mb-3 sm:mb-4">
+              Meet the Team
+            </h2>
+            <p className="text-lg sm:text-xl text-neutral-600 px-4">
+              Local experts passionate about sharing the real Rio
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8">
+            {[
+              {
+                name: 'Tom',
+                role: 'Founder & Guide',
+                bio: 'A young traveler and entrepreneur, a dreamer passionate about Rio, adventure, and meeting new people from all around the world. 🚀',
+                image: '/images/tom.jpg',
+                objectPosition: 'center 15%'
+              },
+              {
+                name: 'Leroy',
+                role: 'Local Guide',
+                bio: 'Born and raised in Rocinha, a local guide, surf lover, and expert in the history of the communities. Passionate about sharing favela culture and real stories. 🌊🏘️',
+                image: '/images/leroy.jpg',
+                objectPosition: 'center 15%'
+              },
+              {
+                name: 'João',
+                role: 'Football & Travel',
+                bio: 'Passionate about football and travel, creating unique experiences for those who want to discover the true essence of football. ⚽',
+                image: '/images/joão.jpg',
+                objectPosition: 'center 15%'
+              },
+              {
+                name: 'Guilherme',
+                role: 'Influencer & Guide',
+                bio: 'An influencer and tour guide, passionate about parties and the good life. Communication and adventure are the pillars of his essence. 🌎🎉',
+                image: '/images/Guilherme.jpg',
+                objectPosition: 'center 15%'
+              },
+              {
+                name: 'Camilla',
+                role: 'Rio Expert',
+                bio: 'Passionate about Rio de Janeiro, its culture, and the vibrant energy that makes this city unique. Loves sharing authentic experiences and the true spirit of Rio. 🌴🩷',
+                image: '/images/camilla.jpg',
+                objectPosition: 'center 15%'
+              },
+              {
+                name: 'Eduarda',
+                role: 'Entrepreneur & Host',
+                bio: 'An entrepreneur and bartender who loves trying new restaurants and enjoying a good glass of wine — with plenty of great recommendations for your trip. 🍷✨',
+                image: '/images/eduarda.jpg',
+                objectPosition: 'center 15%'
+              }
+            ].map((member, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="mx-auto mb-4 w-28 h-28 sm:w-32 sm:h-32">
+                  <div className="w-full h-full rounded-full overflow-hidden border-4 border-brazilian-green shadow-md">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={128}
+                      height={128}
+                      className="w-full h-full object-cover"
+                      style={{ objectPosition: member.objectPosition }}
+                    />
+                  </div>
+                </div>
+                <h3 className="font-semibold text-neutral-900 text-sm sm:text-base">{member.name}</h3>
+                <p className="text-xs sm:text-sm text-brazilian-green font-medium mb-2">{member.role}</p>
+                <p className="text-xs text-neutral-500 leading-relaxed hidden sm:block">{member.bio}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Popular Tours Preview - Light background with green accent */}
       <section className="py-16 sm:py-24 bg-gradient-to-b from-brazilian-green/5 to-neutral-100 relative">
         {/* Subtle green decorative element */}
@@ -261,7 +354,7 @@ export default function Home() {
                 price: '850R',
                 includes: 'Video +200R',
                 emoji: '🪂',
-                image: '/images/IMG_1126.PNG'
+                image: '/images/hanggliding.jpg'
               }
             ].map((tour, index) => (
               <motion.div
