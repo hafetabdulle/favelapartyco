@@ -40,15 +40,15 @@ export default function Navigation() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+          <div className="flex justify-between items-center h-24 sm:h-28">
             {/* Logo */}
             <Link href="/" className="flex items-center">
               <Image
                 src="/images/rio.png"
                 alt="Rio Explore"
-                width={320}
-                height={80}
-                className="h-20 w-auto"
+                width={480}
+                height={120}
+                className="h-20 sm:h-24 w-auto"
                 priority
               />
             </Link>

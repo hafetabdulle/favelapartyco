@@ -140,7 +140,7 @@ const tours: Tour[] = [
   {
     id: 'helicopter-doors-off',
     title: 'Helicopter Tour – Without Doors',
-    price: 'R$1,200 per person',
+    price: '1000 per person',
     duration: '30 minutes',
     includes: ['Doorless helicopter', 'Professional pilot', 'Epic photo ops', 'Christ the Redeemer views', 'Up to 3 people', 'Wind-in-your-hair experience'],
     description: 'Experience Rio from above with the wind in your hair! See Christ, Sugarloaf, and the beaches like never before. The ultimate open-air aerial adventure.',
@@ -197,7 +197,7 @@ export default function ToursPage() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-neutral-900 mb-4 sm:mb-6 px-4">
               What&apos;s Your Next Experience?
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-neutral-600 leading-relaxed px-4">
+            <p className="text-sm sm:text-lg md:text-xl text-neutral-600 leading-relaxed px-4 whitespace-nowrap">
               Top adventures, iconic parties, and unforgettable experiences in Rio
             </p>
           </motion.div>
