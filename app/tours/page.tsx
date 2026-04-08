@@ -121,7 +121,7 @@ const tours: Tour[] = [
     title: 'Hang Gliding',
     price: '950R',
     duration: '2-3 hours',
-    includes: ['Professional pilot', 'All equipment', 'Hotel pickup', 'Video available (+200R)'],
+    includes: ['Professional pilot', 'All equipment', 'Video available (+200R)'],
     description: 'Soar above Rio\'s beaches and mountains for a once-in-a-lifetime flight — pure adrenaline and breathtaking scenery. Professional video of your flight available for 200R extra.',
     emoji: '🪂',
     highlight: 'Top Adventure',
