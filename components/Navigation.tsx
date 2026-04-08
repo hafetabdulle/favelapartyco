@@ -39,16 +39,16 @@ export default function Navigation() {
           scrolled ? 'bg-white/80 backdrop-blur-xl shadow-sm' : 'bg-white'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-24 sm:h-28">
             {/* Logo */}
             <Link href="/" className="flex items-center">
               <Image
                 src="/images/rio.png"
                 alt="Rio Explore"
-                width={480}
-                height={120}
-                className="h-20 sm:h-24 w-auto"
+                width={440}
+                height={110}
+                className="h-20 sm:h-24 md:h-28 w-auto"
                 priority
               />
             </Link>

@@ -130,7 +130,7 @@ const tours: Tour[] = [
   {
     id: 'helicopter-doors-on',
     title: 'Helicopter Tour – With Doors',
-    price: 'R$1,890 total',
+    price: '1990R total',
     duration: '20 minutes',
     includes: ['Helicopter with doors', 'Professional pilot', 'Up to 3 people', 'Christ the Redeemer views', 'Panoramic views of beaches and mountains'],
     description: 'Experience Rio from above in comfort and safety! See Christ, Sugarloaf, and the beaches with doors on. Total price for up to 3 people.',
