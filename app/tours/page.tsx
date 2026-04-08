@@ -169,6 +169,33 @@ const tours: Tour[] = [
     image: '/images/IMG_9230.JPG'
   },
   {
+    id: 'botafogo-bar-crawl',
+    title: 'Botafogo Bar Crawl',
+    price: '90R',
+    includes: ['Bar-hopping experience', 'Local guide', 'Visit to multiple local bars'],
+    description: "Explore Botafogo's nightlife through authentic local bars. Enjoy a social bar-hopping experience with a fun group and lively atmosphere.",
+    emoji: '🍺',
+    image: '/images/botofongo.jpg',
+  },
+  {
+    id: 'sunset-pedra-bonita',
+    title: 'Sunset Experience + Picnic – Pedra Bonita',
+    price: '190R',
+    includes: ['Guided hike', 'Picnic with snacks & drinks', 'Sunset experience', 'Small group'],
+    description: "Watch one of Rio's most beautiful sunsets from Pedra Bonita. Enjoy an easy hike, breathtaking views, and a curated picnic with a relaxed, social vibe.",
+    emoji: '🌅',
+    image: '/images/sunset-pedra-bonita.jpg',
+  },
+  {
+    id: 'rio-night-pedra-sal',
+    title: 'Rio Night Experience – Pedra do Sal Bar Crawl',
+    price: '190R',
+    includes: ['Local host', 'Group experience', 'Van transfer', 'Nightlife experience'],
+    description: "Experience Rio's cultural nightlife with live samba, vibrant energy, and a social group atmosphere in one of the city's most iconic areas.",
+    emoji: '🎶',
+    image: '/images/rio-night-pedra-sal.jpg',
+  },
+  {
     id: 'concierge-service',
     title: 'Concierge Service',
     price: 'Custom Pricing',
@@ -197,7 +224,7 @@ export default function ToursPage() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-neutral-900 mb-4 sm:mb-6 px-4">
               What&apos;s Your Next Experience?
             </h1>
-            <p className="text-sm sm:text-lg md:text-xl text-neutral-600 leading-relaxed px-4 whitespace-nowrap">
+            <p className="text-sm sm:text-base md:text-lg text-neutral-600 leading-relaxed px-4 whitespace-normal sm:whitespace-nowrap">
               Top adventures, iconic parties, and unforgettable experiences in Rio
             </p>
           </motion.div>
