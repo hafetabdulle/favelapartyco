@@ -140,7 +140,7 @@ const tours: Tour[] = [
   {
     id: 'helicopter-doors-off',
     title: 'Helicopter Tour – Without Doors',
-    price: '1000 per person',
+    price: '1050R per person',
     duration: '30 minutes',
     includes: ['Doorless helicopter', 'Professional pilot', 'Epic photo ops', 'Christ the Redeemer views', 'Up to 3 people', 'Wind-in-your-hair experience'],
     description: 'Experience Rio from above with the wind in your hair! See Christ, Sugarloaf, and the beaches like never before. The ultimate open-air aerial adventure.',
