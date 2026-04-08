@@ -56,7 +56,7 @@ const tours: Tour[] = [
   {
     id: 'pubcrawl-party',
     title: 'Pubcrawl & Favela Party',
-    price: '150R',
+    price: '170R',
     includes: ['Transport included', 'Free shots', 'Rooftop bars', 'Party guide'],
     description: 'Dive into Rio\'s nightlife like a local! Experience rooftop bars, music, drinks, and a real party inside the favela streets — an experience like no other.',
     emoji: '🎉',
