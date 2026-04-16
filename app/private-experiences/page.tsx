@@ -78,7 +78,7 @@ Message: ${formData.message}`;
   };
 
   return (
-    <div className="pt-16">
+    <div className="pt-20">
       {/* Header */}
       <section className="relative py-20 sm:py-32 bg-neutral-100 overflow-hidden">
         {/* Background Image */}

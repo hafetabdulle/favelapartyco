@@ -20,7 +20,7 @@ export default function Home() {
   };
 
   return (
-    <div className="pt-16">
+    <div className="pt-20">
       {/* Hero Section */}
       <section className="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center overflow-hidden bg-neutral-100">
         {/* Hero Background Image */}
@@ -336,22 +336,22 @@ export default function Home() {
             {[
               {
                 title: 'Favela Tour by Day',
-                price: '260R',
-                discount: '200R for 2+',
+                price: '250R',
+                discount: '220R for 2+',
                 duration: '3 hours',
                 emoji: '🏘️',
                 image: '/images/IMG_9154.JPG'
               },
               {
                 title: 'Pubcrawl & Favela Party',
-                price: '150R',
+                price: '170R',
                 includes: 'Transport & shots',
                 emoji: '🎉',
                 image: '/images/IMG_1118.PNG'
               },
               {
                 title: 'Hang Gliding',
-                price: '850R',
+                price: '950R',
                 includes: 'Video +200R',
                 emoji: '🪂',
                 image: '/images/hanggliding.jpg'
@@ -420,6 +420,127 @@ export default function Home() {
               View All 9+ Tours
             </Link>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section className="py-16 sm:py-24 bg-neutral-50 relative">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-brazilian-yellow/5 rounded-full blur-3xl" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10 sm:mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-neutral-900 mb-4 px-4">
+              What Our Guests Say
+            </h2>
+            <div className="flex items-center justify-center gap-1 mb-3">
+              {[1,2,3,4,5].map(i => (
+                <svg key={i} className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+              ))}
+              <span className="text-neutral-500 text-sm ml-2">5.0 · Verified reviews</span>
+            </div>
+            <p className="text-base sm:text-lg text-neutral-600 px-4">Real experiences from real travelers</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            {[
+              {
+                name: 'Luzie',
+                location: '',
+                highlight: 'Once-in-a-lifetime',
+                tour: 'Pubcrawl & Real Favela Party',
+                date: 'March 2026',
+                text: "We had the absolute best time on this tour and Tom was such a great host, he knows his stuff and was such a fun person to hang out with! We immediately knew that it's gonna be a great night and it really was! Loved connecting with all these amazing people and I'd recommend this to everyone! A big obrigada to the guides! <3"
+              },
+              {
+                name: 'Christian',
+                location: 'Los Angeles, CA',
+                highlight: 'Once-in-a-lifetime',
+                tour: 'Pubcrawl & Real Favela Party',
+                date: 'March 2026',
+                text: 'Amazing! The hosts were very kind and made me feel very welcomed!!! People in RIO really know how to PARTY!!! Highly recommend if you want to meet new people!'
+              },
+              {
+                name: 'Mikaela',
+                location: '',
+                highlight: '',
+                tour: 'Favela Tour & Night Favela Party',
+                date: 'March 2026',
+                text: "We had an amazing experience with Tom's tour company and would highly recommend it to anyone visiting Rio! Both the Favela Tour and the Night Favela Party Tour were unforgettable — we booked the night tour twice because we loved it so much. Guilherme was incredible, so welcoming and fun. Kimberly (day tour) was an absolute angel — warm, welcoming, and incredibly knowledgeable. Both tours felt authentic and respectful of the community."
+              },
+              {
+                name: 'Κωνσταντίνα',
+                location: 'Greece',
+                highlight: '',
+                tour: '',
+                date: 'April 2026',
+                text: "Guilherme is the best host and one of the happiest, most energetic people I've met in Rio. Without him, our night wouldn't have been nearly as amazing! He made sure everyone was having a great time and introduced us to many people — everyone was incredibly welcoming. I would definitely do it again! Thank you for the wonderful experience Guii ❤️"
+              },
+              {
+                name: 'Karl',
+                location: 'Frankfurt, Germany',
+                highlight: '',
+                tour: '',
+                date: 'April 2026',
+                text: "An incredible experience — something completely new, with great guides. Rarely have I seen someone who radiates such enthusiasm, enjoyment of their work, and warmth as Guilherme! Lidson is also extremely likeable and very knowledgeable; you feel very safe with the two of them. The bars are great, and it's even better on the street!! You have an incredible amount of fun."
+              }
+            ].map((review, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-sm border-2 border-neutral-200 hover:border-brazilian-yellow/50 transition-all duration-300 flex flex-col"
+              >
+                {/* Top: stars + Airbnb badge */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex gap-0.5">
+                    {[1,2,3,4,5].map(i => (
+                      <svg key={i} className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      </svg>
+                    ))}
+                  </div>
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="#FF5A5F">
+                    <path d="M12 1C8.14 1 5 4.14 5 8c0 5.25 6.18 13.39 6.45 13.73.14.18.36.27.55.27s.41-.09.55-.27C12.82 21.39 19 13.25 19 8c0-3.86-3.14-7-7-7zm0 10c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/>
+                  </svg>
+                </div>
+
+                {/* Highlight tag */}
+                {review.highlight && (
+                  <span className="inline-block text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 rounded-full px-3 py-1 mb-3 w-fit">
+                    {review.highlight}
+                  </span>
+                )}
+
+                {/* Review text */}
+                <p className="text-sm sm:text-base text-neutral-700 leading-relaxed flex-grow mb-5">
+                  &ldquo;{review.text}&rdquo;
+                </p>
+
+                {/* Reviewer info */}
+                <div className="border-t border-neutral-100 pt-4">
+                  <p className="font-semibold text-neutral-900 text-sm">{review.name}</p>
+                  <div className="flex flex-wrap gap-x-2 mt-0.5">
+                    {review.location && (
+                      <span className="text-xs text-neutral-500">{review.location}</span>
+                    )}
+                    {review.tour && (
+                      <span className="text-xs text-brazilian-green">{review.tour}</span>
+                    )}
+                    <span className="text-xs text-neutral-400">{review.date}</span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

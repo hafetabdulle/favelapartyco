@@ -41,7 +41,7 @@ ${formData.message}`;
   };
 
   return (
-    <div className="pt-16">
+    <div className="pt-20">
       {/* Header */}
       <section className="relative py-24 bg-gradient-to-b from-brazilian-green/5 to-white overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-brazilian-yellow/5 rounded-full blur-3xl" />

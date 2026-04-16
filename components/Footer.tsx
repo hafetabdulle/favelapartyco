@@ -112,22 +112,29 @@ export default function Footer() {
             <div className="flex flex-wrap items-center gap-2">
               {/* GetYourGuide */}
               <div className="h-8 px-3 bg-white border border-neutral-200 rounded-lg flex items-center justify-center gap-1.5" title="GetYourGuide">
-                <svg viewBox="0 0 24 24" className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="#FF5533">
-                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm.5 17.5h-1v-6h1v6zm-.5-7.5a1 1 0 110-2 1 1 0 010 2z"/>
+                <svg viewBox="0 0 24 24" className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none">
+                  <rect width="24" height="24" rx="4" fill="#FF5533"/>
+                  <path d="M13.5 10.5H10v1.5h2v1c-.4.3-1 .5-1.7.5-1.6 0-2.8-1.2-2.8-2.8S8.7 7.9 10.3 7.9c.8 0 1.5.3 2 .7l1.1-1.1C12.6 6.6 11.5 6.2 10.3 6.2 7.9 6.2 6 8.1 6 10.5s1.9 4.3 4.3 4.3c1.2 0 2.3-.4 3-.9.7-.6 1.1-1.6 1.1-2.7v-.7h-1z" fill="white"/>
                 </svg>
                 <span className="text-xs font-semibold text-neutral-800">GetYourGuide</span>
               </div>
               {/* TripAdvisor */}
               <div className="h-8 px-3 bg-white border border-neutral-200 rounded-lg flex items-center justify-center gap-1.5" title="TripAdvisor">
-                <svg viewBox="0 0 24 24" className="h-4 w-4" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 4.5c2.07 0 3.984.63 5.568 1.706l1.557-1.557.375 2.625A9.43 9.43 0 0121.5 12c0 5.247-4.253 9.5-9.5 9.5S2.5 17.247 2.5 12 6.753 2.5 12 2.5v2zm-3.5 7.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm7 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" fill="#00AA6C"/>
+                <svg viewBox="0 0 24 24" className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none">
+                  <circle cx="12" cy="12" r="11" fill="#00AA6C"/>
+                  <circle cx="8.5" cy="12" r="2.5" fill="white"/>
+                  <circle cx="15.5" cy="12" r="2.5" fill="white"/>
+                  <circle cx="8.5" cy="12" r="1.1" fill="#00AA6C"/>
+                  <circle cx="15.5" cy="12" r="1.1" fill="#00AA6C"/>
+                  <path d="M9 15.5q3 1.8 6 0" stroke="white" strokeWidth="1.4" strokeLinecap="round"/>
+                  <path d="M4.5 12c0-1.5.5-3 1.5-4l-1.5-1.5A9.5 9.5 0 002.5 12h2zm15 0c0-1.5-.5-3-1.5-4l1.5-1.5A9.5 9.5 0 0121.5 12h-2z" fill="white" opacity="0.4"/>
                 </svg>
                 <span className="text-xs font-semibold text-neutral-800">TripAdvisor</span>
               </div>
               {/* Airbnb */}
               <div className="h-8 px-3 bg-white border border-neutral-200 rounded-lg flex items-center justify-center gap-1.5" title="Airbnb">
-                <svg viewBox="0 0 24 24" className="h-4 w-4" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 5c1.226 0 2.086.893 2.086 2.107 0 1.226-.86 2.108-2.086 2.108S9.914 8.333 9.914 7.107C9.914 5.893 10.774 5 12 5zm4.5 10.5c-.36 1.14-1.68 2.14-2.82 2.64-.48.2-.96.36-1.44.36h-.48c-.48 0-.96-.16-1.44-.36-1.14-.5-2.46-1.5-2.82-2.64-.12-.36-.12-.72 0-1.08.24-.84 1.02-1.32 1.86-1.32.48 0 .9.12 1.26.36l.84.6V12c0-.66.54-1.2 1.2-1.2s1.2.54 1.2 1.2v1.86l.84-.6c.36-.24.78-.36 1.26-.36.84 0 1.62.48 1.86 1.32.12.36.12.72 0 1.08z" fill="#FF5A5F"/>
+                <svg viewBox="0 0 24 24" className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="#FF5A5F">
+                  <path d="M12 1C8.14 1 5 4.14 5 8c0 5.25 6.18 13.39 6.45 13.73.14.18.36.27.55.27s.41-.09.55-.27C12.82 21.39 19 13.25 19 8c0-3.86-3.14-7-7-7zm0 10c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/>
                 </svg>
                 <span className="text-xs font-semibold text-neutral-800">Airbnb</span>
               </div>
@@ -143,31 +150,36 @@ export default function Footer() {
             <div className="flex items-center gap-2">
               <span className="text-neutral-400 text-xs mr-1">We accept:</span>
               {/* PayPal */}
-              <div className="h-8 px-3 bg-white border border-neutral-200 rounded-lg flex items-center justify-center" title="PayPal">
-                <svg viewBox="0 0 101 32" className="h-4 w-auto" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12.237 2.93H5.532c-.463 0-.856.336-.928.794L2.05 24.794a.557.557 0 00.55.644h3.175c.463 0 .856-.337.928-.795l.638-4.042c.071-.458.465-.795.927-.795h2.1c4.368 0 6.888-2.113 7.546-6.306.296-1.832.012-3.27-.844-4.277-.94-1.109-2.603-1.693-4.833-1.693v-.6zm.767 6.213c-.362 2.376-2.178 2.376-3.934 2.376h-1l .7-4.428c.042-.269.276-.466.549-.466h.457c1.196 0 2.325 0 2.908.682.349.407.455 1.01.32 1.836zM30.73 9.05h-3.188a.557.557 0 00-.549.466l-.141.895-.224-.325c-.694-1.007-2.24-1.344-3.784-1.344-3.54 0-6.566 2.682-7.155 6.443-.306 1.876.129 3.67 1.18 4.918 .966 1.148 2.346 1.626 3.99 1.626 2.854 0 4.438-1.834 4.438-1.834l-.142.888a.557.557 0 00.549.644h2.872c.463 0 .856-.337.928-.795l1.723-10.937a.557.557 0 00-.548-.645zm-4.447 6.236c-.31 1.832-1.764 3.063-3.616 3.063-.929 0-1.674-.299-2.151-.864-.474-.562-.652-1.362-.502-2.252.29-1.816 1.766-3.086 3.59-3.086.91 0 1.649.301 2.135.873.489.576.681 1.382.544 2.266zM48.15 9.05h-3.204c-.31 0-.6.154-.775.41l-4.474 6.59-1.897-6.337c-.119-.396-.484-.663-.897-.663h-3.15a.557.557 0 00-.528.736l3.572 10.48-3.358 4.737a.557.557 0 00.455.882h3.2c.308 0 .596-.151.772-.404l10.79-15.578a.557.557 0 00-.507-.853z" fill="#253B80"/>
-                  <path d="M57.952 2.93h-6.705c-.463 0-.856.336-.928.794L47.765 24.794a.557.557 0 00.549.644h3.405c.324 0 .599-.235.65-.556l.671-4.281c.071-.458.465-.795.927-.795h2.1c4.368 0 6.888-2.113 7.546-6.306.296-1.832.012-3.27-.844-4.277-.94-1.109-2.602-1.693-4.832-1.693l-.585-.6zm.767 6.213c-.362 2.376-2.178 2.376-3.934 2.376h-1l.7-4.428c.042-.269.276-.466.549-.466h.457c1.196 0 2.325 0 2.908.682.35.407.455 1.01.32 1.836zM76.446 9.05h-3.188a.557.557 0 00-.549.466l-.141.895-.224-.325c-.694-1.007-2.241-1.344-3.784-1.344-3.54 0-6.566 2.682-7.155 6.443-.306 1.876.129 3.67 1.18 4.918.966 1.148 2.346 1.626 3.99 1.626 2.854 0 4.438-1.834 4.438-1.834l-.142.888a.557.557 0 00.549.644h2.872c.463 0 .856-.337.928-.795l1.723-10.937a.557.557 0 00-.497-.645zm-4.447 6.236c-.31 1.832-1.764 3.063-3.616 3.063-.929 0-1.674-.299-2.151-.864-.474-.562-.652-1.362-.502-2.252.29-1.816 1.766-3.086 3.59-3.086.91 0 1.649.301 2.135.873.489.576.681 1.382.544 2.266zM79.503 3.328l-2.577 16.394a.557.557 0 00.549.644h2.747c.463 0 .856-.337.928-.795l2.542-16.108a.557.557 0 00-.549-.644h-3.092a.557.557 0 00-.548.509z" fill="#179BD7"/>
+              <div className="h-8 px-3 bg-white border border-neutral-200 rounded-lg flex items-center justify-center gap-1" title="PayPal">
+                <svg viewBox="0 0 24 24" className="h-4 w-4" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.076 21.337H4.711a.64.64 0 01-.633-.74L6.288.35A.64.64 0 016.92 0h6.254c2.59 0 4.386.612 5.336 1.819.88 1.12 1.088 2.511.618 4.133-.985 3.389-3.388 5.113-7.15 5.113H9.613l-.56 3.638-.563 3.638a.64.64 0 01-.633.552l-.781.444z" fill="#253B80"/>
+                  <path d="M19.466 5.635c-.057.337-.13.68-.225 1.038-1.136 3.908-4.022 5.887-8.577 5.887H8.422a.64.64 0 00-.633.552L6.92 21.337h2.156a.64.64 0 00.633-.552l.557-3.582.562-3.638a.64.64 0 01.633-.552h1.242c3.762 0 6.148-1.724 7.134-5.113.419-1.44.31-2.666-.371-3.663z" fill="#179BD7"/>
                 </svg>
+                <span className="text-xs font-semibold text-[#253B80]">PayPal</span>
               </div>
               {/* Stripe */}
-              <div className="h-8 px-3 bg-white border border-neutral-200 rounded-lg flex items-center justify-center" title="Stripe">
-                <svg viewBox="0 0 60 25" className="h-4 w-auto" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M59.64 14.28h-8.06c.19 1.93 1.6 2.55 3.2 2.55 1.64 0 2.96-.37 4.05-.95v3.32a10.94 10.94 0 01-4.56.93c-4.01 0-6.83-2.5-6.83-7.48 0-4.19 2.39-7.52 6.3-7.52 3.92 0 5.96 3.28 5.96 7.5 0 .4-.04 1.26-.06 1.65zm-5.92-5.62c-1.03 0-2.17.73-2.17 2.58h4.25c0-1.85-1.07-2.58-2.08-2.58zM40.95 20.3c-1.44 0-2.32-.6-2.9-1.04l-.02 4.63-4.44.94V5.27h3.94l.2 1.01c.56-.69 1.68-1.26 3.23-1.26 2.9 0 5.62 2.6 5.62 7.6 0 5.37-2.7 7.68-5.63 7.68zM40 8.95c-.99 0-1.58.38-1.97.9l.04 6.05c.36.5.93.87 1.93.87 1.5 0 2.54-1.65 2.54-3.9C42.54 10.59 41.5 8.95 40 8.95zM28.24 5.27h4.44V20h-4.44V5.27zm0-4.7l4.44-.94v3.56l-4.44.94V.57zm-4.99 14.7l.54 4.73H20.3l-.38-2.97c-.88 1.96-2.65 3.26-5.02 3.26-3.7 0-6.48-3.06-6.48-7.65C8.42 7.37 11.3 5 14.94 5c1.98 0 3.44.7 4.32 1.88V5.27h4.32l.5 9.54-.84.46zM16.1 17.4c1.56 0 2.63-1.3 2.63-3.8 0-2.5-1.1-3.72-2.65-3.72-1.51 0-2.64 1.24-2.64 3.75 0 2.47 1.1 3.77 2.66 3.77zm-12.49-.1c.85 0 1.67-.19 2.37-.51V20c-.75.26-1.75.44-2.9.44C.9 20.44 0 18.9 0 16.53V8.92H1.82V5.27H0V1.54l4.44-.94v4.67H7.3v3.65H4.44v6.98c0 1.01.47 1.4 1.17 1.4z" fill="#635BFF"/>
+              <div className="h-8 px-3 bg-white border border-neutral-200 rounded-lg flex items-center justify-center gap-1" title="Stripe">
+                <svg viewBox="0 0 24 24" className="h-4 w-4" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 6.5C2 4 4 2 6.5 2h11C20 2 22 4 22 6.5v11c0 2.5-2 4.5-4.5 4.5h-11C4 22 2 20 2 17.5v-11z" fill="#635BFF"/>
+                  <path d="M11.5 9.5c0-.7.6-1 1.5-.8v-1.8C11.2 6.7 9.5 7.7 9.5 9.6c0 2.7 3.5 2.3 3.5 3.5 0 .7-.7 1-1.6.8v1.8c1.8.2 3.6-.8 3.6-2.8 0-2.8-3.5-2.4-3.5-3.4z" fill="white"/>
                 </svg>
+                <span className="text-xs font-semibold text-[#635BFF]">Stripe</span>
               </div>
               {/* Revolut */}
-              <div className="h-8 px-3 bg-white border border-neutral-200 rounded-lg flex items-center justify-center gap-1.5" title="Revolut">
-                <svg viewBox="0 0 28 28" className="h-4 w-4" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14 0C6.268 0 0 6.268 0 14s6.268 14 14 14 14-6.268 14-14S21.732 0 14 0zm4.374 20.125l-3.01-4.813H13.5v4.813H10V7.875h5.25c2.9 0 4.813 1.575 4.813 3.85 0 1.838-1.05 3.15-2.712 3.675l3.324 4.725h-4.301zm-2.362-7.35c1.05 0 1.663-.525 1.663-1.4s-.613-1.4-1.663-1.4H13.5v2.8h2.512z" fill="#191C1F"/>
+              <div className="h-8 px-3 bg-white border border-neutral-200 rounded-lg flex items-center justify-center gap-1" title="Revolut">
+                <svg viewBox="0 0 24 24" className="h-4 w-4" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="24" height="24" rx="4" fill="#191C1F"/>
+                  <path d="M8 5h5.5a3 3 0 010 6H11l3 4H11l-3-4V5zm3 2v2h2.5a1 1 0 000-2H11z" fill="white"/>
                 </svg>
                 <span className="text-xs font-semibold text-neutral-800">Revolut</span>
               </div>
               {/* Pix */}
-              <div className="h-8 px-3 bg-white border border-neutral-200 rounded-lg flex items-center justify-center gap-1.5" title="Pix">
-                <svg viewBox="0 0 512 512" className="h-4 w-4" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M376.4 322.6c-22.4 0-43.4-8.7-59.2-24.5l-80.7-80.7c-6.4-6.4-17.6-6.4-24 0l-81 81c-15.8 15.8-36.8 24.5-59.2 24.5H56l102.5 102.5c33.4 33.4 87.5 33.4 120.9 0L382 322.6h-5.6zM72.3 189.4h.8c22.4 0 43.4 8.7 59.2 24.5l81 81c6.6 6.6 17.4 6.6 24 0l80.7-80.7c15.8-15.8 36.8-24.5 59.2-24.5h5.6L280.3 87.1c-33.4-33.4-87.5-33.4-120.9 0L56.7 189.4h15.6zM437.7 210.6L376.4 149h-9.4c-17.3 0-33.6 6.8-45.8 19l-80.7 80.7c-12.3 12.3-33.7 12.3-46 0l-81-81c-12.2-12.2-28.5-19-45.8-19h-9.4L57 210.6c-33.4 33.4-33.4 87.5 0 120.9l61.2 61.2h9.4c17.3 0 33.6-6.8 45.8-19l81-81c12.3-12.3 33.7-12.3 46 0l80.7 80.7c12.2 12.2 28.5 19 45.8 19h9.4l61.2-61.2c33.6-33.4 33.6-87.5.2-120.6z" fill="#32BCAD"/>
+              <div className="h-8 px-3 bg-white border border-neutral-200 rounded-lg flex items-center justify-center gap-1" title="Pix">
+                <svg viewBox="0 0 24 24" className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none">
+                  <path d="M14.5 4.5l-3 3-3-3-3 3 3 3-3 3 3 3 3-3 3 3 3-3-3-3 3-3z" fill="#32BCAD"/>
+                  <circle cx="12" cy="12" r="1.5" fill="#32BCAD"/>
                 </svg>
-                <span className="text-xs font-semibold text-neutral-800">Pix</span>
+                <span className="text-xs font-semibold text-[#32BCAD]">Pix</span>
               </div>
             </div>
           </div>

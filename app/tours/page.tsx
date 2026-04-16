@@ -41,7 +41,8 @@ const tours: Tour[] = [
   {
     id: 'favela-tour-complete',
     title: 'Favela Tour – Complete (Rocinha)',
-    price: 'R$200',
+    price: '250R/person',
+    discountPrice: '220R for 2+ people',
     duration: '3 hours',
     includes: ['Motorcycle ride to the top', '2 panoramic viewpoints with stunning views', 'Visit to Joana\'s house inside Rua 1', 'Street art gallery visit', 'Local football court experience', 'Deep insight into favela life & history'],
     description: 'The full Rocinha experience! Everything from the Standard Tour plus exclusive stops, deeper cultural insights, and more time to truly connect with the community.',
@@ -78,19 +79,10 @@ const tours: Tour[] = [
     ]
   },
   {
-    id: 'pedra-sal',
-    title: 'Pedra do Sal Pubcrawl',
-    price: '150R',
-    duration: 'Every Monday',
-    includes: ['Transport included', 'Welcome beer', 'Local guide', 'Cultural experience'],
-    description: 'Feel the soul of Rio with live samba, street parties, and caipirinhas at the city\'s most iconic Monday night spot. The best way to experience authentic Brazilian culture!',
-    emoji: '🍹',
-    image: '/images/IMG_0904.PNG'
-  },
-  {
     id: 'sunrise-hike',
     title: 'Morro Dois Irmãos Sunrise Hike + Breakfast',
-    price: '190R',
+    price: '190R/person',
+    discountPrice: '150R for 2+ people',
     duration: '4 hours',
     includes: ['Early morning transport', 'Mini Vidigal tour', 'Snacks & water', 'Local breakfast after hike', 'Professional guide'],
     description: 'Start early to witness a magical sunrise above Rio\'s skyline 🌅. Begin with a mini tour through Vidigal\'s vibrant streets, then hike up for unforgettable panoramic views.',
@@ -171,8 +163,8 @@ const tours: Tour[] = [
   {
     id: 'botafogo-bar-crawl',
     title: 'Botafogo Bar Crawl',
-    price: '90R',
-    includes: ['Bar-hopping experience', 'Local guide', 'Visit to multiple local bars'],
+    price: '190R',
+    includes: ['Bar-hopping experience', 'Local guide', 'Visit to multiple local bars', '3 drinks / 5 beers', 'Shared appetizer'],
     description: "Explore Botafogo's nightlife through authentic local bars. Enjoy a social bar-hopping experience with a fun group and lively atmosphere.",
     emoji: '🍺',
     image: '/images/botofongo.jpg',
@@ -180,7 +172,8 @@ const tours: Tour[] = [
   {
     id: 'sunset-pedra-bonita',
     title: 'Sunset Experience + Picnic – Pedra Bonita',
-    price: '190R',
+    price: '250R/person',
+    discountPrice: '190R for 2+ people',
     includes: ['Guided hike', 'Picnic with snacks & drinks', 'Sunset experience', 'Small group'],
     description: "Watch one of Rio's most beautiful sunsets from Pedra Bonita. Enjoy an easy hike, breathtaking views, and a curated picnic with a relaxed, social vibe.",
     emoji: '🌅',
@@ -210,7 +203,7 @@ const tours: Tour[] = [
 
 export default function ToursPage() {
   return (
-    <div className="pt-16">
+    <div className="pt-20">
       {/* Header Section */}
       <section className="relative py-16 sm:py-24 bg-gradient-to-b from-brazilian-green/5 to-white overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-brazilian-yellow/5 rounded-full blur-3xl" />
@@ -226,6 +219,9 @@ export default function ToursPage() {
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-neutral-600 leading-relaxed px-4 whitespace-normal sm:whitespace-nowrap">
               Top adventures, iconic parties, and unforgettable experiences in Rio
+            </p>
+            <p className="text-xs sm:text-sm text-neutral-400 mt-3 px-4">
+              All prices are subject to an additional 10% tax.
             </p>
           </motion.div>
         </div>
@@ -260,8 +256,12 @@ export default function ToursPage() {
                     />
                     {/* Highlight Badge on image */}
                     {tour.highlight && (
-                      <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-brazilian-green text-white text-xs sm:text-sm font-semibold px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-lg">
-                        {tour.highlight}
+                      <div className={`absolute top-3 left-3 sm:top-4 sm:left-4 text-xs sm:text-sm font-semibold px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-lg ${
+                        tour.highlight === 'Premium'
+                          ? 'bg-amber-400 text-amber-900'
+                          : 'bg-brazilian-green text-white'
+                      }`}>
+                        {tour.highlight === 'Premium' ? '⭐ Premium' : tour.highlight}
                       </div>
                     )}
                     {/* Emoji overlay */}
@@ -367,6 +367,7 @@ export default function ToursPage() {
               Quick Price Comparison
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-neutral-600 px-4">All prices in Brazilian Reais (R$)</p>
+            <p className="text-xs sm:text-sm text-neutral-400 mt-1 px-4">All prices are subject to an additional 10% tax.</p>
           </motion.div>
 
           {/* Mobile: Stack layout */}
