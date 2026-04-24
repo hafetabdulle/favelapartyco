@@ -109,6 +109,19 @@ const tours: Tour[] = [
     image: '/images/IMG_1123.PNG'
   },
   {
+    id: 'paragliding',
+    title: 'Paragliding',
+    price: '890R',
+    includes: ['Professional pilot', 'All equipment', 'Video available (+200R)'],
+    description: "Soar above Rio's beaches and mountains on a paragliding flight designed for everyone — smoother, more comfortable, and more accessible than other aerial sports, without missing any of the adrenaline or breathtaking views. Professional video available for an additional R$200.",
+    emoji: '🪂',
+    highlight: 'Top Adventure',
+    image: '/images/paragliding.jpg',
+    addons: [
+      { name: 'Professional video', price: '200R' }
+    ]
+  },
+  {
     id: 'hang-gliding',
     title: 'Hang Gliding',
     price: '950R',
