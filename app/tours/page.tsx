@@ -180,6 +180,19 @@ const tours: Tour[] = [
     image: '/images/sunset-pedra-bonita.jpg',
   },
   {
+    id: 'paddleboard-sunrise',
+    title: 'Sunrise Paddle Board Ocean Experience',
+    price: '190R',
+    includes: ['Life jacket', 'Sand instruction session', 'Waterproof cover', 'Photos & videos during the experience', 'Full guided accompaniment'],
+    description: 'Start your day with an unforgettable sunrise at sea. Enjoy a guided ocean session with stunning views, peaceful vibes, and a unique connection to nature — perfect for beginners and experienced alike.',
+    emoji: '🏄',
+    highlight: 'New Experience',
+    image: '/images/paddleboard-sunrise.jpg',
+    addons: [
+      { name: 'Drone images & video (aerial footage)', price: '80R – 100R' }
+    ]
+  },
+  {
     id: 'rio-night-pedra-sal',
     title: 'Rio Night Experience – Pedra do Sal Bar Crawl',
     price: '190R',
