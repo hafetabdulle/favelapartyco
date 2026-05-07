@@ -255,13 +255,6 @@ export default function Home() {
                 objectPosition: 'center 15%'
               },
               {
-                name: 'João',
-                role: 'Football & Travel',
-                bio: 'Passionate about football and travel, creating unique experiences for those who want to discover the true essence of football. ⚽',
-                image: '/images/joão.jpg',
-                objectPosition: 'center 15%'
-              },
-              {
                 name: 'Guilherme',
                 role: 'Influencer & Guide',
                 bio: 'An influencer and tour guide, passionate about parties and the good life. Communication and adventure are the pillars of his essence. 🌎🎉',
@@ -276,10 +269,24 @@ export default function Home() {
                 objectPosition: 'center 15%'
               },
               {
-                name: 'Eduarda',
-                role: 'Entrepreneur & Host',
-                bio: 'An entrepreneur and bartender who loves trying new restaurants and enjoying a good glass of wine — with plenty of great recommendations for your trip. 🍷✨',
-                image: '/images/eduarda.jpg',
+                name: 'Lidson',
+                role: 'Hiking Guide',
+                bio: 'Expert hiking guide with deep knowledge of Rio\'s trails and mountains. Passionate about nature and sharing the breathtaking views Rio has to offer. 🏔️🌿',
+                image: '/images/lidson.jpg',
+                objectPosition: 'center 15%'
+              },
+              {
+                name: 'Kim',
+                role: 'Local Guide',
+                bio: 'A warm and knowledgeable local guide with a passion for sharing Rio\'s culture, community, and authentic experiences with visitors from around the world. 🌎🩷',
+                image: '/images/kim.jpg',
+                objectPosition: 'center 15%'
+              },
+              {
+                name: 'Sherlock',
+                role: 'Favela Guide',
+                bio: 'Born in the favela and proud of it. Sherlock brings unmatched authenticity and insight into favela life, culture, and community. 🏘️🔍',
+                image: '/images/sherlock.jpg',
                 objectPosition: 'center 15%'
               }
             ].map((member, index) => (

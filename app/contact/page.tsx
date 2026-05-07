@@ -112,7 +112,7 @@ ${formData.message}`;
 
             {/* Instagram */}
             <motion.a
-              href="https://www.instagram.com/favelapartyco/"
+              href="https://www.instagram.com/rioexplore/"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
@@ -134,7 +134,7 @@ ${formData.message}`;
 
             {/* Email */}
             <motion.a
-              href="mailto:hello@favelapartyco.com"
+              href="mailto:rioexploremanagement@gmail.com"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -255,7 +255,7 @@ ${formData.message}`;
                 </button>
 
                 <a
-                  href="mailto:hello@favelapartyco.com"
+                  href="mailto:rioexploremanagement@gmail.com"
                   className="flex-1 min-h-[56px] py-4 bg-white hover:bg-brazilian-yellow-light text-brazilian-green rounded-full font-semibold text-lg shadow-md hover:shadow-lg transition-all duration-300 border-2 border-brazilian-green flex items-center justify-center"
                 >
                   Send via Email
@@ -290,7 +290,7 @@ ${formData.message}`;
 
             <div className="flex justify-center space-x-6">
               <a
-                href="https://www.instagram.com/favelapartyco/"
+                href="https://www.instagram.com/rioexplore/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-pink-500 text-white hover:shadow-xl hover:scale-110 transition-all duration-300"
