@@ -229,145 +229,160 @@ const tours: Tour[] = [
 
 export default function ToursPage() {
   return (
-    <div className="pt-20">
-      {/* Header Section */}
-      <section className="relative py-16 sm:py-24 bg-gradient-to-b from-brazilian-green/5 to-white overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-brazilian-yellow/5 rounded-full blur-3xl" />
+    <div className="pt-28 sm:pt-32 bg-[#FDF8F0]">
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Hero */}
+      <section className="py-16 sm:py-24 bg-[#FDF8F0]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center max-w-3xl mx-auto"
+            transition={{ duration: 0.7 }}
+            className="max-w-3xl"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-neutral-900 mb-4 sm:mb-6 px-4">
-              What&apos;s Your Next Experience?
+            <div className="w-10 h-1 bg-[#FEDD00] mb-6 rounded-full" />
+            <h1
+              className="font-display font-semibold text-neutral-900 leading-tight mb-5"
+              style={{ fontSize: 'clamp(2.4rem, 6vw, 4.5rem)' }}
+            >
+              Every corner of Rio,{' '}
+              <em className="italic text-[#009739]">yours to explore</em>
             </h1>
-            <p className="text-sm sm:text-base md:text-lg text-neutral-600 leading-relaxed px-4 whitespace-normal sm:whitespace-nowrap">
-              Top adventures, iconic parties, and unforgettable experiences in Rio
+            <p className="text-base sm:text-lg text-neutral-600 leading-relaxed max-w-xl mb-3">
+              Top adventures, iconic parties, and unforgettable experiences — led by people who live and breathe this city.
             </p>
-            <p className="text-xs sm:text-sm text-neutral-400 mt-3 px-4">
-              All prices are subject to an additional 10% tax.
-            </p>
+            <p className="text-xs text-neutral-400">All prices are subject to an additional 10% tax.</p>
           </motion.div>
         </div>
       </section>
 
       {/* Tours Grid */}
-      <section className="py-12 sm:py-24 bg-white">
+      <section className="pb-20 sm:pb-28 bg-[#FDF8F0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
             {tours.map((tour, index) => (
               <motion.div
                 key={tour.id}
                 id={tour.id}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className={`bg-white rounded-2xl sm:rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border-2 flex flex-col ${
-                  tour.accentColor === 'red'
-                    ? 'border-red-300 hover:border-red-400'
-                    : 'border-neutral-200 hover:border-brazilian-yellow/60'
-                }`}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: Math.min(index * 0.04, 0.3) }}
+                className="bg-white rounded-2xl overflow-hidden flex flex-col group shadow-sm hover:shadow-lg transition-all duration-400"
               >
-                {/* Tour Image */}
-                {tour.image && (
-                  <div className="relative h-48 sm:h-56 w-full">
+                {/* Image */}
+                {tour.image ? (
+                  <div className="relative h-56 sm:h-64 overflow-hidden flex-shrink-0">
                     <Image
                       src={tour.image}
                       alt={tour.title}
                       fill
-                      className="object-cover"
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                    {/* Highlight Badge on image */}
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                    {/* Price badge */}
+                    <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm rounded-xl px-3 py-1.5 shadow-sm">
+                      <p className="text-sm font-semibold text-[#009739] leading-tight">{tour.price}</p>
+                      {tour.discountPrice && (
+                        <p className="text-[10px] text-neutral-500 leading-tight">{tour.discountPrice}</p>
+                      )}
+                    </div>
+                    {/* Highlight badge */}
                     {tour.highlight && (
-                      <div className={`absolute top-3 left-3 sm:top-4 sm:left-4 text-xs sm:text-sm font-semibold px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-lg ${
+                      <div className={`absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full ${
                         tour.highlight === 'Premium'
                           ? 'bg-amber-400 text-amber-900'
-                          : 'bg-brazilian-green text-white'
+                          : tour.highlight === 'VIP Service'
+                          ? 'bg-[#FEDD00] text-neutral-900'
+                          : 'bg-[#009739] text-white'
                       }`}>
-                        {tour.highlight === 'Premium' ? '⭐ Premium' : tour.highlight}
+                        {tour.highlight}
                       </div>
                     )}
-                    {/* Emoji overlay */}
-                    <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 text-4xl sm:text-5xl drop-shadow-lg">{tour.emoji}</div>
+                  </div>
+                ) : (
+                  <div className={`h-24 flex items-center justify-center flex-shrink-0 ${
+                    tour.highlight === 'VIP Service' ? 'bg-[#006B28]' :
+                    tour.accentColor === 'red' ? 'bg-red-50' : 'bg-[#FDF8F0]'
+                  }`}>
+                    <span className="text-5xl">{tour.emoji}</span>
+                    {tour.highlight && (
+                      <div className={`absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full ${
+                        tour.highlight === 'VIP Service' ? 'bg-[#FEDD00] text-neutral-900' : 'bg-[#009739] text-white'
+                      }`}>
+                        {tour.highlight}
+                      </div>
+                    )}
                   </div>
                 )}
 
-                {/* Highlight Badge (for tours without images) */}
-                {!tour.image && tour.highlight && (
-                  <div className="bg-brazilian-green text-white text-xs sm:text-sm font-semibold px-4 py-2 text-center">
-                    {tour.highlight}
-                  </div>
-                )}
+                {/* Body */}
+                <div className="p-5 sm:p-6 flex flex-col flex-grow">
+                  {!tour.image && <div className="text-2xl mb-3 hidden">{tour.emoji}</div>}
 
-                <div className="p-5 sm:p-8 flex-grow flex flex-col">
-                  {/* Emoji (only show if no image) */}
-                  {!tour.image && <div className="text-5xl sm:text-6xl mb-4">{tour.emoji}</div>}
-
-                  {/* Title */}
-                  <h3 className="text-xl sm:text-2xl font-semibold text-neutral-900 mb-2 sm:mb-3 leading-tight">
+                  <h3 className="font-display font-semibold text-neutral-900 leading-snug mb-1 text-lg sm:text-xl">
                     {tour.title}
                   </h3>
 
-                  {/* Price */}
-                  <div className="mb-3 sm:mb-4">
-                    <p className="text-2xl sm:text-3xl font-semibold text-brazilian-green">
-                      {tour.price}
-                    </p>
-                    {tour.discountPrice && (
-                      <p className="text-xs sm:text-sm text-brazilian-green-dark font-medium mt-1">
-                        {tour.discountPrice}
-                      </p>
-                    )}
-                    {tour.duration && (
-                      <p className="text-xs sm:text-sm text-neutral-600 mt-1">{tour.duration}</p>
-                    )}
-                  </div>
+                  {/* Price for no-image tours */}
+                  {!tour.image && (
+                    <div className="mb-2">
+                      <p className="text-lg font-semibold text-[#009739]">{tour.price}</p>
+                      {tour.discountPrice && (
+                        <p className="text-xs text-[#006B28] font-medium">{tour.discountPrice}</p>
+                      )}
+                    </div>
+                  )}
 
-                  {/* Description */}
-                  <p className="text-sm sm:text-base text-neutral-600 mb-3 sm:mb-4 leading-relaxed flex-grow">
+                  {tour.duration && (
+                    <p className="text-xs text-neutral-500 mb-3 flex items-center gap-1">
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      </svg>
+                      {tour.duration}
+                    </p>
+                  )}
+
+                  <p className="text-sm text-neutral-600 leading-relaxed mb-4 flex-grow">
                     {tour.description}
                   </p>
 
                   {/* Includes */}
                   {tour.includes && tour.includes.length > 0 && (
-                    <div className="mb-5 sm:mb-6 space-y-2">
-                      <p className="text-xs sm:text-sm font-semibold text-neutral-900">Includes:</p>
+                    <div className="mb-4 space-y-1.5">
+                      <p className="text-xs font-semibold text-neutral-800 uppercase tracking-wide">Includes</p>
                       <ul className="space-y-1">
                         {tour.includes.map((item, i) => (
-                          <li key={i} className="text-xs sm:text-sm text-neutral-600 flex items-start">
-                            <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brazilian-green mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <li key={i} className="text-xs text-neutral-600 flex items-start gap-2">
+                            <svg className="w-3.5 h-3.5 text-[#009739] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                             </svg>
-                            <span>{item}</span>
+                            {item}
                           </li>
                         ))}
                       </ul>
                     </div>
                   )}
 
-                  {/* Optional Add-ons */}
+                  {/* Add-ons */}
                   {tour.addons && tour.addons.length > 0 && (
-                    <div className="mb-5 sm:mb-6 p-3 sm:p-4 bg-yellow-50 rounded-xl border border-brazilian-yellow/30">
-                      <p className="text-xs sm:text-sm font-semibold text-neutral-900 mb-2">Optional Add-ons:</p>
-                      <div className="space-y-1">
-                        {tour.addons.map((addon, i) => (
-                          <p key={i} className="text-xs sm:text-sm text-neutral-700">
-                            {addon.name}: <span className="font-semibold text-brazilian-green">{addon.price}</span>
-                          </p>
-                        ))}
-                      </div>
+                    <div className="mb-4 p-3 bg-[#FDF8F0] rounded-xl border border-[#FEDD00]/40">
+                      <p className="text-xs font-semibold text-neutral-800 mb-1.5">Optional Add-ons</p>
+                      {tour.addons.map((addon, i) => (
+                        <p key={i} className="text-xs text-neutral-600">
+                          {addon.name}: <span className="font-semibold text-[#009739]">{addon.price}</span>
+                        </p>
+                      ))}
                     </div>
                   )}
 
-                  {/* Book Button - Green with WHITE text */}
                   <a
                     href={`https://wa.me/5521998477858?text=Hi! I'm interested in the ${tour.title}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full min-h-[48px] sm:min-h-[52px] py-3 sm:py-3.5 bg-brazilian-green hover:bg-brazilian-green-dark text-white rounded-full font-semibold text-sm sm:text-base text-center shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center mt-auto"
+                    className="w-full min-h-[48px] py-3 bg-[#009739] hover:bg-[#006B28] text-white rounded-full font-semibold text-sm text-center transition-all duration-200 flex items-center justify-center mt-auto"
                   >
                     Book Now
                   </a>
@@ -378,136 +393,137 @@ export default function ToursPage() {
         </div>
       </section>
 
-      {/* Quick Price Comparison */}
-      <section className="py-12 sm:py-24 bg-neutral-100 relative">
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-brazilian-green/5 rounded-full blur-3xl" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Price Comparison */}
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-10 sm:mb-16"
+            className="mb-10 sm:mb-14"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-neutral-900 mb-3 sm:mb-4 px-4">
-              Quick Price Comparison
+            <div className="w-10 h-1 bg-[#FEDD00] mb-5 rounded-full" />
+            <h2 className="font-display font-semibold text-neutral-900 mb-2" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>
+              Quick Price Overview
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-neutral-600 px-4">All prices in Brazilian Reais (R$)</p>
-            <p className="text-xs sm:text-sm text-neutral-400 mt-1 px-4">All prices are subject to an additional 10% tax.</p>
+            <p className="text-neutral-500 text-sm">All prices in Brazilian Reais (R$) · Subject to 10% tax</p>
           </motion.div>
 
-          {/* Mobile: Stack layout */}
-          <div className="sm:hidden space-y-4">
-            {tours.map((tour) => (
+          {/* Mobile cards */}
+          <div className="sm:hidden space-y-3">
+            {tours.map((tour, i) => (
               <motion.div
                 key={tour.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -16 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-5 shadow-sm border-2 border-brazilian-yellow/30"
+                transition={{ delay: i * 0.03 }}
+                className="flex items-center justify-between bg-[#FDF8F0] rounded-2xl px-4 py-3.5 border border-neutral-200/60"
               >
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-2xl">{tour.emoji}</span>
-                  <span className="text-xl font-semibold text-brazilian-green">
-                    {tour.price}
-                  </span>
+                <div className="flex items-center gap-3">
+                  <span className="text-xl">{tour.emoji}</span>
+                  <div>
+                    <p className="text-sm font-medium text-neutral-900 leading-snug">{tour.title}</p>
+                    {tour.duration && <p className="text-xs text-neutral-500">{tour.duration}</p>}
+                  </div>
                 </div>
-                <h3 className="font-semibold text-neutral-900 mb-1">{tour.title}</h3>
-                {tour.duration && (
-                  <p className="text-sm text-neutral-600">{tour.duration}</p>
-                )}
+                <div className="text-right ml-3 flex-shrink-0">
+                  <p className="text-sm font-semibold text-[#009739]">{tour.price}</p>
+                  {tour.discountPrice && <p className="text-[10px] text-[#006B28]">{tour.discountPrice}</p>}
+                </div>
               </motion.div>
             ))}
           </div>
 
-          {/* Desktop: Table layout */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="hidden sm:block bg-white rounded-3xl shadow-sm overflow-hidden"
-          >
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead className="bg-brazilian-green text-white">
-                  <tr>
-                    <th className="px-6 py-4 text-left font-semibold">Tour</th>
-                    <th className="px-6 py-4 text-left font-semibold">Price</th>
-                    <th className="px-6 py-4 text-left font-semibold">Duration</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-neutral-200">
-                  {tours.map((tour) => (
-                    <tr key={tour.id} className="hover:bg-neutral-50 transition-colors">
-                      <td className="px-6 py-4">
-                        <div className="flex items-center space-x-3">
-                          <span className="text-2xl">{tour.emoji}</span>
-                          <span className="font-medium text-neutral-900">{tour.title}</span>
-                        </div>
-                      </td>
-                      <td className="px-6 py-4">
-                        <span className="text-lg font-semibold text-brazilian-green">{tour.price}</span>
-                        {tour.discountPrice && (
-                          <div className="text-sm text-brazilian-green-dark">{tour.discountPrice}</div>
-                        )}
-                      </td>
-                      <td className="px-6 py-4 text-neutral-600">
-                        {tour.duration || 'Contact us'}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-12 sm:py-24 bg-white relative">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-brazilian-yellow/5 rounded-full blur-3xl" />
-
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="space-y-4 sm:space-y-8"
-          >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-neutral-900 px-4">
-              Can&apos;t Decide? Get a Custom Package
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-neutral-600 leading-relaxed px-4">
-              Want to experience multiple tours? We offer custom multi-day packages with everything included.
-            </p>
-          </motion.div>
-
+          {/* Desktop table */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center mt-6 sm:mt-8 max-w-lg mx-auto"
+            className="hidden sm:block rounded-2xl overflow-hidden border border-neutral-200"
           >
-            {/* Green button with WHITE text */}
-            <Link
-              href="/private-experiences"
-              className="w-full sm:w-auto min-h-[52px] sm:min-h-[56px] px-8 sm:px-12 py-3.5 sm:py-4 bg-brazilian-green hover:bg-brazilian-green-dark text-white rounded-full font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center"
+            <table className="w-full">
+              <thead>
+                <tr className="bg-[#006B28] text-white">
+                  <th className="px-6 py-4 text-left font-semibold text-sm">Tour</th>
+                  <th className="px-6 py-4 text-left font-semibold text-sm">Price</th>
+                  <th className="px-6 py-4 text-left font-semibold text-sm">Duration</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-neutral-100">
+                {tours.map((tour, i) => (
+                  <tr key={tour.id} className={`hover:bg-[#FDF8F0] transition-colors ${i % 2 === 0 ? 'bg-white' : 'bg-neutral-50/50'}`}>
+                    <td className="px-6 py-4">
+                      <div className="flex items-center gap-3">
+                        <span className="text-xl">{tour.emoji}</span>
+                        <span className="font-medium text-neutral-900 text-sm">{tour.title}</span>
+                        {tour.highlight && (
+                          <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${
+                            tour.highlight === 'Premium' ? 'bg-amber-100 text-amber-700' :
+                            tour.highlight === 'VIP Service' ? 'bg-[#FEDD00]/40 text-neutral-800' :
+                            'bg-[#009739]/10 text-[#009739]'
+                          }`}>{tour.highlight}</span>
+                        )}
+                      </div>
+                    </td>
+                    <td className="px-6 py-4">
+                      <span className="font-semibold text-[#009739] text-sm">{tour.price}</span>
+                      {tour.discountPrice && (
+                        <div className="text-xs text-[#006B28]">{tour.discountPrice}</div>
+                      )}
+                    </td>
+                    <td className="px-6 py-4 text-sm text-neutral-500">{tour.duration || '—'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 sm:py-24 bg-[#006B28] grain relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-black/10 rounded-full translate-x-1/3 translate-y-1/3" />
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <div className="w-10 h-1 bg-[#FEDD00] mb-4 rounded-full mx-auto" />
+            <h2
+              className="font-display font-semibold text-white leading-tight"
+              style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}
             >
-              View Private Packages
-            </Link>
-            {/* White button with green border */}
-            <a
-              href="https://wa.me/5521998477858"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto min-h-[52px] sm:min-h-[56px] px-8 sm:px-12 py-3.5 sm:py-4 bg-white hover:bg-brazilian-yellow-light text-brazilian-green rounded-full font-semibold text-base sm:text-lg shadow-md hover:shadow-lg transition-all duration-300 border-2 border-brazilian-green inline-flex items-center justify-center space-x-2"
-            >
-              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-              </svg>
-              <span>WhatsApp Us</span>
-            </a>
+              Can&apos;t decide?{' '}
+              <em className="italic text-[#FEDD00]">We&apos;ll plan it for you</em>
+            </h2>
+            <p className="text-white/80 text-base sm:text-lg leading-relaxed max-w-xl mx-auto">
+              Want to experience multiple tours? We build custom multi-day packages with everything included — activities, transport, and local expertise.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center pt-2 max-w-md mx-auto">
+              <Link
+                href="/private-experiences"
+                className="min-h-[52px] px-8 py-3 bg-[#FEDD00] hover:bg-yellow-300 text-neutral-900 rounded-full font-semibold text-base transition-all duration-200 flex items-center justify-center shadow-lg"
+              >
+                View Private Packages
+              </Link>
+              <a
+                href="https://wa.me/5521998477858"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="min-h-[52px] px-8 py-3 bg-white/10 hover:bg-white/20 border border-white/30 text-white rounded-full font-semibold text-base transition-all duration-200 flex items-center justify-center gap-2"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                </svg>
+                WhatsApp Us
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
