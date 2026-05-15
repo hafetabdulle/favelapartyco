@@ -231,6 +231,7 @@ const tours: Tour[] = [
     description: 'Experience one of the most magical mornings in Rio! Watch the sunrise from the iconic Vista Chinesa, enjoy a light breakfast with panoramic city views, then continue into nature for a refreshing waterfall adventure in the Tijuca Forest.',
     emoji: '🌊',
     highlight: 'New Experience',
+    image: '/images/waterfall.jpg',
   },
   {
     id: 'drone-video',
@@ -240,7 +241,7 @@ const tours: Tour[] = [
     includes: ['Guided walk through the alleys', 'Professional drone video footage', 'Motorcycle ride up & down the favela'],
     description: 'Capture unforgettable moments in the heart of Rocinha with a unique drone-focused experience. Ride through the favela by motorcycle, explore the local alleys, and finish with incredible rooftop drone footage overlooking Rio de Janeiro.',
     emoji: '🎬',
-    image: '/images/IMG_9154.JPG',
+    image: '/images/drone.jpg',
   },
   {
     id: 'haircut-favela',
@@ -250,6 +251,7 @@ const tours: Tour[] = [
     includes: ['Professional men\'s haircut', 'Hair bleaching or color service', 'Barber styling and finishing', 'Authentic Rocinha barbershop experience', 'Photos during the experience', 'Local host assistance'],
     description: 'Get a fresh cut inside the heart of Rocinha with an authentic local barber experience. Relax, upgrade your style, and experience the energy of one of Rio\'s most vibrant communities while being treated by skilled local barbers.',
     emoji: '💈',
+    image: '/images/haircut.jpg',
   },
   {
     id: 'concierge-service',
