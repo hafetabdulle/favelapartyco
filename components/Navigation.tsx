@@ -36,7 +36,7 @@ export default function Navigation() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-28 sm:h-32 overflow-visible">
+          <div className="flex justify-between items-center h-24 sm:h-28 overflow-visible">
             {/* Logo */}
             <Link href="/" className="flex items-center overflow-visible">
               <Image
@@ -44,7 +44,7 @@ export default function Navigation() {
                 alt="Rio Explore"
                 width={440}
                 height={110}
-                className="h-28 sm:h-32 md:h-38 w-auto scale-110 sm:scale-125 origin-left"
+                className="h-28 sm:h-32 md:h-36 w-auto scale-[1.2] sm:scale-[1.4] origin-left"
                 priority
               />
             </Link>

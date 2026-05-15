@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --background: #FDF8F0;
+  --background: #ffffff;
   --foreground: #1a1a18;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

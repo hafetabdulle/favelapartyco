@@ -58,6 +58,7 @@ const tours: Tour[] = [
     id: 'pubcrawl-party',
     title: 'Pubcrawl & Favela Party',
     price: '170R',
+    duration: '6 hours',
     includes: ['Transport included', 'Free shots', 'Rooftop bars', 'Party guide'],
     description: 'Dive into Rio\'s nightlife like a local! Experience rooftop bars, music, drinks, and a real party inside the favela streets — an experience like no other.',
     emoji: '🎉',
@@ -96,7 +97,8 @@ const tours: Tour[] = [
     duration: '30 minutes',
     includes: ['Professional guide', 'Scenic hiking trail', 'Panoramic views', 'Water & snacks'],
     description: 'Experience a refreshing 30-minute hike with breathtaking views of Rio\'s iconic Sugar Loaf mountain and surrounding beaches. Perfect for a quick adventure or as part of a larger tour.',
-    emoji: '🏔️'
+    emoji: '🏔️',
+    image: '/images/IMG_7581.jpeg'
   },
   {
     id: 'football',
@@ -112,6 +114,7 @@ const tours: Tour[] = [
     id: 'paragliding',
     title: 'Paragliding',
     price: '890R',
+    duration: '2–3 hours',
     includes: ['Professional pilot', 'All equipment', 'Video available (+200R)'],
     description: "Soar above Rio's beaches and mountains on a paragliding flight designed for everyone — smoother, more comfortable, and more accessible than other aerial sports, without missing any of the adrenaline or breathtaking views. Professional video available for an additional R$200.",
     emoji: '🪂',
@@ -177,6 +180,7 @@ const tours: Tour[] = [
     id: 'botafogo-bar-crawl',
     title: 'Botafogo Bar Crawl',
     price: '190R',
+    duration: '3 hours',
     includes: ['Bar-hopping experience', 'Local guide', 'Visit to multiple local bars', '3 drinks / 5 beers', 'Shared appetizer'],
     description: "Explore Botafogo's nightlife through authentic local bars. Enjoy a social bar-hopping experience with a fun group and lively atmosphere.",
     emoji: '🍺',
@@ -187,6 +191,7 @@ const tours: Tour[] = [
     title: 'Sunset Experience + Picnic – Pedra Bonita',
     price: '250R/person',
     discountPrice: '190R for 2+ people',
+    duration: '4 hours',
     includes: ['Guided hike', 'Picnic with snacks & drinks', 'Sunset experience', 'Small group'],
     description: "Watch one of Rio's most beautiful sunsets from Pedra Bonita. Enjoy an easy hike, breathtaking views, and a curated picnic with a relaxed, social vibe.",
     emoji: '🌅',
@@ -196,6 +201,7 @@ const tours: Tour[] = [
     id: 'paddleboard-sunrise',
     title: 'Sunrise Paddle Board Ocean Experience',
     price: '190R',
+    duration: '2 hours',
     includes: ['Life jacket', 'Sand instruction session', 'Waterproof cover', 'Photos & videos during the experience', 'Full guided accompaniment'],
     description: 'Start your day with an unforgettable sunrise at sea. Enjoy a guided ocean session with stunning views, peaceful vibes, and a unique connection to nature — perfect for beginners and experienced alike.',
     emoji: '🏄',
@@ -209,10 +215,41 @@ const tours: Tour[] = [
     id: 'rio-night-pedra-sal',
     title: 'Rio Night Experience – Pedra do Sal Bar Crawl',
     price: '190R',
+    duration: '6 hours',
     includes: ['Local host', 'Group experience', 'Van transfer', 'Nightlife experience'],
     description: "Experience Rio's cultural nightlife with live samba, vibrant energy, and a social group atmosphere in one of the city's most iconic areas.",
     emoji: '🎶',
     image: '/images/rio-night-pedra-sal.jpg',
+  },
+  {
+    id: 'sunrise-waterfall',
+    title: 'Sunrise Experience & Waterfall Adventure',
+    price: '250R/person',
+    discountPrice: '190R for 2+ people',
+    duration: '6 hours',
+    includes: ['Transportation included', 'Sunrise at Vista Chinesa', 'Light breakfast with scenic views', 'Guided Horto Waterfall trail', 'Time to swim and relax at the waterfall', 'Photos and breathtaking viewpoints', 'Optional group lunch after the experience (additional cost)'],
+    description: 'Experience one of the most magical mornings in Rio! Watch the sunrise from the iconic Vista Chinesa, enjoy a light breakfast with panoramic city views, then continue into nature for a refreshing waterfall adventure in the Tijuca Forest.',
+    emoji: '🌊',
+    highlight: 'New Experience',
+  },
+  {
+    id: 'drone-video',
+    title: 'Infamous Drone Video',
+    price: '250R',
+    duration: '1.5 hours',
+    includes: ['Guided walk through the alleys', 'Professional drone video footage', 'Motorcycle ride up & down the favela'],
+    description: 'Capture unforgettable moments in the heart of Rocinha with a unique drone-focused experience. Ride through the favela by motorcycle, explore the local alleys, and finish with incredible rooftop drone footage overlooking Rio de Janeiro.',
+    emoji: '🎬',
+    image: '/images/IMG_9154.JPG',
+  },
+  {
+    id: 'haircut-favela',
+    title: 'Haircut & Color in the Favela',
+    price: '400R',
+    duration: '1.5 hours',
+    includes: ['Professional men\'s haircut', 'Hair bleaching or color service', 'Barber styling and finishing', 'Authentic Rocinha barbershop experience', 'Photos during the experience', 'Local host assistance'],
+    description: 'Get a fresh cut inside the heart of Rocinha with an authentic local barber experience. Relax, upgrade your style, and experience the energy of one of Rio\'s most vibrant communities while being treated by skilled local barbers.',
+    emoji: '💈',
   },
   {
     id: 'concierge-service',
@@ -229,10 +266,10 @@ const tours: Tour[] = [
 
 export default function ToursPage() {
   return (
-    <div className="pt-28 sm:pt-32 bg-[#FDF8F0]">
+    <div className="pt-28 sm:pt-32 bg-white">
 
       {/* Hero */}
-      <section className="py-16 sm:py-24 bg-[#FDF8F0]">
+      <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -257,7 +294,7 @@ export default function ToursPage() {
       </section>
 
       {/* Tours Grid */}
-      <section className="pb-20 sm:pb-28 bg-[#FDF8F0]">
+      <section className="pb-20 sm:pb-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
             {tours.map((tour, index) => (
@@ -305,7 +342,7 @@ export default function ToursPage() {
                 ) : (
                   <div className={`h-24 flex items-center justify-center flex-shrink-0 ${
                     tour.highlight === 'VIP Service' ? 'bg-[#006B28]' :
-                    tour.accentColor === 'red' ? 'bg-red-50' : 'bg-[#FDF8F0]'
+                    tour.accentColor === 'red' ? 'bg-red-50' : 'bg-white'
                   }`}>
                     <span className="text-5xl">{tour.emoji}</span>
                     {tour.highlight && (
@@ -368,7 +405,7 @@ export default function ToursPage() {
 
                   {/* Add-ons */}
                   {tour.addons && tour.addons.length > 0 && (
-                    <div className="mb-4 p-3 bg-[#FDF8F0] rounded-xl border border-[#FEDD00]/40">
+                    <div className="mb-4 p-3 bg-white rounded-xl border border-[#FEDD00]/40">
                       <p className="text-xs font-semibold text-neutral-800 mb-1.5">Optional Add-ons</p>
                       {tour.addons.map((addon, i) => (
                         <p key={i} className="text-xs text-neutral-600">
@@ -418,7 +455,7 @@ export default function ToursPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.03 }}
-                className="flex items-center justify-between bg-[#FDF8F0] rounded-2xl px-4 py-3.5 border border-neutral-200/60"
+                className="flex items-center justify-between bg-white rounded-2xl px-4 py-3.5 border border-neutral-200/60"
               >
                 <div className="flex items-center gap-3">
                   <span className="text-xl">{tour.emoji}</span>
@@ -452,7 +489,7 @@ export default function ToursPage() {
               </thead>
               <tbody className="divide-y divide-neutral-100">
                 {tours.map((tour, i) => (
-                  <tr key={tour.id} className={`hover:bg-[#FDF8F0] transition-colors ${i % 2 === 0 ? 'bg-white' : 'bg-neutral-50/50'}`}>
+                  <tr key={tour.id} className={`hover:bg-white transition-colors ${i % 2 === 0 ? 'bg-white' : 'bg-neutral-50/50'}`}>
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
                         <span className="text-xl">{tour.emoji}</span>

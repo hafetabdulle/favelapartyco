@@ -69,7 +69,7 @@ Message: ${formData.message}`;
   };
 
   return (
-    <div className="bg-[#FDF8F0]">
+    <div className="bg-white">
 
       {/* Hero — full-bleed image */}
       <section className="relative h-[70vh] min-h-[480px] flex items-end overflow-hidden">
@@ -106,7 +106,7 @@ Message: ${formData.message}`;
       </section>
 
       {/* Package Options */}
-      <section className="py-16 sm:py-24 bg-[#FDF8F0]">
+      <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -176,7 +176,7 @@ Message: ${formData.message}`;
                     className={`w-full min-h-[48px] py-3 rounded-full font-semibold text-sm transition-all duration-200 ${
                       pkg.popular
                         ? 'bg-[#009739] hover:bg-[#006B28] text-white shadow-md'
-                        : 'bg-[#FDF8F0] hover:bg-neutral-100 text-neutral-900 border border-neutral-200'
+                        : 'bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-200'
                     }`}
                   >
                     Get Custom Quote
@@ -224,7 +224,7 @@ Message: ${formData.message}`;
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="bg-[#FDF8F0] rounded-xl p-5 border border-neutral-200/60 hover:border-[#009739]/30 hover:shadow-sm transition-all duration-200"
+                className="bg-white rounded-xl p-5 border border-neutral-200/60 hover:border-[#009739]/30 hover:shadow-sm transition-all duration-200"
               >
                 <div className="text-3xl mb-3">{feature.icon}</div>
                 <h3 className="font-semibold text-neutral-900 text-sm mb-1">{feature.title}</h3>
@@ -236,7 +236,7 @@ Message: ${formData.message}`;
       </section>
 
       {/* Booking Form */}
-      <section id="booking-form" className="py-16 sm:py-24 bg-[#FDF8F0]">
+      <section id="booking-form" className="py-16 sm:py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -440,7 +440,7 @@ Message: ${formData.message}`;
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.06 }}
-                className="bg-[#FDF8F0] rounded-xl px-6 py-5 border border-neutral-200/60"
+                className="bg-white rounded-xl px-6 py-5 border border-neutral-200/60"
               >
                 <h3 className="font-semibold text-neutral-900 text-base mb-2">{faq.question}</h3>
                 <p className="text-neutral-500 text-sm leading-relaxed">{faq.answer}</p>

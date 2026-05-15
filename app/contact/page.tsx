@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Script from 'next/script';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -36,10 +37,10 @@ ${formData.message}`;
   };
 
   return (
-    <div className="pt-28 sm:pt-32 bg-[#FDF8F0]">
+    <div className="pt-28 sm:pt-32 bg-white">
 
       {/* Hero */}
-      <section className="py-16 sm:py-24 bg-[#FDF8F0]">
+      <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -63,7 +64,7 @@ ${formData.message}`;
       </section>
 
       {/* Contact Cards */}
-      <section className="pb-16 sm:pb-24 bg-[#FDF8F0]">
+      <section className="pb-16 sm:pb-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
 
@@ -150,7 +151,7 @@ ${formData.message}`;
               transition={{ duration: 0.5, delay: 0.3 }}
               className="group bg-white rounded-2xl p-6 sm:p-8 border border-neutral-200 hover:border-[#009739]/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
-              <div className="w-12 h-12 rounded-xl bg-[#FDF8F0] border border-neutral-200 flex items-center justify-center mb-5">
+              <div className="w-12 h-12 rounded-xl bg-white border border-neutral-200 flex items-center justify-center mb-5">
                 <svg className="w-6 h-6 text-neutral-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
@@ -200,7 +201,7 @@ ${formData.message}`;
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full min-h-[52px] px-4 py-3 bg-[#FDF8F0] border border-neutral-200 rounded-xl focus:ring-2 focus:ring-[#009739] focus:border-transparent outline-none transition-all text-base"
+                    className="w-full min-h-[52px] px-4 py-3 bg-white border border-neutral-200 rounded-xl focus:ring-2 focus:ring-[#009739] focus:border-transparent outline-none transition-all text-base"
                     placeholder="John Doe"
                   />
                 </div>
@@ -212,7 +213,7 @@ ${formData.message}`;
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full min-h-[52px] px-4 py-3 bg-[#FDF8F0] border border-neutral-200 rounded-xl focus:ring-2 focus:ring-[#009739] focus:border-transparent outline-none transition-all text-base"
+                    className="w-full min-h-[52px] px-4 py-3 bg-white border border-neutral-200 rounded-xl focus:ring-2 focus:ring-[#009739] focus:border-transparent outline-none transition-all text-base"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -225,7 +226,7 @@ ${formData.message}`;
                   required
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="w-full min-h-[52px] px-4 py-3 bg-[#FDF8F0] border border-neutral-200 rounded-xl focus:ring-2 focus:ring-[#009739] focus:border-transparent outline-none transition-all text-base"
+                  className="w-full min-h-[52px] px-4 py-3 bg-white border border-neutral-200 rounded-xl focus:ring-2 focus:ring-[#009739] focus:border-transparent outline-none transition-all text-base"
                 >
                   <option value="">Select a subject</option>
                   <option value="Tour Booking">Tour Booking</option>
@@ -245,7 +246,7 @@ ${formData.message}`;
                   rows={6}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 bg-[#FDF8F0] border border-neutral-200 rounded-xl focus:ring-2 focus:ring-[#009739] focus:border-transparent outline-none transition-all resize-none text-base"
+                  className="w-full px-4 py-3 bg-white border border-neutral-200 rounded-xl focus:ring-2 focus:ring-[#009739] focus:border-transparent outline-none transition-all resize-none text-base"
                   placeholder="Tell us what you're interested in..."
                 />
               </div>
@@ -260,7 +261,7 @@ ${formData.message}`;
                 </button>
                 <a
                   href="mailto:rioexploremanagement@gmail.com"
-                  className="flex-1 min-h-[52px] py-3.5 bg-[#FDF8F0] hover:bg-neutral-100 text-neutral-700 rounded-full font-semibold text-base transition-all duration-200 border border-neutral-200 flex items-center justify-center"
+                  className="flex-1 min-h-[52px] py-3.5 bg-white hover:bg-neutral-100 text-neutral-700 rounded-full font-semibold text-base transition-all duration-200 border border-neutral-200 flex items-center justify-center"
                 >
                   Send via Email
                 </a>
@@ -275,7 +276,7 @@ ${formData.message}`;
       </section>
 
       {/* Info strip */}
-      <section className="py-12 bg-[#FDF8F0] border-t border-neutral-200/60">
+      <section className="py-12 bg-white border-t border-neutral-200/60">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             {[
@@ -327,6 +328,34 @@ ${formData.message}`;
             ))}
           </div>
         </div>
+      </section>
+
+      {/* TripAdvisor Review Widget */}
+      <section className="py-12 sm:py-16 bg-white border-t border-neutral-100">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-sm font-semibold text-neutral-500 uppercase tracking-widest mb-4">Had a great time? Leave us a review</p>
+            <div id="TA_cdswritereviewlgvi22" className="TA_cdswritereviewlgvi flex justify-center">
+              <ul id="sUtPWoZ0" className="TA_links list-none p-0 m-0">
+                <li id="4lelHiQJEJ7" className="AdrTe2">
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.tripadvisor.com/">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_secondary_registered.svg" alt="TripAdvisor" className="h-10 mx-auto" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </motion.div>
+        </div>
+        <Script
+          async
+          src="https://www.jscache.com/wejs?wtype=cdswritereviewlgvi&uniq=22&locationId=34228341&lang=en_US&display_version=2"
+          strategy="afterInteractive"
+        />
       </section>
 
       {/* Dark green CTA */}

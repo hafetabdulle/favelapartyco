@@ -28,13 +28,13 @@ const YellowBar = () => (
 
 export default function Home() {
   const teamMembers = [
-    { name: 'Tom',       role: 'Founder & Guide',     image: '/images/tom.jpg' },
-    { name: 'Leroy',     role: 'Local Guide',          image: '/images/leroy.jpg' },
-    { name: 'Guilherme', role: 'Influencer & Guide',   image: '/images/Guilherme.jpg' },
-    { name: 'Camilla',   role: 'Rio Expert',           image: '/images/camilla.jpg' },
-    { name: 'Lidson',    role: 'Hiking Guide',         image: '/images/lidson.jpg' },
-    { name: 'Kim',       role: 'Local Guide',          image: '/images/kim.jpg' },
-    { name: 'Sherlock',  role: 'Favela Guide',         image: '/images/sherlock.jpg' },
+    { name: 'Tom',       role: 'Founder & Guide',     image: '/images/tom.jpg',       objectPosition: 'top' },
+    { name: 'Leroy',     role: 'Local Guide',          image: '/images/leroy.jpg',     objectPosition: 'top' },
+    { name: 'Guilherme', role: 'Influencer & Guide',   image: '/images/Guilherme.jpg', objectPosition: 'top' },
+    { name: 'Camilla',   role: 'Rio Expert',           image: '/images/camilla.jpg',   objectPosition: 'top' },
+    { name: 'Lidson',    role: 'Hiking Guide',         image: '/images/lidson.jpg',    objectPosition: 'center' },
+    { name: 'Kim',       role: 'Local Guide',          image: '/images/kim.jpg',       objectPosition: 'center' },
+    { name: 'Sherlock',  role: 'Favela Guide',         image: '/images/sherlock.jpg',  objectPosition: 'top' },
   ];
 
   const reviews = [
@@ -76,7 +76,7 @@ export default function Home() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/45 to-black/80 z-10" />
 
-        <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 text-center pt-28 sm:pt-0">
+        <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 text-center pt-28 sm:pt-24">
           {/* Floating stat pills */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -172,7 +172,7 @@ export default function Home() {
       </section>
 
       {/* ─── WHY CHOOSE US ─── */}
-      <section className="py-16 sm:py-28 bg-[#FDF8F0]">
+      <section className="py-16 sm:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Editorial split: Tom photo + text */}
           <motion.div
@@ -269,7 +269,8 @@ export default function Home() {
                     alt={member.name}
                     width={128}
                     height={128}
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: member.objectPosition }}
                   />
                 </div>
                 <p className="font-semibold text-white text-sm">{member.name}</p>
@@ -281,7 +282,7 @@ export default function Home() {
       </section>
 
       {/* ─── POPULAR TOURS ─── */}
-      <section className="py-16 sm:py-28 bg-[#FDF8F0]">
+      <section className="py-16 sm:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
