@@ -98,7 +98,7 @@ const tours: Tour[] = [
     includes: ['Professional guide', 'Scenic hiking trail', 'Panoramic views', 'Water & snacks'],
     description: 'Experience a refreshing 30-minute hike with breathtaking views of Rio\'s iconic Sugar Loaf mountain and surrounding beaches. Perfect for a quick adventure or as part of a larger tour.',
     emoji: '🏔️',
-    image: '/images/IMG_7581.jpeg'
+    image: '/images/sugarloaf.jpg'
   },
   {
     id: 'football',
