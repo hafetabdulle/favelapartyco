@@ -22,8 +22,8 @@ const AirbnbPin = () => (
   </svg>
 );
 
-const YellowBar = () => (
-  <div className="w-10 h-1 bg-[#FEDD00] mb-5 rounded-full" />
+const GreenBar = () => (
+  <div className="w-10 h-1 bg-[#009739] mb-5 rounded-full" />
 );
 
 export default function Home() {
@@ -103,7 +103,7 @@ export default function Home() {
             style={{ fontSize: 'clamp(3rem, 10vw, 8rem)' }}
           >
             Experience<br />
-            <em className="italic text-[#FEDD00] not-italic" style={{ fontStyle: 'italic' }}>the Real</em><br />
+            <em className="italic not-italic" style={{ fontStyle: 'italic' }}>the Real</em><br />
             Rio de Janeiro
           </motion.h1>
 
@@ -146,7 +146,7 @@ export default function Home() {
               href="https://wa.me/5521998477858"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-white/60 hover:text-[#FEDD00] transition-colors duration-200 text-sm"
+              className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors duration-200 text-sm"
             >
               <WhatsAppIcon />
               <span>Quick question? WhatsApp us</span>
@@ -166,7 +166,7 @@ export default function Home() {
             transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
             className="w-5 h-8 border border-white/40 rounded-full flex justify-center pt-1.5"
           >
-            <div className="w-1 h-2 bg-[#FEDD00] rounded-full" />
+            <div className="w-1 h-2 bg-white rounded-full" />
           </motion.div>
         </motion.div>
       </section>
@@ -195,7 +195,7 @@ export default function Home() {
 
             {/* Text */}
             <div className="flex-1 max-w-xl text-center md:text-left">
-              <YellowBar />
+              <GreenBar />
               <h2 className="font-display font-semibold text-neutral-900 leading-[1.05] mb-6"
                 style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)' }}>
                 Why choose <em className="italic text-[#009739]">me?</em>
@@ -221,7 +221,7 @@ export default function Home() {
                 className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-7 shadow-sm hover:shadow-md transition-all duration-300 border border-neutral-100"
               >
                 <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center text-xl sm:text-2xl mb-4 ${
-                  feature.accent === 'green' ? 'bg-[#009739]/10' : 'bg-[#FEDD00]/40'
+                  feature.accent === 'green' ? 'bg-[#009739]/10' : 'bg-[#009739]/5'
                 }`}>
                   {feature.icon}
                 </div>
@@ -233,8 +233,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── TEAM — dark green, horizontal scroll on mobile ─── */}
-      <section className="py-16 sm:py-24 bg-[#006B28] grain overflow-hidden">
+      {/* ─── TEAM — light gray, horizontal scroll on mobile ─── */}
+      <section className="py-16 sm:py-24 bg-neutral-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -242,14 +242,14 @@ export default function Home() {
             viewport={{ once: true }}
             className="mb-10 sm:mb-14"
           >
-            <YellowBar />
+            <GreenBar />
             <h2
-              className="font-display font-semibold text-white leading-[1.05]"
+              className="font-display font-semibold text-neutral-900 leading-[1.05]"
               style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)' }}
             >
-              Meet the <em className="italic text-[#FEDD00]">Crew</em>
+              Meet the <em className="italic text-[#009739]">Crew</em>
             </h2>
-            <p className="text-white/55 mt-3 text-base sm:text-lg">Local experts passionate about sharing the real Rio</p>
+            <p className="text-neutral-500 mt-3 text-base sm:text-lg">Local experts passionate about sharing the real Rio</p>
           </motion.div>
 
           {/* Mobile: horizontal scroll | Desktop: 7-col grid */}
@@ -263,7 +263,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: i * 0.06 }}
                 className="flex-shrink-0 snap-start w-40 sm:w-auto text-center"
               >
-                <div className="mx-auto w-32 h-32 sm:w-32 sm:h-32 lg:w-24 lg:h-24 xl:w-28 xl:h-28 rounded-2xl overflow-hidden border-2 border-white/20 shadow-lg mb-3 hover:scale-105 hover:border-[#FEDD00]/50 transition-all duration-300">
+                <div className="mx-auto w-32 h-32 sm:w-32 sm:h-32 lg:w-24 lg:h-24 xl:w-28 xl:h-28 rounded-2xl overflow-hidden border-2 border-[#009739]/20 shadow-sm mb-3 hover:scale-105 hover:border-[#009739]/50 transition-all duration-300">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -273,8 +273,8 @@ export default function Home() {
                     style={{ objectPosition: member.objectPosition }}
                   />
                 </div>
-                <p className="font-semibold text-white text-sm">{member.name}</p>
-                <p className="text-[#FEDD00]/75 text-xs mt-0.5">{member.role}</p>
+                <p className="font-semibold text-neutral-900 text-sm">{member.name}</p>
+                <p className="text-neutral-500 text-xs mt-0.5">{member.role}</p>
               </motion.div>
             ))}
           </div>
@@ -290,7 +290,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="mb-10 sm:mb-14"
           >
-            <YellowBar />
+            <GreenBar />
             <h2
               className="font-display font-semibold text-neutral-900 leading-[1.05]"
               style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)' }}
@@ -367,7 +367,7 @@ export default function Home() {
             className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 sm:mb-14"
           >
             <div>
-              <YellowBar />
+              <GreenBar />
               <h2
                 className="font-display font-semibold text-neutral-900 leading-[1.05]"
                 style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)' }}
@@ -425,10 +425,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── CTA — deep forest green ─── */}
-      <section className="py-20 sm:py-32 bg-[#006B28] grain relative overflow-hidden">
-        <div className="absolute -top-24 -right-24 w-72 h-72 bg-[#009739]/40 rounded-full blur-3xl" />
-        <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-[#FEDD00]/10 rounded-full blur-3xl" />
+      {/* ─── CTA ─── */}
+      <section className="py-20 sm:py-32 bg-white relative overflow-hidden">
+        <div className="absolute -top-24 -right-24 w-72 h-72 bg-[#009739]/5 rounded-full blur-3xl" />
+        <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-[#009739]/5 rounded-full blur-3xl" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
           <motion.div
@@ -437,27 +437,27 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <div className="w-10 h-1 bg-[#FEDD00] mb-6 rounded-full mx-auto" />
+            <div className="w-10 h-1 bg-[#009739] mb-6 rounded-full mx-auto" />
             <h2
-              className="font-display font-semibold text-white leading-[1.0] mb-6"
+              className="font-display font-semibold text-neutral-900 leading-[1.0] mb-6"
               style={{ fontSize: 'clamp(2.8rem, 7vw, 6rem)' }}
             >
               Ready for your<br />
-              <em className="italic text-[#FEDD00]">Rio</em> adventure?
+              <em className="italic text-[#009739]">Rio</em> adventure?
             </h2>
-            <p className="text-white/65 text-base sm:text-lg md:text-xl mb-10 max-w-xl mx-auto leading-relaxed">
+            <p className="text-neutral-600 text-base sm:text-lg md:text-xl mb-10 max-w-xl mx-auto leading-relaxed">
               Whether you want a single tour or a complete multi-day experience, we&apos;ve got you covered.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center max-w-sm sm:max-w-none mx-auto">
               <Link
                 href="/tours"
-                className="min-h-[54px] sm:min-h-[56px] px-10 sm:px-14 py-3.5 bg-[#FEDD00] hover:bg-yellow-300 text-neutral-900 rounded-full font-bold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] flex items-center justify-center"
+                className="min-h-[54px] sm:min-h-[56px] px-10 sm:px-14 py-3.5 bg-[#009739] hover:bg-[#006B28] text-white rounded-full font-bold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] flex items-center justify-center"
               >
                 Book a Tour
               </Link>
               <Link
                 href="/private-experiences"
-                className="min-h-[54px] sm:min-h-[56px] px-10 sm:px-14 py-3.5 bg-transparent border-2 border-white/30 hover:border-white/60 text-white rounded-full font-semibold text-base sm:text-lg transition-all duration-300 flex items-center justify-center"
+                className="min-h-[54px] sm:min-h-[56px] px-10 sm:px-14 py-3.5 bg-white border-2 border-[#009739] text-[#009739] hover:bg-[#009739] hover:text-white rounded-full font-semibold text-base sm:text-lg transition-all duration-300 flex items-center justify-center"
               >
                 Custom Package
               </Link>
@@ -469,7 +469,7 @@ export default function Home() {
                 href="https://wa.me/5521998477858"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white/50 hover:text-[#FEDD00] transition-colors text-sm"
+                className="inline-flex items-center gap-2 text-neutral-400 hover:text-[#009739] transition-colors text-sm"
               >
                 <WhatsAppIcon />
                 <span>Or message us on WhatsApp</span>
