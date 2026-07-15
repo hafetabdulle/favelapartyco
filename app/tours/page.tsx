@@ -57,13 +57,23 @@ const tours: Tour[] = [
   {
     id: 'pubcrawl-party',
     title: 'Pubcrawl & Favela Party',
-    price: '170R',
+    price: '190R',
     duration: '6 hours',
     includes: ['Transport included', 'Free shots', 'Rooftop bars', 'Party guide'],
     description: 'Dive into Rio\'s nightlife like a local! Experience rooftop bars, music, drinks, and a real party inside the favela streets — an experience like no other.',
     emoji: '🎉',
     image: '/images/IMG_1118.PNG',
     accentColor: 'red'
+  },
+  {
+    id: 'churrasco-rooftop',
+    title: 'Authentic Brazilian Churrasco on a Favela Rooftop',
+    price: '190R',
+    duration: '5 hours',
+    includes: ['Unlimited Brazilian BBQ', 'Vegetarian options available', 'Local host', 'Beer pong tournament', 'Karaoke', 'Music & dancing', 'Rooftop views', 'Social experience with travelers & locals'],
+    description: 'Experience an authentic Brazilian churrasco night on a rooftop in Rocinha. Enjoy unlimited BBQ, music, dancing, karaoke, games, and incredible views while meeting travelers and locals.',
+    emoji: '🍖',
+    image: '/images/bbqchurrasco.jpg',
   },
   {
     id: 'city-tour',
@@ -78,6 +88,16 @@ const tours: Tour[] = [
     addons: [
       { name: 'Maracanã Stadium Tour', price: '200R per person' }
     ]
+  },
+  {
+    id: 'landmark-adventure',
+    title: 'Landmark Adventure in the Heart of Rio',
+    price: '380R',
+    duration: '6 hours',
+    includes: ['Private transportation', 'Local English-speaking guide', 'Hotel pick-up & drop-off'],
+    description: "Discover Rio de Janeiro's most iconic landmarks in one unforgettable day. Visit Christ the Redeemer, the Brazilian Flag Staircase, the Museum of Tomorrow, Selarón Steps, and Sugarloaf Mountain with a local guide and private transportation.",
+    emoji: '🗺️',
+    image: '/images/landmark.jpg',
   },
   {
     id: 'sunrise-hike',
@@ -187,6 +207,16 @@ const tours: Tour[] = [
     image: '/images/botofongo.jpg',
   },
   {
+    id: 'eat-drink-feira',
+    title: 'Eat & Drink like a Local at Feira da Glória',
+    price: '250R',
+    duration: '2 hours',
+    includes: ['Guided visit to Feira da Glória', 'Local English-speaking guide', 'Authentic Brazilian food tastings', 'Traditional drinks', 'Cultural insights and local stories'],
+    description: "Experience one of Rio's most authentic local traditions at the famous Feira da Glória. Wander through the vibrant Sunday street market where Cariocas gather to eat, drink, and socialize while tasting delicious local specialties.",
+    emoji: '🥘',
+    image: '/images/eatdrinklocal.jpg',
+  },
+  {
     id: 'sunset-pedra-bonita',
     title: 'Sunset Experience + Picnic – Pedra Bonita',
     price: '250R/person',
@@ -212,6 +242,16 @@ const tours: Tour[] = [
     ]
   },
   {
+    id: 'girls-beach-day',
+    title: 'Girls Beach Day with Charcuterie',
+    price: '150R',
+    duration: '4 hours',
+    includes: ['Girls-only beach picnic', 'Local host', 'Food & drinks', 'Painting & drawing materials', 'Sunset experience', 'Group photos', 'Charcuterie board'],
+    description: "Spend the perfect girls-only day at Ipanema Beach with a relaxing beach picnic. Enjoy food, drinks, swimming, painting, drawing, taking photos, and end the afternoon watching Rio's unforgettable sunset together.",
+    emoji: '🏖️',
+    image: '/images/girlsbeachday.jpg',
+  },
+  {
     id: 'rio-night-pedra-sal',
     title: 'Rio Night Experience – Pedra do Sal Bar Crawl',
     price: '190R',
@@ -227,7 +267,7 @@ const tours: Tour[] = [
     price: '250R/person',
     discountPrice: '190R for 2+ people',
     duration: '6 hours',
-    includes: ['Transportation included', 'Sunrise at Vista Chinesa', 'Light breakfast with scenic views', 'Guided Horto Waterfall trail', 'Time to swim and relax at the waterfall', 'Photos and breathtaking viewpoints', 'Optional group lunch after the experience (additional cost)'],
+    includes: ['Sunrise at Vista Chinesa', 'Light breakfast with scenic views', 'Guided Horto Waterfall trail', 'Time to swim and relax at the waterfall', 'Photos and breathtaking viewpoints', 'Optional group lunch after the experience (additional cost)'],
     description: 'Experience one of the most magical mornings in Rio! Watch the sunrise from the iconic Vista Chinesa, enjoy a light breakfast with panoramic city views, then continue into nature for a refreshing waterfall adventure in the Tijuca Forest.',
     emoji: '🌊',
     highlight: 'New Experience',
@@ -418,7 +458,7 @@ export default function ToursPage() {
                   )}
 
                   <a
-                    href={`https://wa.me/5521998477858?text=Hi! I'm interested in the ${tour.title}`}
+                    href={`https://wa.me/5521998477858?text=${encodeURIComponent(`Hi! I'm interested in the ${tour.title}`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full min-h-[48px] py-3 bg-[#009739] hover:bg-[#006B28] text-white rounded-full font-semibold text-sm text-center transition-all duration-200 flex items-center justify-center mt-auto"

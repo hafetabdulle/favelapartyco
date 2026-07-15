@@ -32,7 +32,6 @@ export default function Home() {
     { name: 'Leroy',     role: 'Local Guide',          image: '/images/leroy.jpg',     objectPosition: 'top' },
     { name: 'Guilherme', role: 'Influencer & Guide',   image: '/images/Guilherme.jpg', objectPosition: 'top' },
     { name: 'Camilla',   role: 'Rio Expert',           image: '/images/camilla.jpg',   objectPosition: 'top' },
-    { name: 'Lidson',    role: 'Hiking Guide',         image: '/images/lidson.jpg',    objectPosition: 'center' },
     { name: 'Kim',       role: 'Local Guide',          image: '/images/kim.jpg',       objectPosition: 'center' },
     { name: 'Sherlock',  role: 'Favela Guide',         image: '/images/sherlock.jpg',  objectPosition: 'top' },
   ];
