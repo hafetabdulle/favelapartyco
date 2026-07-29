@@ -24,21 +24,6 @@ interface Tour {
 
 const tours: Tour[] = [
   {
-    id: 'favela-tour-standard',
-    title: 'Favela Tour – Standard (Rocinha)',
-    price: '160R',
-    duration: '1.5 hours',
-    includes: ['Motorcycle ride to the top of Rocinha', 'Capoeira show with local performers', 'Visit to the famous "Rua 1"', 'Return walk down or moto-taxi (+R$10)'],
-    description: 'Discover the Real Rocinha! Explore the largest favela in Brazil with an authentic experience that connects you directly with local life, art, and culture.',
-    emoji: '🛵',
-    highlight: 'Best Value',
-    image: '/images/IMG_9154.JPG',
-    addons: [
-      { name: 'Professional Photographer (Canon G7X Mark III)', price: 'Contact us' },
-      { name: 'Drone Video (unique aerial footage)', price: 'R$150 per person' }
-    ]
-  },
-  {
     id: 'favela-tour-complete',
     title: 'Favela Tour – Complete (Rocinha)',
     price: '250R/person',
@@ -92,9 +77,9 @@ const tours: Tour[] = [
   {
     id: 'landmark-adventure',
     title: 'Landmark Adventure in the Heart of Rio',
-    price: '380R',
+    price: '790R',
     duration: '6 hours',
-    includes: ['Private transportation', 'Local English-speaking guide', 'Hotel pick-up & drop-off'],
+    includes: ['Tickets included', 'Private transportation', 'Local English-speaking guide', 'Hotel pick-up & drop-off'],
     description: "Discover Rio de Janeiro's most iconic landmarks in one unforgettable day. Visit Christ the Redeemer, the Brazilian Flag Staircase, the Museum of Tomorrow, Selarón Steps, and Sugarloaf Mountain with a local guide and private transportation.",
     emoji: '🗺️',
     image: '/images/landmark.jpg',
@@ -133,24 +118,21 @@ const tours: Tour[] = [
   {
     id: 'paragliding',
     title: 'Paragliding',
-    price: '890R',
+    price: '1250R',
     duration: '2–3 hours',
-    includes: ['Professional pilot', 'All equipment', 'Video available (+200R)'],
-    description: "Soar above Rio's beaches and mountains on a paragliding flight designed for everyone — smoother, more comfortable, and more accessible than other aerial sports, without missing any of the adrenaline or breathtaking views. Professional video available for an additional R$200.",
+    includes: ['Professional pilot', 'All equipment', 'GoPro video included'],
+    description: "Soar above Rio's beaches and mountains on a paragliding flight designed for everyone — smoother, more comfortable, and more accessible than other aerial sports, without missing any of the adrenaline or breathtaking views. GoPro video of your flight included.",
     emoji: '🪂',
     highlight: 'Top Adventure',
     image: '/images/paragliding.jpg',
-    addons: [
-      { name: 'Professional video', price: '200R' }
-    ]
   },
   {
     id: 'hang-gliding',
     title: 'Hang Gliding',
-    price: '950R',
+    price: '1250R',
     duration: '2-3 hours',
-    includes: ['Professional pilot', 'All equipment', 'Video available (+200R)'],
-    description: 'Soar above Rio\'s beaches and mountains for a once-in-a-lifetime flight — pure adrenaline and breathtaking scenery. Professional video of your flight available for 200R extra.',
+    includes: ['Professional pilot', 'All equipment', 'GoPro video included'],
+    description: 'Soar above Rio\'s beaches and mountains for a once-in-a-lifetime flight — pure adrenaline and breathtaking scenery. GoPro video of your flight included.',
     emoji: '🪂',
     highlight: 'Top Adventure',
     image: '/images/hanggliding.jpg'
@@ -197,11 +179,21 @@ const tours: Tour[] = [
     image: '/images/IMG_9230.JPG'
   },
   {
-    id: 'botafogo-bar-crawl',
-    title: 'Botafogo Bar Crawl',
-    price: '190R',
+    id: 'ebike-tour',
+    title: 'E-Bike Tour in Rio de Janeiro Hidden Gems',
+    price: '300R',
     duration: '3 hours',
-    includes: ['Bar-hopping experience', 'Local guide', 'Visit to multiple local bars', '3 drinks / 5 beers', 'Shared appetizer'],
+    includes: ['Electric bike & helmet', 'Coconut water at Flamengo Beach', 'Photos & videos captured with Ray-Ban Meta smart glasses', "Local guide sharing Rio's history & culture"],
+    description: "Discover Rio de Janeiro on one of the city's only electric bike tours. Ride effortlessly through iconic beaches, historic landmarks, and vibrant neighborhoods while your local guide shares the city's history, culture, and hidden stories. Enjoy breathtaking views, plenty of photo stops, complimentary coconut water, and receive photos and videos captured with Ray-Ban Meta smart glasses to remember your adventure.",
+    emoji: '🚲',
+    image: '/images/ebike.jpg',
+  },
+  {
+    id: 'botafogo-bar-crawl',
+    title: 'Bar Crawl in Botafogo, Eat & Drink like a local',
+    price: '110R',
+    duration: '3 hours',
+    includes: ['Bar-hopping experience', 'Local guide', 'Visit to multiple local bars'],
     description: "Explore Botafogo's nightlife through authentic local bars. Enjoy a social bar-hopping experience with a fun group and lively atmosphere.",
     emoji: '🍺',
     image: '/images/botofongo.jpg',
@@ -215,6 +207,16 @@ const tours: Tour[] = [
     description: "Experience one of Rio's most authentic local traditions at the famous Feira da Glória. Wander through the vibrant Sunday street market where Cariocas gather to eat, drink, and socialize while tasting delicious local specialties.",
     emoji: '🥘',
     image: '/images/eatdrinklocal.jpg',
+  },
+  {
+    id: 'art-flavors-hidden-gems',
+    title: "Rio's Art, Flavors & Hidden Gems",
+    price: '350R',
+    duration: '4 hours',
+    includes: ['Guided visit to Selarón Steps, Feira da Glória and Havaianas Concept Store', 'Private transportation', 'Pastel or tapioca and your choice of natural juice', 'Authentic Brazilian food tastings', 'Cultural insights and local stories'],
+    description: "Discover a different side of Rio as you explore the colorful Selarón Steps, experience the vibrant atmosphere of Feira da Glória, and browse unique local brands at the Havaianas Concept Store. A perfect experience for travelers looking to connect with Rio's art, culture, and everyday life.",
+    emoji: '🎨',
+    image: '/images/hiddengem.jpg',
   },
   {
     id: 'sunset-pedra-bonita',
@@ -301,7 +303,6 @@ const tours: Tour[] = [
     includes: ['Full-time personal assistance', 'Pre-arrival trip planning & analysis', 'Personalized recommendations', 'Tour booking & organization', 'Restaurant & nightlife reservations', 'Social events coordination', 'Emergency support'],
     description: '24/7 full-time assistance during your stay (or for the days you choose). I personally take care of you with recommendations, support, planning, and guide you in any tours you want to book. The service starts before you arrive in Rio — I analyze and organize your trip objectives to arrange everything: parties, social events, restaurants, bars, nightlife, meetings, experiences... whatever you want, I\'ll make it happen and be fully available for you.',
     emoji: '🎯',
-    highlight: 'VIP Service',
     accentColor: 'red'
   }
 ];
@@ -327,10 +328,17 @@ export default function ToursPage() {
               Every corner of Rio,{' '}
               <em className="italic text-[#009739]">yours to explore</em>
             </h1>
-            <p className="text-base sm:text-lg text-neutral-600 leading-relaxed max-w-xl mb-3">
+            <p className="text-base sm:text-lg text-neutral-600 leading-relaxed max-w-xl mb-5">
               Top adventures, iconic parties, and unforgettable experiences — led by people who live and breathe this city.
             </p>
-            <p className="text-xs text-neutral-400">All prices are subject to an additional 10% tax.</p>
+            <div className="flex items-start gap-3 max-w-xl rounded-2xl bg-[#009739]/8 border border-[#009739]/20 px-4 py-3.5">
+              <svg className="w-5 h-5 text-[#009739] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4-4 4 4 0 004 4zm6 0a3 3 0 10-2.5-4.5" />
+              </svg>
+              <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+                All experiences can be arranged as <span className="font-semibold text-[#006B28]">female-only groups</span> upon request, accompanied by a female guide.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -485,7 +493,7 @@ export default function ToursPage() {
             <h2 className="font-display font-semibold text-neutral-900 mb-2" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>
               Quick Price Overview
             </h2>
-            <p className="text-neutral-500 text-sm">All prices in Brazilian Reais (R$) · Subject to 10% tax</p>
+            <p className="text-neutral-500 text-sm">All prices in Brazilian Reais (R$)</p>
           </motion.div>
 
           {/* Mobile cards */}

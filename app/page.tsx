@@ -34,6 +34,7 @@ export default function Home() {
     { name: 'Camilla',   role: 'Rio Expert',           image: '/images/camilla.jpg',   objectPosition: 'top' },
     { name: 'Kim',       role: 'Local Guide',          image: '/images/kim.jpg',       objectPosition: 'center' },
     { name: 'Sherlock',  role: 'Favela Guide',         image: '/images/sherlock.jpg',  objectPosition: 'top' },
+    { name: 'Thales',    role: 'Local Guide',          image: '/images/thales.jpg',    objectPosition: 'top' },
   ];
 
   const reviews = [
@@ -197,13 +198,13 @@ export default function Home() {
               <GreenBar />
               <h2 className="font-display font-semibold text-neutral-900 leading-[1.05] mb-6"
                 style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)' }}>
-                Why choose <em className="italic text-[#009739]">me?</em>
+                Why Choose <em className="italic text-[#009739]">Us?</em>
               </h2>
               <p className="text-base sm:text-lg text-neutral-600 leading-relaxed mb-4">
-                I&apos;ve traveled to more than 20 countries around the world, and I know exactly what it feels like to arrive in a city like this — so much to do, so many people to meet, and so many moments waiting to happen.
+                At Rio Explore, we don&apos;t just show you Rio de Janeiro, we help you experience it. Every experience is designed to connect you with the city&apos;s authentic culture, local communities, and hidden gems. Because we believe travel should create meaningful human connections, not just check off landmarks.
               </p>
-              <p className="text-base sm:text-lg text-neutral-600 leading-relaxed">
-                With my help, you&apos;ll make the most of your vacation and connect with Rio at its fullest. Get ready to experience the city, the energy, the culture, and the vibe in the best possible way!
+              <p className="text-base sm:text-lg font-medium text-[#009739] leading-relaxed">
+                Travel like a local, not a tourist.
               </p>
             </div>
           </motion.div>
