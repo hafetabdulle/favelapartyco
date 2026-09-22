@@ -38,3 +38,6 @@ next-env.d.ts
 
 # local tooling
 .claude/
+
+# client-supplied source assets (originals + zips, not needed to build)
+/newchanges/

@@ -3,11 +3,19 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+
+/** Pages whose hero is a full-bleed photo, so the nav can sit on it in white. */
+const PHOTO_HERO_ROUTES = ['/', '/private-experiences'];
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  /** True only when the nav is floating over a dark photo hero. */
+  const onDark = !scrolled && PHOTO_HERO_ROUTES.includes(pathname);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -30,21 +38,28 @@ export default function Navigation() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? 'bg-white/90 backdrop-blur-xl shadow-sm'
-            : 'bg-transparent'
+          onDark ? 'bg-transparent' : 'bg-white/90 backdrop-blur-xl shadow-sm'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-24 sm:h-28 overflow-visible">
             {/* Logo */}
-            <Link href="/" className="flex items-center overflow-visible">
+            {/* The logo art has a lot of transparent padding, so the image box is much
+                taller than the wordmark. Keep the clickable area to the nav bar itself
+                and let the art overflow visually, or it swallows clicks on the hero. */}
+            <Link
+              href="/"
+              aria-label="Rio Explore — home"
+              className="relative flex items-center h-20 w-44 sm:w-52 md:w-60 flex-shrink-0"
+            >
               <Image
                 src="/images/rio.png"
                 alt="Rio Explore"
                 width={440}
-                height={110}
-                className="h-28 sm:h-32 md:h-36 w-auto scale-[1.2] sm:scale-[1.4] origin-left"
+                height={440}
+                className={`pointer-events-none absolute left-[-1.25rem] sm:left-[-1.5rem] top-1/2 -translate-y-1/2 h-36 sm:h-44 md:h-52 w-auto max-w-none transition-[filter] duration-500 ${
+                  onDark ? 'brightness-0 invert drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]' : ''
+                }`}
                 priority
               />
             </Link>
@@ -56,9 +71,9 @@ export default function Navigation() {
                   key={link.href}
                   href={link.href}
                   className={`font-medium transition-colors duration-300 ${
-                    scrolled
-                      ? 'text-neutral-700 hover:text-[#009739]'
-                      : 'text-white/90 hover:text-white'
+                    onDark
+                      ? 'text-white/90 hover:text-white'
+                      : 'text-neutral-700 hover:text-[#009739]'
                   }`}
                 >
                   {link.label}
@@ -69,9 +84,9 @@ export default function Navigation() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`min-h-[40px] px-5 py-2 rounded-full font-semibold text-sm transition-all duration-300 flex items-center ${
-                  scrolled
-                    ? 'bg-[#009739] text-white hover:bg-[#006B28]'
-                    : 'bg-white/15 backdrop-blur-sm text-white border border-white/30 hover:bg-white/25'
+                  onDark
+                    ? 'bg-white/15 backdrop-blur-sm text-white border border-white/30 hover:bg-white/25'
+                    : 'bg-[#009739] text-white hover:bg-[#006B28]'
                 }`}
               >
                 WhatsApp Us
@@ -82,7 +97,7 @@ export default function Navigation() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`md:hidden w-11 h-11 flex items-center justify-center rounded-full transition-colors duration-200 ${
-                scrolled ? 'hover:bg-neutral-100' : 'hover:bg-white/15'
+                onDark ? 'hover:bg-white/15' : 'hover:bg-neutral-100'
               }`}
               aria-label="Toggle menu"
             >
@@ -90,19 +105,19 @@ export default function Navigation() {
                 <motion.span
                   animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
                   className={`w-full h-0.5 rounded-full origin-center transition-all ${
-                    scrolled ? 'bg-neutral-800' : 'bg-white'
+                    onDark ? 'bg-white' : 'bg-neutral-800'
                   }`}
                 />
                 <motion.span
                   animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
                   className={`w-full h-0.5 rounded-full transition-all ${
-                    scrolled ? 'bg-neutral-800' : 'bg-white'
+                    onDark ? 'bg-white' : 'bg-neutral-800'
                   }`}
                 />
                 <motion.span
                   animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
                   className={`w-full h-0.5 rounded-full origin-center transition-all ${
-                    scrolled ? 'bg-neutral-800' : 'bg-white'
+                    onDark ? 'bg-white' : 'bg-neutral-800'
                   }`}
                 />
               </div>

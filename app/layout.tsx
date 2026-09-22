@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import Toucan from "@/components/Toucan";
 
 export const metadata: Metadata = {
   title: "Rio Explore - Authentic Rio de Janeiro Tours & Experiences",
@@ -27,6 +28,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Toucan />
       </body>
     </html>
   );

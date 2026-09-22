@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { reviewPlatforms, otherPlatforms } from './PlatformLogos';
 
 export default function Footer() {
   return (
@@ -44,9 +45,10 @@ export default function Footer() {
             <h4 className="font-semibold text-white text-sm uppercase tracking-widest">Popular Tours</h4>
             <ul className="space-y-3">
               {[
-                { href: '/tours#favela-tour-complete', label: 'Favela Tour by Day' },
-                { href: '/tours#pubcrawl-party',       label: 'Pubcrawl & Favela Party' },
-                { href: '/tours#hang-gliding',         label: 'Hang Gliding' },
+                { href: '/tours#rocinha-favela-tour',    label: 'Complete Rocinha Favela Tour' },
+                { href: '/tours#pubcrawl-favela-party',  label: 'Pub Crawl & Favela Party' },
+                { href: '/tours#pedra-do-sal-samba',     label: 'Monday Night Samba' },
+                { href: '/tours#hang-gliding',           label: 'Hang Gliding' },
               ].map(link => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-neutral-400 hover:text-[#FEDD00] transition-colors text-sm">
@@ -112,36 +114,32 @@ export default function Footer() {
 
         {/* Platform badges */}
         <div className="mt-12 pt-8 border-t border-white/10">
-          <div className="flex flex-col sm:flex-row items-center gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4">
             <span className="text-neutral-500 text-xs shrink-0 uppercase tracking-widest">Find us on:</span>
-            <div className="flex flex-wrap items-center gap-2">
-              {/* GetYourGuide */}
-              <div className="h-8 px-3 bg-white/5 border border-white/10 rounded-lg flex items-center gap-1.5" title="GetYourGuide">
-                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none">
-                  <rect width="24" height="24" rx="4" fill="#FF5533"/>
-                  <path d="M13.5 10.5H10v1.5h2v1c-.4.3-1 .5-1.7.5-1.6 0-2.8-1.2-2.8-2.8S8.7 7.9 10.3 7.9c.8 0 1.5.3 2 .7l1.1-1.1C12.6 6.6 11.5 6.2 10.3 6.2 7.9 6.2 6 8.1 6 10.5s1.9 4.3 4.3 4.3c1.2 0 2.3-.4 3-.9.7-.6 1.1-1.6 1.1-2.7v-.7h-1z" fill="white"/>
-                </svg>
-                <span className="text-xs font-medium text-neutral-300">GetYourGuide</span>
-              </div>
-              {/* TripAdvisor */}
-              <div className="h-8 px-3 bg-white/5 border border-white/10 rounded-lg flex items-center gap-1.5" title="TripAdvisor">
-                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none">
-                  <circle cx="12" cy="12" r="11" fill="#00AA6C"/>
-                  <circle cx="8.5" cy="12" r="2.5" fill="white"/>
-                  <circle cx="15.5" cy="12" r="2.5" fill="white"/>
-                  <circle cx="8.5" cy="12" r="1.1" fill="#00AA6C"/>
-                  <circle cx="15.5" cy="12" r="1.1" fill="#00AA6C"/>
-                  <path d="M9 15.5q3 1.8 6 0" stroke="white" strokeWidth="1.4" strokeLinecap="round"/>
-                </svg>
-                <span className="text-xs font-medium text-neutral-300">TripAdvisor</span>
-              </div>
-              {/* Airbnb */}
-              <div className="h-8 px-3 bg-white/5 border border-white/10 rounded-lg flex items-center gap-1.5" title="Airbnb">
-                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="#FF5A5F">
-                  <path d="M12 1C8.14 1 5 4.14 5 8c0 5.25 6.18 13.39 6.45 13.73.14.18.36.27.55.27s.41-.09.55-.27C12.82 21.39 19 13.25 19 8c0-3.86-3.14-7-7-7zm0 10c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/>
-                </svg>
-                <span className="text-xs font-medium text-neutral-300">Airbnb</span>
-              </div>
+            <div className="flex flex-wrap items-center gap-2.5">
+              {reviewPlatforms.map(p => (
+                <a
+                  key={p.name}
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={p.name}
+                  className="h-11 px-3.5 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/25 rounded-xl flex items-center gap-2.5 transition-all duration-200"
+                >
+                  <p.Mark className="h-6 w-6" />
+                  <span className="text-sm font-medium text-neutral-200">{p.name}</span>
+                </a>
+              ))}
+              {otherPlatforms.map(p => (
+                <div
+                  key={p.name}
+                  title={p.name}
+                  className="h-11 px-3.5 bg-white/5 border border-white/10 rounded-xl flex items-center gap-2.5"
+                >
+                  <p.Mark className="h-6 w-6" />
+                  <span className="text-sm font-medium text-neutral-200">{p.name}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -152,16 +150,11 @@ export default function Footer() {
             <p className="text-neutral-500 text-sm">
               © {new Date().getFullYear()} Rio Explore. All rights reserved.
             </p>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center justify-center gap-2">
               <span className="text-neutral-600 text-xs mr-1">We accept:</span>
-              {[
-                { label: 'PayPal',  color: '#253B80', bg: '#253B80' },
-                { label: 'Stripe',  color: '#635BFF', bg: '#635BFF' },
-                { label: 'Revolut', color: '#fff',    bg: '#191C1F' },
-                { label: 'Pix',     color: '#32BCAD', bg: '#32BCAD' },
-              ].map(p => (
-                <div key={p.label} className="h-7 px-2.5 bg-white/5 border border-white/10 rounded-md flex items-center">
-                  <span className="text-xs font-medium text-neutral-400">{p.label}</span>
+              {['PayPal', 'Stripe', 'Revolut', 'Wise', 'Pix'].map(label => (
+                <div key={label} className="h-7 px-2.5 bg-white/5 border border-white/10 rounded-md flex items-center">
+                  <span className="text-xs font-medium text-neutral-400">{label}</span>
                 </div>
               ))}
             </div>

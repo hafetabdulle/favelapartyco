@@ -19,29 +19,38 @@ export default function PrivateExperiencesPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const baseIncludes = [
+    'Help planning and scheduling your itinerary',
+    '24/7 assistance and support throughout your stay',
+    'Recommendations and coordination for activities and tours',
+    'Access to our tours at a discounted rate compared to the prices listed on our website',
+  ];
+
   const packages = [
     {
-      duration: '3 Days',
-      description: 'Perfect weekend getaway',
-      includes: ['3 daily activities', 'All meals', 'Airport transfers', 'Local guide'],
-      price: 'Price on request',
-      emoji: '🌟'
+      duration: '3-Day Package',
+      description: 'Everything in the all-inclusive service, plus:',
+      includes: ['Sunrise hike', 'Favela party', 'Pedra do Sal', 'Additional tours at a discounted rate'],
+      price: '$300 USD',
+      priceNote: 'total · $100 USD/day',
+      emoji: '🌟',
     },
     {
-      duration: '7 Days',
-      description: 'Complete Rio experience',
-      includes: ['7 daily activities', 'All meals', 'Airport transfers', 'Local guide', 'Rio highlights tour'],
-      price: 'Price on request',
+      duration: '5-Day Package',
+      description: 'Everything in the all-inclusive service, plus:',
+      includes: [
+        'Sunrise hike',
+        'Favela party',
+        'Favela tour (drone video not included)',
+        'Pedra do Sal',
+        'Botafogo bar crawl',
+        'Additional tours at a discounted rate',
+      ],
+      price: '$500 USD',
+      priceNote: 'total · $100 USD/day',
       emoji: '✨',
-      popular: true
+      popular: true,
     },
-    {
-      duration: '10 Days',
-      description: 'Ultimate Brazilian adventure',
-      includes: ['10 daily activities', 'All meals', 'Airport transfers', 'Local guide', 'Extended trips available'],
-      price: 'Price on request',
-      emoji: '🌴'
-    }
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -99,7 +108,7 @@ Message: ${formData.message}`;
               <em className="italic">your way</em>
             </h1>
             <p className="text-white/90 text-base sm:text-lg leading-relaxed max-w-lg drop-shadow-md">
-              Fully customized packages for couples, groups, and solo adventurers. We handle everything — just show up and enjoy.
+              Our concierge service plans your whole stay — itinerary, 24/7 support, and our tours at a discounted rate. Just show up and enjoy.
             </p>
           </motion.div>
         </div>
@@ -119,12 +128,72 @@ Message: ${formData.message}`;
               className="font-display font-semibold text-neutral-900"
               style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}
             >
-              Choose your <em className="italic text-[#009739]">package</em>
+              Our <em className="italic text-[#009739]">concierge service</em>
             </h2>
-            <p className="text-neutral-500 text-base mt-2">All packages are fully customizable — just a starting point</p>
+            <p className="text-neutral-500 text-base mt-2">
+              Two options, depending on how much support and planning you want during your stay
+            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-7">
+          {/* Option 1 — Personalized Trip Assistance */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-3xl border border-neutral-200 p-6 sm:p-10 mb-10 sm:mb-14 shadow-sm"
+          >
+            <div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-12">
+              <div className="md:w-2/5">
+                <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#009739] bg-[#009739]/10 rounded-full px-3 py-1 mb-4">
+                  Option 1
+                </span>
+                <h3 className="font-display font-semibold text-neutral-900 text-2xl sm:text-3xl mb-3 leading-snug">
+                  Personalized Trip Assistance
+                </h3>
+                <p className="font-display font-bold text-[#009739] text-3xl sm:text-4xl">$50 USD</p>
+                <p className="text-neutral-500 text-sm mt-1">per day</p>
+              </div>
+              <div className="md:w-3/5 space-y-3">
+                {baseIncludes.map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-[#009739] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-base text-neutral-600 leading-relaxed">{item}</span>
+                  </div>
+                ))}
+                <button
+                  onClick={() => {
+                    setFormData({ ...formData, package: 'Personalized Trip Assistance ($50 USD/day)' });
+                    document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="mt-5 min-h-[50px] px-8 py-3 bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-300 rounded-full font-semibold text-sm transition-all duration-200"
+                >
+                  Get Started
+                </button>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Option 2 — All-Inclusive Experience Packages */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-8"
+          >
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#009739] bg-[#009739]/10 rounded-full px-3 py-1 mb-3">
+              Option 2
+            </span>
+            <h3 className="font-display font-semibold text-neutral-900 text-2xl sm:text-3xl">
+              All-Inclusive Experience Packages
+            </h3>
+            <p className="text-neutral-500 text-base mt-1.5">
+              $100 USD per day — everything in Option 1, plus a set of our best experiences
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-7">
             {packages.map((pkg, index) => (
               <motion.div
                 key={index}
@@ -153,7 +222,8 @@ Message: ${formData.message}`;
                   <p className="text-neutral-500 text-sm mb-5">{pkg.description}</p>
 
                   <div className="mb-6">
-                    <p className="font-display text-2xl font-semibold text-[#009739]">{pkg.price}</p>
+                    <p className="font-display text-4xl font-bold text-[#009739] leading-none">{pkg.price}</p>
+                    <p className="text-sm text-neutral-500 mt-1.5">{pkg.priceNote}</p>
                   </div>
 
                   <div className="space-y-2 mb-8 flex-grow">
@@ -185,6 +255,21 @@ Message: ${formData.message}`;
               </motion.div>
             ))}
           </div>
+
+          {/* Fixed-price note */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mt-8 flex items-start gap-3 rounded-2xl bg-amber-50 border border-amber-200 px-4 py-3.5 max-w-3xl"
+          >
+            <svg className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+              Please note: helicopter rides and hang gliding have fixed prices, so we&apos;re unable to offer discounts on those activities.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -209,13 +294,13 @@ Message: ${formData.message}`;
 
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {[
-              { icon: '🏨', title: 'Accommodations', description: 'Comfortable hotels or hostels in prime locations' },
-              { icon: '🎯', title: 'Daily Activities', description: 'Curated mix of tours, adventures, and cultural experiences' },
-              { icon: '🍽️', title: 'All Meals', description: 'Breakfast, lunch, and dinner featuring local cuisine' },
-              { icon: '🚗', title: 'Transport', description: 'Airport pickup, all transfers, and activity transport' },
-              { icon: '👨‍🏫', title: 'Local Guide', description: 'Expert guide with you throughout your journey' },
-              { icon: '🎉', title: 'Nightlife', description: 'Access to best parties, pubcrawls, and events' },
-              { icon: '📸', title: 'Photo Ops', description: 'Visit all the iconic Instagram spots' },
+              { icon: '🗓️', title: 'Itinerary Planning', description: 'We plan and schedule your days around what you actually want to do' },
+              { icon: '📱', title: '24/7 Support', description: 'Someone on the other end of the phone for your whole stay' },
+              { icon: '🎯', title: 'Activity Coordination', description: 'Recommendations and bookings for tours, restaurants and nightlife' },
+              { icon: '💰', title: 'Discounted Tours', description: 'Our experiences at a better rate than the prices listed on this site' },
+              { icon: '🚗', title: 'Transport Sorted', description: 'We arrange the transfers so you never have to work out how to get there' },
+              { icon: '🎉', title: 'Nightlife Access', description: 'Parties, bar crawls and events, with people who know the scene' },
+              { icon: '👨‍🏫', title: 'Local Guides', description: 'Born-and-raised Cariocas with you throughout' },
               { icon: '🔒', title: 'Safety First', description: 'Your security and comfort are our top priorities' }
             ].map((feature, index) => (
               <motion.div
@@ -312,11 +397,11 @@ Message: ${formData.message}`;
                   onChange={(e) => setFormData({ ...formData, package: e.target.value })}
                   className="w-full min-h-[52px] px-4 py-3 bg-white border border-neutral-200 rounded-xl focus:ring-2 focus:ring-[#009739] focus:border-transparent outline-none transition-all text-base"
                 >
-                  <option value="">Select a package</option>
-                  <option value="3 Days">3 Days</option>
-                  <option value="7 Days">7 Days (1 Week)</option>
-                  <option value="10 Days">10 Days</option>
-                  <option value="Custom">Custom Duration</option>
+                  <option value="">Select an option</option>
+                  <option value="Personalized Trip Assistance ($50 USD/day)">Personalized Trip Assistance — $50 USD/day</option>
+                  <option value="3-Day Package">All-Inclusive 3-Day Package — $300 USD</option>
+                  <option value="5-Day Package">All-Inclusive 5-Day Package — $500 USD</option>
+                  <option value="Custom">Custom duration</option>
                 </select>
               </div>
               <div>
