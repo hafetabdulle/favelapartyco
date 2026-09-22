@@ -10,7 +10,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -29,15 +29,9 @@ button, a {
 }
 
 @layer base {
-  /* Fraunces is a variable face — dial the optical size and soften the
-     quirkier letterforms so large headings stay elegant rather than novelty. */
+  /* Large headings need tighter tracking than the system face gives by default. */
   .font-display {
-    font-variation-settings: 'SOFT' 24, 'WONK' 0, 'opsz' 96;
     letter-spacing: -0.025em;
-  }
-  .font-display em,
-  em.font-display {
-    font-variation-settings: 'SOFT' 40, 'WONK' 1, 'opsz' 96;
   }
 }
 
