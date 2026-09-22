@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #1a1a18;
+  --background: #FBF8F3;
+  --foreground: #17150F;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -23,6 +23,42 @@ button, a {
   -webkit-tap-highlight-color: transparent;
 }
 
+::selection {
+  background: #009739;
+  color: #fff;
+}
+
+@layer base {
+  /* Fraunces is a variable face — dial the optical size and soften the
+     quirkier letterforms so large headings stay elegant rather than novelty. */
+  .font-display {
+    font-variation-settings: 'SOFT' 24, 'WONK' 0, 'opsz' 96;
+    letter-spacing: -0.025em;
+  }
+  .font-display em,
+  em.font-display {
+    font-variation-settings: 'SOFT' 40, 'WONK' 1, 'opsz' 96;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  /* Prices and counters shouldn't jitter between values. */
+  .nums {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum';
+  }
+  /* Small all-caps label above a section heading. */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-brazilian-green;
+  }
+}
+
 /* Hide scrollbar */
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
@@ -32,23 +68,34 @@ button, a {
   scrollbar-width: none;
 }
 
-/* Grain texture overlay — adds warmth and depth */
+/* Film grain — adds warmth and stops large flat areas looking digital. */
 .grain {
   position: relative;
+  isolation: isolate;
 }
 .grain::after {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.1'/%3E%3C/svg%3E");
-  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.045;
+  mix-blend-mode: overlay;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
   border-radius: inherit;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Thin rule used to separate editorial blocks. */
+.hairline {
+  height: 1px;
+  background: linear-gradient(to right, rgba(23, 21, 15, 0.14), rgba(23, 21, 15, 0));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

@@ -30,7 +30,7 @@ export default function Navigation() {
   const navLinks = [
     { href: '/',                    label: 'Home' },
     { href: '/tours',               label: 'Tours' },
-    { href: '/private-experiences', label: 'Private Experiences' },
+    { href: '/private-experiences', label: 'Concierge' },
     { href: '/contact',             label: 'Contact' },
   ];
 
@@ -38,7 +38,7 @@ export default function Navigation() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          onDark ? 'bg-transparent' : 'bg-white/90 backdrop-blur-xl shadow-sm'
+          onDark ? 'bg-transparent' : 'bg-cream/85 backdrop-blur-xl border-b border-sand'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,8 +72,8 @@ export default function Navigation() {
                   href={link.href}
                   className={`font-medium transition-colors duration-300 ${
                     onDark
-                      ? 'text-white/90 hover:text-white'
-                      : 'text-neutral-700 hover:text-[#009739]'
+                      ? 'text-cream/85 hover:text-cream'
+                      : 'text-ink-soft hover:text-brazilian-green'
                   }`}
                 >
                   {link.label}
@@ -85,8 +85,8 @@ export default function Navigation() {
                 rel="noopener noreferrer"
                 className={`min-h-[40px] px-5 py-2 rounded-full font-semibold text-sm transition-all duration-300 flex items-center ${
                   onDark
-                    ? 'bg-white/15 backdrop-blur-sm text-white border border-white/30 hover:bg-white/25'
-                    : 'bg-[#009739] text-white hover:bg-[#006B28]'
+                    ? 'bg-cream/12 backdrop-blur-sm text-cream border border-cream/30 hover:bg-cream/22'
+                    : 'bg-ink text-cream hover:bg-brazilian-green'
                 }`}
               >
                 WhatsApp Us
@@ -97,7 +97,7 @@ export default function Navigation() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`md:hidden w-11 h-11 flex items-center justify-center rounded-full transition-colors duration-200 ${
-                onDark ? 'hover:bg-white/15' : 'hover:bg-neutral-100'
+                onDark ? 'hover:bg-cream/15' : 'hover:bg-sand/60'
               }`}
               aria-label="Toggle menu"
             >
@@ -105,19 +105,19 @@ export default function Navigation() {
                 <motion.span
                   animate={isOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
                   className={`w-full h-0.5 rounded-full origin-center transition-all ${
-                    onDark ? 'bg-white' : 'bg-neutral-800'
+                    onDark ? 'bg-cream' : 'bg-ink'
                   }`}
                 />
                 <motion.span
                   animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
                   className={`w-full h-0.5 rounded-full transition-all ${
-                    onDark ? 'bg-white' : 'bg-neutral-800'
+                    onDark ? 'bg-cream' : 'bg-ink'
                   }`}
                 />
                 <motion.span
                   animate={isOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
                   className={`w-full h-0.5 rounded-full origin-center transition-all ${
-                    onDark ? 'bg-white' : 'bg-neutral-800'
+                    onDark ? 'bg-cream' : 'bg-ink'
                   }`}
                 />
               </div>
@@ -134,7 +134,7 @@ export default function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 bg-white z-40 md:hidden"
+            className="fixed inset-0 bg-cream z-40 md:hidden"
           >
             <div className="flex flex-col items-center justify-center h-full space-y-8 px-4">
               {navLinks.map((link, i) => (
@@ -147,7 +147,7 @@ export default function Navigation() {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="font-display text-4xl font-semibold text-neutral-800 hover:text-[#009739] transition-colors duration-200"
+                    className="font-display text-4xl font-semibold text-ink hover:text-brazilian-green transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -163,7 +163,7 @@ export default function Navigation() {
                   href="https://wa.me/5521998477858"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center min-h-[52px] px-10 py-3 bg-[#009739] text-white rounded-full font-semibold text-lg hover:bg-[#006B28] transition-colors duration-200 shadow-lg"
+                  className="inline-flex items-center justify-center min-h-[54px] px-10 bg-brazilian-green text-white rounded-full font-semibold text-lg hover:bg-brazilian-green-dark transition-colors duration-200 shadow-banner"
                 >
                   WhatsApp Us
                 </a>

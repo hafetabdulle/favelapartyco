@@ -90,8 +90,8 @@ export default function Toucan() {
         </motion.div>
         {!found && (
           <span className="absolute -top-1 -right-1 flex h-3 w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FEDD00] opacity-75" />
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-[#FEDD00]" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brazilian-yellow opacity-75" />
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-brazilian-yellow" />
           </span>
         )}
       </motion.button>
@@ -104,7 +104,7 @@ export default function Toucan() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setOpen(false)}
-            className="fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm flex items-center justify-center p-4"
+            className="fixed inset-0 z-[60] bg-ink/60 backdrop-blur-md flex items-center justify-center p-4"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.92, y: 20 }}
@@ -112,13 +112,13 @@ export default function Toucan() {
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
               transition={{ type: 'spring', stiffness: 300, damping: 26 }}
               onClick={e => e.stopPropagation()}
-              className="relative bg-white rounded-3xl max-w-sm w-full p-7 sm:p-9 text-center shadow-2xl"
+              className="relative bg-cream rounded-[1.75rem] max-w-sm w-full p-7 sm:p-9 text-center shadow-lift grain"
             >
               <button
                 type="button"
                 onClick={() => setOpen(false)}
                 aria-label="Close"
-                className="absolute top-4 right-4 w-9 h-9 rounded-full hover:bg-neutral-100 flex items-center justify-center text-neutral-400 hover:text-neutral-700 transition-colors"
+                className="absolute top-4 right-4 w-9 h-9 rounded-full hover:bg-sand flex items-center justify-center text-ink-faint hover:text-ink transition-colors"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -127,28 +127,28 @@ export default function Toucan() {
 
               <ToucanBird className="w-24 h-20 mx-auto mb-4" />
 
-              <h3 className="font-display font-semibold text-neutral-900 text-2xl sm:text-3xl mb-2">
+              <h3 className="font-display font-semibold text-ink text-3xl mb-2">
                 You caught the toucan!
               </h3>
-              <p className="text-neutral-600 text-sm sm:text-base leading-relaxed mb-6">
-                Here&apos;s <span className="font-semibold text-[#009739]">5% off</span> any experience.
+              <p className="text-ink-soft text-sm sm:text-base leading-relaxed mb-6">
+                Here&apos;s <span className="font-semibold text-brazilian-green">5% off</span> any experience.
                 Just send us this code when you book.
               </p>
 
               <button
                 type="button"
                 onClick={copy}
-                className="w-full min-h-[56px] rounded-2xl border-2 border-dashed border-[#009739] bg-[#009739]/5 hover:bg-[#009739]/10 transition-colors flex items-center justify-center gap-3 mb-4"
+                className="w-full min-h-[56px] rounded-2xl border-2 border-dashed border-brazilian-green bg-brazilian-green/5 hover:bg-brazilian-green/10 transition-colors flex items-center justify-center gap-3 mb-4"
               >
-                <span className="font-mono font-bold tracking-widest text-lg sm:text-xl text-[#006B28]">{CODE}</span>
-                <span className="text-xs font-semibold text-[#009739]">{copied ? 'Copied!' : 'Tap to copy'}</span>
+                <span className="font-mono font-bold tracking-widest text-lg sm:text-xl text-brazilian-green-dark">{CODE}</span>
+                <span className="text-xs font-semibold text-brazilian-green">{copied ? 'Copied!' : 'Tap to copy'}</span>
               </button>
 
               <a
                 href={`https://wa.me/5521998477858?text=${encodeURIComponent(`Hi! I found the toucan 🦜 — I'd like to use code ${CODE}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full min-h-[52px] py-3.5 bg-[#009739] hover:bg-[#006B28] text-white rounded-full font-semibold text-base transition-colors duration-200 flex items-center justify-center"
+                className="block w-full min-h-[52px] py-3.5 bg-brazilian-green hover:bg-brazilian-green-dark text-white rounded-full font-semibold text-base transition-colors duration-200 flex items-center justify-center"
               >
                 Book with 5% off
               </a>
@@ -159,7 +159,7 @@ export default function Toucan() {
                   setOpen(false);
                   setHidden(true);
                 }}
-                className="text-xs text-neutral-400 hover:text-neutral-600 mt-4 transition-colors"
+                className="text-xs text-ink-faint hover:text-ink-soft mt-4 transition-colors"
               >
                 Don&apos;t show the toucan again
               </button>

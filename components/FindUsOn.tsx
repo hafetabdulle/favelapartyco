@@ -2,50 +2,43 @@
 
 import { motion } from 'framer-motion';
 import { reviewPlatforms, otherPlatforms } from './PlatformLogos';
+import SectionHeading from './SectionHeading';
+import { IconArrow } from './Icons';
+
+const ease = [0.16, 1, 0.3, 1] as const;
 
 export default function FindUsOn() {
   return (
-    <section id="find-us-on" className="py-16 sm:py-28 bg-neutral-50 scroll-mt-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-10 sm:mb-14 text-center"
+    <section id="find-us-on" className="py-20 sm:py-32 bg-cream-deep scroll-mt-24">
+      <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="Book anywhere"
+          align="center"
+          subtitle="We're on every platform you already trust — tap a logo to read our reviews or book there instead."
+          className="mb-12 sm:mb-16"
         >
-          <div className="w-10 h-1 bg-[#009739] mb-5 rounded-full mx-auto" />
-          <h2
-            className="font-display font-semibold text-neutral-900 leading-[1.05]"
-            style={{ fontSize: 'clamp(2.4rem, 5vw, 4rem)' }}
-          >
-            Find us <em className="italic text-[#009739]">on</em>
-          </h2>
-          <p className="text-neutral-500 mt-3 text-base sm:text-lg">
-            Book with us wherever you like — tap a logo to see our profile and reviews
-          </p>
-        </motion.div>
+          Find us <em>on</em>
+        </SectionHeading>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
           {reviewPlatforms.map((p, i) => (
             <motion.a
               key={p.name}
               href={p.href}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group bg-white rounded-3xl border border-neutral-200 p-7 sm:p-10 flex flex-col items-center text-center shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-neutral-300 transition-all duration-300"
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.6, delay: i * 0.08, ease }}
+              className="group bg-white rounded-3xl border border-sand p-8 sm:p-10 flex flex-col items-center text-center shadow-card hover:shadow-lift hover:-translate-y-1.5 hover:border-sand-dark transition-all duration-500 ease-out-expo"
             >
-              <p.Mark className="w-20 h-20 sm:w-24 sm:h-24 mb-5 transition-transform duration-300 group-hover:scale-105" />
-              <h3 className="font-display font-semibold text-neutral-900 text-xl sm:text-2xl">{p.name}</h3>
-              <p className="text-neutral-500 text-sm mt-1.5">{p.blurb}</p>
-              <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#009739]">
+              <p.Mark className="w-[4.5rem] h-[4.5rem] sm:w-24 sm:h-24 mb-6 transition-transform duration-500 ease-out-expo group-hover:scale-[1.07]" />
+              <h3 className="font-display font-semibold text-ink text-xl sm:text-2xl">{p.name}</h3>
+              <p className="text-ink-muted text-sm mt-1.5 leading-relaxed">{p.blurb}</p>
+              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brazilian-green">
                 Visit profile
-                <svg className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
+                <IconArrow className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </span>
             </motion.a>
           ))}
@@ -55,13 +48,14 @@ export default function FindUsOn() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-4"
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="mt-10 sm:mt-12 flex flex-wrap items-center justify-center gap-x-7 gap-y-4"
         >
-          <span className="text-neutral-400 text-xs uppercase tracking-widest">Also on</span>
+          <span className="text-ink-faint text-[0.7rem] uppercase tracking-[0.18em] font-semibold">Also on</span>
           {otherPlatforms.map(p => (
             <div key={p.name} className="flex items-center gap-2.5">
-              <p.Mark className="w-8 h-8" />
-              <span className="text-neutral-600 text-sm font-medium">{p.name}</span>
+              <p.Mark className="w-7 h-7" />
+              <span className="text-ink-soft text-sm font-medium">{p.name}</span>
             </div>
           ))}
         </motion.div>

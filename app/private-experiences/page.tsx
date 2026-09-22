@@ -4,6 +4,10 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import {
+  IconCalendar, IconSupport, IconRoute, IconPrice, IconCar, IconParty,
+  IconGuide, IconSafe, IconCheck,
+} from '@/components/Icons';
 
 export default function PrivateExperiencesPage() {
   const [formData, setFormData] = useState({
@@ -33,7 +37,6 @@ export default function PrivateExperiencesPage() {
       includes: ['Sunrise hike', 'Favela party', 'Pedra do Sal', 'Additional tours at a discounted rate'],
       price: '$300 USD',
       priceNote: 'total · $100 USD/day',
-      emoji: '🌟',
     },
     {
       duration: '5-Day Package',
@@ -48,7 +51,6 @@ export default function PrivateExperiencesPage() {
       ],
       price: '$500 USD',
       priceNote: 'total · $100 USD/day',
-      emoji: '✨',
       popular: true,
     },
   ];
@@ -78,7 +80,7 @@ Message: ${formData.message}`;
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-cream">
 
       {/* Hero — full-bleed image */}
       <section className="relative h-[70vh] min-h-[480px] flex items-end overflow-hidden">
@@ -99,7 +101,7 @@ Message: ${formData.message}`;
             transition={{ duration: 0.8 }}
             className="max-w-2xl"
           >
-            <div className="w-10 h-1 bg-[#009739] mb-5 rounded-full" />
+            <div className="w-10 h-1 bg-brazilian-green mb-5 rounded-full" />
             <h1
               className="font-display font-semibold text-white leading-tight mb-4 drop-shadow-xl"
               style={{ fontSize: 'clamp(2.4rem, 6vw, 4.5rem)' }}
@@ -115,7 +117,7 @@ Message: ${formData.message}`;
       </section>
 
       {/* Package Options */}
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-20 sm:py-28 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -123,14 +125,14 @@ Message: ${formData.message}`;
             viewport={{ once: true }}
             className="mb-10 sm:mb-14"
           >
-            <div className="w-10 h-1 bg-[#009739] mb-5 rounded-full" />
+            <div className="w-10 h-1 bg-brazilian-green mb-5 rounded-full" />
             <h2
-              className="font-display font-semibold text-neutral-900"
+              className="font-display font-semibold text-ink"
               style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}
             >
-              Our <em className="italic text-[#009739]">concierge service</em>
+              Our <em className="italic text-brazilian-green">concierge service</em>
             </h2>
-            <p className="text-neutral-500 text-base mt-2">
+            <p className="text-ink-muted text-base mt-2">
               Two options, depending on how much support and planning you want during your stay
             </p>
           </motion.div>
@@ -140,26 +142,24 @@ Message: ${formData.message}`;
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-3xl border border-neutral-200 p-6 sm:p-10 mb-10 sm:mb-14 shadow-sm"
+            className="bg-white rounded-3xl border border-sand p-6 sm:p-10 mb-10 sm:mb-14 shadow-sm"
           >
             <div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-12">
               <div className="md:w-2/5">
-                <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#009739] bg-[#009739]/10 rounded-full px-3 py-1 mb-4">
+                <span className="inline-block text-xs font-bold uppercase tracking-widest text-brazilian-green bg-brazilian-green/10 rounded-full px-3 py-1 mb-4">
                   Option 1
                 </span>
-                <h3 className="font-display font-semibold text-neutral-900 text-2xl sm:text-3xl mb-3 leading-snug">
+                <h3 className="font-display font-semibold text-ink text-2xl sm:text-3xl mb-3 leading-snug">
                   Personalized Trip Assistance
                 </h3>
-                <p className="font-display font-bold text-[#009739] text-3xl sm:text-4xl">$50 USD</p>
-                <p className="text-neutral-500 text-sm mt-1">per day</p>
+                <p className="font-display font-bold text-brazilian-green text-3xl sm:text-4xl">$50 USD</p>
+                <p className="text-ink-muted text-sm mt-1">per day</p>
               </div>
               <div className="md:w-3/5 space-y-3">
                 {baseIncludes.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-[#009739] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-base text-neutral-600 leading-relaxed">{item}</span>
+                    <IconCheck className="w-5 h-5 text-brazilian-green mt-0.5 flex-shrink-0" />
+                    <span className="text-base text-ink-soft leading-relaxed">{item}</span>
                   </div>
                 ))}
                 <button
@@ -167,7 +167,7 @@ Message: ${formData.message}`;
                     setFormData({ ...formData, package: 'Personalized Trip Assistance ($50 USD/day)' });
                     document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="mt-5 min-h-[50px] px-8 py-3 bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-300 rounded-full font-semibold text-sm transition-all duration-200"
+                  className="mt-5 min-h-[50px] px-8 py-3 bg-white hover:bg-cream-deep text-ink border border-sand-dark rounded-full font-semibold text-sm transition-all duration-200"
                 >
                   Get Started
                 </button>
@@ -182,13 +182,13 @@ Message: ${formData.message}`;
             viewport={{ once: true }}
             className="mb-8"
           >
-            <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#009739] bg-[#009739]/10 rounded-full px-3 py-1 mb-3">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-brazilian-green bg-brazilian-green/10 rounded-full px-3 py-1 mb-3">
               Option 2
             </span>
-            <h3 className="font-display font-semibold text-neutral-900 text-2xl sm:text-3xl">
+            <h3 className="font-display font-semibold text-ink text-2xl sm:text-3xl">
               All-Inclusive Experience Packages
             </h3>
-            <p className="text-neutral-500 text-base mt-1.5">
+            <p className="text-ink-muted text-base mt-1.5">
               $100 USD per day — everything in Option 1, plus a set of our best experiences
             </p>
           </motion.div>
@@ -203,37 +203,34 @@ Message: ${formData.message}`;
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={`bg-white rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${
                   pkg.popular
-                    ? 'ring-2 ring-[#009739] shadow-md'
-                    : 'border border-neutral-200'
+                    ? 'ring-2 ring-brazilian-green shadow-md'
+                    : 'border border-sand'
                 }`}
               >
                 {pkg.popular && (
-                  <div className="bg-[#009739] text-white text-xs font-semibold px-4 py-2.5 text-center uppercase tracking-widest">
+                  <div className="bg-brazilian-green text-white text-xs font-semibold px-4 py-2.5 text-center uppercase tracking-widest">
                     Most Popular
                   </div>
                 )}
 
                 <div className="p-6 sm:p-8 flex flex-col flex-grow">
-                  <div className="text-5xl mb-4">{pkg.emoji}</div>
 
-                  <h3 className="font-display font-semibold text-neutral-900 text-3xl mb-1">
+                  <h3 className="font-display font-semibold text-ink text-3xl mb-1">
                     {pkg.duration}
                   </h3>
-                  <p className="text-neutral-500 text-sm mb-5">{pkg.description}</p>
+                  <p className="text-ink-muted text-sm mb-5">{pkg.description}</p>
 
                   <div className="mb-6">
-                    <p className="font-display text-4xl font-bold text-[#009739] leading-none">{pkg.price}</p>
-                    <p className="text-sm text-neutral-500 mt-1.5">{pkg.priceNote}</p>
+                    <p className="font-display text-4xl font-bold text-brazilian-green leading-none">{pkg.price}</p>
+                    <p className="text-sm text-ink-muted mt-1.5">{pkg.priceNote}</p>
                   </div>
 
                   <div className="space-y-2 mb-8 flex-grow">
-                    <p className="text-xs font-semibold text-neutral-800 uppercase tracking-wide mb-3">What&apos;s Included</p>
+                    <p className="text-xs font-semibold text-ink uppercase tracking-wide mb-3">What&apos;s Included</p>
                     {pkg.includes.map((item, i) => (
                       <div key={i} className="flex items-start gap-2.5">
-                        <svg className="w-4 h-4 text-[#009739] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                        </svg>
-                        <span className="text-sm text-neutral-600">{item}</span>
+                        <IconCheck className="w-4 h-4 text-brazilian-green mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-ink-soft">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -245,8 +242,8 @@ Message: ${formData.message}`;
                     }}
                     className={`w-full min-h-[48px] py-3 rounded-full font-semibold text-sm transition-all duration-200 ${
                       pkg.popular
-                        ? 'bg-[#009739] hover:bg-[#006B28] text-white shadow-md'
-                        : 'bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-200'
+                        ? 'bg-brazilian-green hover:bg-brazilian-green-dark text-white shadow-md'
+                        : 'bg-white hover:bg-cream-deep text-ink border border-sand'
                     }`}
                   >
                     Get Custom Quote
@@ -266,7 +263,7 @@ Message: ${formData.message}`;
             <svg className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
+            <p className="text-sm sm:text-base text-ink-soft leading-relaxed">
               Please note: helicopter rides and hang gliding have fixed prices, so we&apos;re unable to offer discounts on those activities.
             </p>
           </motion.div>
@@ -274,7 +271,7 @@ Message: ${formData.message}`;
       </section>
 
       {/* What's Included */}
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-20 sm:py-28 bg-white border-y border-sand/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -282,26 +279,26 @@ Message: ${formData.message}`;
             viewport={{ once: true }}
             className="mb-10 sm:mb-14"
           >
-            <div className="w-10 h-1 bg-[#009739] mb-5 rounded-full" />
+            <div className="w-10 h-1 bg-brazilian-green mb-5 rounded-full" />
             <h2
-              className="font-display font-semibold text-neutral-900"
+              className="font-display font-semibold text-ink"
               style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}
             >
-              Everything <em className="italic text-[#009739]">taken care of</em>
+              Everything <em className="italic text-brazilian-green">taken care of</em>
             </h2>
-            <p className="text-neutral-500 text-base mt-2">Just bring yourself and get ready for adventure</p>
+            <p className="text-ink-muted text-base mt-2">Just bring yourself and get ready for adventure</p>
           </motion.div>
 
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {[
-              { icon: '🗓️', title: 'Itinerary Planning', description: 'We plan and schedule your days around what you actually want to do' },
-              { icon: '📱', title: '24/7 Support', description: 'Someone on the other end of the phone for your whole stay' },
-              { icon: '🎯', title: 'Activity Coordination', description: 'Recommendations and bookings for tours, restaurants and nightlife' },
-              { icon: '💰', title: 'Discounted Tours', description: 'Our experiences at a better rate than the prices listed on this site' },
-              { icon: '🚗', title: 'Transport Sorted', description: 'We arrange the transfers so you never have to work out how to get there' },
-              { icon: '🎉', title: 'Nightlife Access', description: 'Parties, bar crawls and events, with people who know the scene' },
-              { icon: '👨‍🏫', title: 'Local Guides', description: 'Born-and-raised Cariocas with you throughout' },
-              { icon: '🔒', title: 'Safety First', description: 'Your security and comfort are our top priorities' }
+              { Icon: IconCalendar, title: 'Itinerary Planning', description: 'We plan and schedule your days around what you actually want to do' },
+              { Icon: IconSupport,  title: '24/7 Support', description: 'Someone on the other end of the phone for your whole stay' },
+              { Icon: IconRoute,    title: 'Activity Coordination', description: 'Recommendations and bookings for tours, restaurants and nightlife' },
+              { Icon: IconPrice,    title: 'Discounted Tours', description: 'Our experiences at a better rate than the prices listed on this site' },
+              { Icon: IconCar,      title: 'Transport Sorted', description: 'We arrange the transfers so you never have to work out how to get there' },
+              { Icon: IconParty,    title: 'Nightlife Access', description: 'Parties, bar crawls and events, with people who know the scene' },
+              { Icon: IconGuide,    title: 'Local Guides', description: 'Born-and-raised Cariocas with you throughout' },
+              { Icon: IconSafe,     title: 'Safety First', description: 'Your security and comfort are our top priorities' }
             ].map((feature, index) => (
               <motion.div
                 key={index}
@@ -309,11 +306,11 @@ Message: ${formData.message}`;
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="bg-white rounded-xl p-5 border border-neutral-200/60 hover:border-[#009739]/30 hover:shadow-sm transition-all duration-200"
+                className="bg-white rounded-xl p-5 border border-sand hover:border-brazilian-green/30 hover:shadow-sm transition-all duration-200"
               >
-                <div className="text-3xl mb-3">{feature.icon}</div>
-                <h3 className="font-semibold text-neutral-900 text-sm mb-1">{feature.title}</h3>
-                <p className="text-xs text-neutral-500 leading-relaxed">{feature.description}</p>
+                <feature.Icon className="w-6 h-6 text-brazilian-green mb-4" />
+                <h3 className="font-semibold text-ink text-sm mb-1">{feature.title}</h3>
+                <p className="text-xs text-ink-muted leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -321,7 +318,7 @@ Message: ${formData.message}`;
       </section>
 
       {/* Booking Form */}
-      <section id="booking-form" className="py-16 sm:py-24 bg-white">
+      <section id="booking-form" className="py-20 sm:py-28 bg-cream">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -329,14 +326,14 @@ Message: ${formData.message}`;
             viewport={{ once: true }}
             className="mb-10"
           >
-            <div className="w-10 h-1 bg-[#009739] mb-5 rounded-full" />
+            <div className="w-10 h-1 bg-brazilian-green mb-5 rounded-full" />
             <h2
-              className="font-display font-semibold text-neutral-900 mb-2"
+              className="font-display font-semibold text-ink mb-2"
               style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}
             >
-              Request a <em className="italic text-[#009739]">custom quote</em>
+              Request a <em className="italic text-brazilian-green">custom quote</em>
             </h2>
-            <p className="text-neutral-500 text-base">Tell us about your dream Rio experience</p>
+            <p className="text-ink-muted text-base">Tell us about your dream Rio experience</p>
           </motion.div>
 
           <motion.form
@@ -349,53 +346,53 @@ Message: ${formData.message}`;
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-2">Your Name *</label>
+                <label htmlFor="name" className="block text-sm font-medium text-ink-soft mb-2">Your Name *</label>
                 <input
                   type="text"
                   id="name"
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full min-h-[52px] px-4 py-3 bg-white border border-neutral-200 rounded-xl focus:ring-2 focus:ring-[#009739] focus:border-transparent outline-none transition-all text-base"
+                  className="w-full min-h-[52px] px-4 py-3 bg-white border border-sand rounded-2xl focus:ring-2 focus:ring-brazilian-green focus:border-transparent outline-none transition-all text-base"
                   placeholder="John Doe"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-2">Email *</label>
+                <label htmlFor="email" className="block text-sm font-medium text-ink-soft mb-2">Email *</label>
                 <input
                   type="email"
                   id="email"
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full min-h-[52px] px-4 py-3 bg-white border border-neutral-200 rounded-xl focus:ring-2 focus:ring-[#009739] focus:border-transparent outline-none transition-all text-base"
+                  className="w-full min-h-[52px] px-4 py-3 bg-white border border-sand rounded-2xl focus:ring-2 focus:ring-brazilian-green focus:border-transparent outline-none transition-all text-base"
                   placeholder="john@example.com"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="whatsapp" className="block text-sm font-medium text-neutral-700 mb-2">WhatsApp Number *</label>
+              <label htmlFor="whatsapp" className="block text-sm font-medium text-ink-soft mb-2">WhatsApp Number *</label>
               <input
                 type="tel"
                 id="whatsapp"
                 required
                 value={formData.whatsapp}
                 onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
-                className="w-full min-h-[52px] px-4 py-3 bg-white border border-neutral-200 rounded-xl focus:ring-2 focus:ring-[#009739] focus:border-transparent outline-none transition-all text-base"
+                className="w-full min-h-[52px] px-4 py-3 bg-white border border-sand rounded-2xl focus:ring-2 focus:ring-brazilian-green focus:border-transparent outline-none transition-all text-base"
                 placeholder="+55 21 12345-6789"
               />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label htmlFor="package" className="block text-sm font-medium text-neutral-700 mb-2">Preferred Package *</label>
+                <label htmlFor="package" className="block text-sm font-medium text-ink-soft mb-2">Preferred Package *</label>
                 <select
                   id="package"
                   required
                   value={formData.package}
                   onChange={(e) => setFormData({ ...formData, package: e.target.value })}
-                  className="w-full min-h-[52px] px-4 py-3 bg-white border border-neutral-200 rounded-xl focus:ring-2 focus:ring-[#009739] focus:border-transparent outline-none transition-all text-base"
+                  className="w-full min-h-[52px] px-4 py-3 bg-white border border-sand rounded-2xl focus:ring-2 focus:ring-brazilian-green focus:border-transparent outline-none transition-all text-base"
                 >
                   <option value="">Select an option</option>
                   <option value="Personalized Trip Assistance ($50 USD/day)">Personalized Trip Assistance — $50 USD/day</option>
@@ -405,7 +402,7 @@ Message: ${formData.message}`;
                 </select>
               </div>
               <div>
-                <label htmlFor="guests" className="block text-sm font-medium text-neutral-700 mb-2">Number of Guests *</label>
+                <label htmlFor="guests" className="block text-sm font-medium text-ink-soft mb-2">Number of Guests *</label>
                 <input
                   type="number"
                   id="guests"
@@ -413,44 +410,44 @@ Message: ${formData.message}`;
                   min="1"
                   value={formData.guests}
                   onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
-                  className="w-full min-h-[52px] px-4 py-3 bg-white border border-neutral-200 rounded-xl focus:ring-2 focus:ring-[#009739] focus:border-transparent outline-none transition-all text-base"
+                  className="w-full min-h-[52px] px-4 py-3 bg-white border border-sand rounded-2xl focus:ring-2 focus:ring-brazilian-green focus:border-transparent outline-none transition-all text-base"
                   placeholder="2"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="dates" className="block text-sm font-medium text-neutral-700 mb-2">Preferred Dates</label>
+              <label htmlFor="dates" className="block text-sm font-medium text-ink-soft mb-2">Preferred Dates</label>
               <input
                 type="text"
                 id="dates"
                 value={formData.dates}
                 onChange={(e) => setFormData({ ...formData, dates: e.target.value })}
-                className="w-full min-h-[52px] px-4 py-3 bg-white border border-neutral-200 rounded-xl focus:ring-2 focus:ring-[#009739] focus:border-transparent outline-none transition-all text-base"
+                className="w-full min-h-[52px] px-4 py-3 bg-white border border-sand rounded-2xl focus:ring-2 focus:ring-brazilian-green focus:border-transparent outline-none transition-all text-base"
                 placeholder="e.g., January 15–22, 2025"
               />
             </div>
 
             <div>
-              <label htmlFor="interests" className="block text-sm font-medium text-neutral-700 mb-2">Interests & Activities</label>
+              <label htmlFor="interests" className="block text-sm font-medium text-ink-soft mb-2">Interests & Activities</label>
               <input
                 type="text"
                 id="interests"
                 value={formData.interests}
                 onChange={(e) => setFormData({ ...formData, interests: e.target.value })}
-                className="w-full min-h-[52px] px-4 py-3 bg-white border border-neutral-200 rounded-xl focus:ring-2 focus:ring-[#009739] focus:border-transparent outline-none transition-all text-base"
+                className="w-full min-h-[52px] px-4 py-3 bg-white border border-sand rounded-2xl focus:ring-2 focus:ring-brazilian-green focus:border-transparent outline-none transition-all text-base"
                 placeholder="e.g., Adventure sports, nightlife, culture, beaches"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-neutral-700 mb-2">Additional Information</label>
+              <label htmlFor="message" className="block text-sm font-medium text-ink-soft mb-2">Additional Information</label>
               <textarea
                 id="message"
                 rows={5}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full px-4 py-3 bg-white border border-neutral-200 rounded-xl focus:ring-2 focus:ring-[#009739] focus:border-transparent outline-none transition-all resize-none text-base"
+                className="w-full px-4 py-3 bg-white border border-sand rounded-2xl focus:ring-2 focus:ring-brazilian-green focus:border-transparent outline-none transition-all resize-none text-base"
                 placeholder="Any special requests, dietary restrictions, or questions?"
               />
             </div>
@@ -459,19 +456,19 @@ Message: ${formData.message}`;
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex-1 min-h-[52px] py-3.5 bg-[#009739] hover:bg-[#006B28] text-white rounded-full font-semibold text-base shadow-md hover:shadow-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 min-h-[52px] py-3.5 bg-brazilian-green hover:bg-brazilian-green-dark text-white rounded-full font-semibold text-base shadow-md hover:shadow-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Sending…' : 'Send via WhatsApp'}
               </button>
               <Link
                 href="/contact"
-                className="flex-1 min-h-[52px] py-3.5 bg-white hover:bg-neutral-50 text-neutral-700 rounded-full font-semibold text-base transition-all duration-200 border border-neutral-200 flex items-center justify-center"
+                className="flex-1 min-h-[52px] py-3.5 bg-white hover:bg-cream text-ink-soft rounded-full font-semibold text-base transition-all duration-200 border border-sand flex items-center justify-center"
               >
                 Other Contact Options
               </Link>
             </div>
 
-            <p className="text-center text-xs text-neutral-400 pt-1">
+            <p className="text-center text-xs text-ink-faint pt-1">
               Clicking &quot;Send via WhatsApp&quot; will open a pre-filled message on your device
             </p>
           </motion.form>
@@ -479,7 +476,7 @@ Message: ${formData.message}`;
       </section>
 
       {/* FAQ */}
-      <section className="py-16 sm:py-24 bg-white">
+      <section className="py-20 sm:py-28 bg-cream">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -487,9 +484,9 @@ Message: ${formData.message}`;
             viewport={{ once: true }}
             className="mb-10 sm:mb-14"
           >
-            <div className="w-10 h-1 bg-[#009739] mb-5 rounded-full" />
+            <div className="w-10 h-1 bg-brazilian-green mb-5 rounded-full" />
             <h2
-              className="font-display font-semibold text-neutral-900"
+              className="font-display font-semibold text-ink"
               style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}
             >
               Common questions
@@ -525,10 +522,10 @@ Message: ${formData.message}`;
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.06 }}
-                className="bg-white rounded-xl px-6 py-5 border border-neutral-200/60"
+                className="bg-white rounded-xl px-6 py-5 border border-sand"
               >
-                <h3 className="font-semibold text-neutral-900 text-base mb-2">{faq.question}</h3>
-                <p className="text-neutral-500 text-sm leading-relaxed">{faq.answer}</p>
+                <h3 className="font-semibold text-ink text-base mb-2">{faq.question}</h3>
+                <p className="text-ink-muted text-sm leading-relaxed">{faq.answer}</p>
               </motion.div>
             ))}
           </div>
@@ -536,10 +533,10 @@ Message: ${formData.message}`;
       </section>
 
       {/* CTA */}
-      <section className="py-16 sm:py-24 bg-neutral-50 relative overflow-hidden">
+      <section className="py-16 sm:py-24 bg-cream relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-[#009739] rounded-full -translate-x-1/3 -translate-y-1/3" />
-          <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#009739] rounded-full translate-x-1/3 translate-y-1/3" />
+          <div className="absolute top-0 left-0 w-96 h-96 bg-brazilian-green rounded-full -translate-x-1/3 -translate-y-1/3" />
+          <div className="absolute bottom-0 right-0 w-64 h-64 bg-brazilian-green rounded-full translate-x-1/3 translate-y-1/3" />
         </div>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
@@ -548,15 +545,15 @@ Message: ${formData.message}`;
             viewport={{ once: true }}
             className="space-y-5"
           >
-            <div className="w-10 h-1 bg-[#009739] mb-4 rounded-full mx-auto" />
+            <div className="w-10 h-1 bg-brazilian-green mb-4 rounded-full mx-auto" />
             <h2
-              className="font-display font-semibold text-neutral-900 leading-tight"
+              className="font-display font-semibold text-ink leading-tight"
               style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}
             >
               Still deciding?{' '}
-              <em className="italic text-[#009739]">Let&apos;s talk</em>
+              <em className="italic text-brazilian-green">Let&apos;s talk</em>
             </h2>
-            <p className="text-neutral-600 text-base leading-relaxed max-w-md mx-auto">
+            <p className="text-ink-soft text-base leading-relaxed max-w-md mx-auto">
               No commitment needed — just drop us a message and we&apos;ll help you figure out the perfect experience for your trip.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
@@ -564,7 +561,7 @@ Message: ${formData.message}`;
                 href="https://wa.me/5521998477858"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 min-h-[52px] px-8 py-3 bg-[#009739] hover:bg-[#006B28] text-white rounded-full font-semibold text-base transition-all duration-200 shadow-lg"
+                className="inline-flex items-center justify-center gap-2.5 min-h-[52px] px-8 py-3 bg-brazilian-green hover:bg-brazilian-green-dark text-white rounded-full font-semibold text-base transition-all duration-200 shadow-lg"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
@@ -573,7 +570,7 @@ Message: ${formData.message}`;
               </a>
               <Link
                 href="/tours"
-                className="inline-flex items-center justify-center min-h-[52px] px-8 py-3 bg-white hover:bg-neutral-100 border border-neutral-200 text-neutral-700 rounded-full font-semibold text-base transition-all duration-200"
+                className="inline-flex items-center justify-center min-h-[52px] px-8 py-3 bg-white hover:bg-cream-deep border border-sand text-ink-soft rounded-full font-semibold text-base transition-all duration-200"
               >
                 Browse All Tours
               </Link>
