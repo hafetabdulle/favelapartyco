@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useT } from '@/app/i18n/LocaleProvider';
 
 const CODE = 'WELCOMETORIO5';
 const STORAGE_KEY = 'rioexplore-toucan-found';
@@ -34,6 +35,7 @@ const ToucanBird = ({ className = '' }: { className?: string }) => (
 );
 
 export default function Toucan() {
+  const d = useT();
   const [open, setOpen] = useState(false);
   const [found, setFound] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -75,7 +77,7 @@ export default function Toucan() {
       <motion.button
         type="button"
         onClick={reveal}
-        aria-label="A little toucan — tap it"
+        aria-label={d.toucan.aria}
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 2.5, duration: 0.8 }}
@@ -117,7 +119,7 @@ export default function Toucan() {
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                aria-label="Close"
+                aria-label={d.toucan.close}
                 className="absolute top-4 right-4 w-9 h-9 rounded-full hover:bg-sand flex items-center justify-center text-ink-faint hover:text-ink transition-colors"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
@@ -128,11 +130,12 @@ export default function Toucan() {
               <ToucanBird className="w-24 h-20 mx-auto mb-4" />
 
               <h3 className="font-display font-semibold text-ink text-3xl mb-2">
-                You caught the toucan!
+                {d.toucan.title}
               </h3>
               <p className="text-ink-soft text-sm sm:text-base leading-relaxed mb-6">
-                Here&apos;s <span className="font-semibold text-brazilian-green">5% off</span> any experience.
-                Just send us this code when you book.
+                {d.toucan.body1}{' '}
+                <span className="font-semibold text-brazilian-green">{d.toucan.discount}</span>{' '}
+                {d.toucan.body2}
               </p>
 
               <button
@@ -141,16 +144,16 @@ export default function Toucan() {
                 className="w-full min-h-[56px] rounded-2xl border-2 border-dashed border-brazilian-green bg-brazilian-green/5 hover:bg-brazilian-green/10 transition-colors flex items-center justify-center gap-3 mb-4"
               >
                 <span className="font-mono font-bold tracking-widest text-lg sm:text-xl text-brazilian-green-dark">{CODE}</span>
-                <span className="text-xs font-semibold text-brazilian-green">{copied ? 'Copied!' : 'Tap to copy'}</span>
+                <span className="text-xs font-semibold text-brazilian-green">{copied ? d.toucan.copied : d.toucan.tapToCopy}</span>
               </button>
 
               <a
-                href={`https://wa.me/5521998477858?text=${encodeURIComponent(`Hi! I found the toucan 🦜 — I'd like to use code ${CODE}`)}`}
+                href={`https://wa.me/5521998477858?text=${encodeURIComponent(`${d.toucan.whatsappMessage} ${CODE}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full min-h-[52px] py-3.5 bg-brazilian-green hover:bg-brazilian-green-dark text-white rounded-full font-semibold text-base transition-colors duration-200 flex items-center justify-center"
               >
-                Book with 5% off
+                {d.toucan.bookWith}
               </a>
 
               <button
@@ -161,7 +164,7 @@ export default function Toucan() {
                 }}
                 className="text-xs text-ink-faint hover:text-ink-soft mt-4 transition-colors"
               >
-                Don&apos;t show the toucan again
+                {d.toucan.dismiss}
               </button>
             </motion.div>
           </motion.div>

@@ -1,23 +1,33 @@
-import Link from 'next/link';
+'use client';
+
 import Image from 'next/image';
+import L from './L';
 import { reviewPlatforms, otherPlatforms } from './PlatformLogos';
 import { IconWhatsApp } from './Icons';
+import { useT } from '@/app/i18n/LocaleProvider';
 
-const quickLinks = [
-  { href: '/tours',               label: 'All Tours' },
-  { href: '/private-experiences', label: 'Concierge Service' },
-  { href: '/contact',             label: 'Contact Us' },
-  { href: '/#reviews',            label: 'Reviews' },
-];
-
-const popularTours = [
-  { href: '/tours#rocinha-favela-tour',   label: 'Complete Rocinha Favela Tour' },
-  { href: '/tours#pubcrawl-favela-party', label: 'Pub Crawl & Favela Party' },
-  { href: '/tours#pedra-do-sal-samba',    label: 'Monday Night Samba' },
-  { href: '/tours#hang-gliding',          label: 'Hang Gliding' },
-];
+const popularTourIds = [
+  'rocinha-favela-tour',
+  'pubcrawl-favela-party',
+  'pedra-do-sal-samba',
+  'hang-gliding',
+] as const;
 
 export default function Footer() {
+  const d = useT();
+
+  const quickLinks = [
+    { href: '/tours',               label: d.footer.links.allTours },
+    { href: '/private-experiences', label: d.footer.links.concierge },
+    { href: '/contact',             label: d.footer.links.contact },
+    { href: '/#reviews',            label: d.footer.links.reviews },
+  ];
+
+  const popularTours = popularTourIds.map(id => ({
+    href: `/tours#${id}`,
+    label: d.tourContent[id].title,
+  }));
+
   return (
     <footer className="bg-ink text-cream grain">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16 sm:py-24">
@@ -33,7 +43,7 @@ export default function Footer() {
               className="h-32 w-auto -ml-6 brightness-0 invert"
             />
             <p className="text-cream/50 text-[0.95rem] leading-relaxed max-w-xs -mt-5">
-              Authentic experiences in Rio de Janeiro, run by the people who actually live here.
+              {d.footer.tagline}
             </p>
             <a
               href="https://wa.me/5521998477858"
@@ -42,38 +52,38 @@ export default function Footer() {
               className="inline-flex items-center gap-2.5 min-h-[48px] px-6 bg-brazilian-green hover:bg-brazilian-green-light text-white rounded-full font-semibold text-sm transition-colors duration-200"
             >
               <IconWhatsApp className="w-4 h-4" />
-              Message us
+              {d.common.messageUs}
             </a>
           </div>
 
           <div className="lg:col-span-2 lg:col-start-5">
-            <h4 className="font-semibold text-cream/40 text-[0.65rem] uppercase tracking-[0.18em] mb-5">Explore</h4>
+            <h4 className="font-semibold text-cream/40 text-[0.65rem] uppercase tracking-[0.18em] mb-5">{d.footer.explore}</h4>
             <ul className="space-y-3">
               {quickLinks.map(link => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-cream/70 hover:text-brazilian-yellow transition-colors text-sm">
+                  <L href={link.href} className="text-cream/70 hover:text-brazilian-yellow transition-colors text-sm">
                     {link.label}
-                  </Link>
+                  </L>
                 </li>
               ))}
             </ul>
           </div>
 
           <div className="lg:col-span-3">
-            <h4 className="font-semibold text-cream/40 text-[0.65rem] uppercase tracking-[0.18em] mb-5">Popular</h4>
+            <h4 className="font-semibold text-cream/40 text-[0.65rem] uppercase tracking-[0.18em] mb-5">{d.footer.popular}</h4>
             <ul className="space-y-3">
               {popularTours.map(link => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-cream/70 hover:text-brazilian-yellow transition-colors text-sm">
+                  <L href={link.href} className="text-cream/70 hover:text-brazilian-yellow transition-colors text-sm">
                     {link.label}
-                  </Link>
+                  </L>
                 </li>
               ))}
             </ul>
           </div>
 
           <div className="col-span-2 lg:col-span-3">
-            <h4 className="font-semibold text-cream/40 text-[0.65rem] uppercase tracking-[0.18em] mb-5">Get in touch</h4>
+            <h4 className="font-semibold text-cream/40 text-[0.65rem] uppercase tracking-[0.18em] mb-5">{d.footer.getInTouch}</h4>
             <div className="space-y-3">
               <a
                 href="https://wa.me/5521998477858"
@@ -112,7 +122,7 @@ export default function Footer() {
         <div className="mt-16 pt-10 border-t border-cream/10">
           <div className="flex flex-col sm:flex-row sm:items-center gap-5">
             <span className="text-cream/40 text-[0.65rem] shrink-0 uppercase tracking-[0.18em] font-semibold">
-              Find us on
+              {d.footer.findUsOn}
             </span>
             <div className="flex flex-wrap items-center gap-2.5">
               {reviewPlatforms.map(p => (
@@ -146,10 +156,10 @@ export default function Footer() {
         <div className="mt-10 pt-8 border-t border-cream/10">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
             <p className="text-cream/35 text-sm order-2 sm:order-1">
-              © {new Date().getFullYear()} Rio Explore. All rights reserved.
+              © {new Date().getFullYear()} Rio Explore. {d.footer.rights}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-2 order-1 sm:order-2">
-              <span className="text-cream/35 text-xs mr-1">We accept</span>
+              <span className="text-cream/35 text-xs mr-1">{d.footer.weAccept}</span>
               {['PayPal', 'Stripe', 'Revolut', 'Wise', 'Pix'].map(label => (
                 <div key={label} className="h-8 px-3 bg-cream/[0.06] border border-cream/10 rounded-lg flex items-center">
                   <span className="text-xs font-medium text-cream/60">{label}</span>

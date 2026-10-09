@@ -2,22 +2,30 @@
 
 import { motion } from 'framer-motion';
 import { reviewPlatforms, otherPlatforms } from './PlatformLogos';
+import { useT } from '@/app/i18n/LocaleProvider';
 import SectionHeading from './SectionHeading';
 import { IconArrow } from './Icons';
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
 export default function FindUsOn() {
+  const d = useT();
+  const blurbs: Record<string, string> = {
+    Airbnb: d.findUs.blurbs.airbnb,
+    Tripadvisor: d.findUs.blurbs.tripadvisor,
+    GetYourGuide: d.findUs.blurbs.getyourguide,
+  };
+
   return (
     <section id="find-us-on" className="py-20 sm:py-32 bg-cream-deep scroll-mt-24">
       <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Book anywhere"
+          eyebrow={d.findUs.eyebrow}
           align="center"
-          subtitle="We're on every platform you already trust — tap a logo to read our reviews or book there instead."
+          subtitle={d.findUs.subtitle}
           className="mb-12 sm:mb-16"
         >
-          Find us <em>on</em>
+          {d.findUs.title} <em>{d.findUs.accent}</em>
         </SectionHeading>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
@@ -35,9 +43,9 @@ export default function FindUsOn() {
             >
               <p.Mark className="w-[4.5rem] h-[4.5rem] sm:w-24 sm:h-24 mb-6 transition-transform duration-500 ease-out-expo group-hover:scale-[1.07]" />
               <h3 className="font-display font-semibold text-ink text-xl sm:text-2xl">{p.name}</h3>
-              <p className="text-ink-muted text-sm mt-1.5 leading-relaxed">{p.blurb}</p>
+              <p className="text-ink-muted text-sm mt-1.5 leading-relaxed">{blurbs[p.name] ?? p.blurb}</p>
               <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brazilian-green">
-                Visit profile
+                {d.common.visitProfile}
                 <IconArrow className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </span>
             </motion.a>
@@ -51,7 +59,7 @@ export default function FindUsOn() {
           transition={{ duration: 0.6, delay: 0.25 }}
           className="mt-10 sm:mt-12 flex flex-wrap items-center justify-center gap-x-7 gap-y-4"
         >
-          <span className="text-ink-faint text-[0.7rem] uppercase tracking-[0.18em] font-semibold">Also on</span>
+          <span className="text-ink-faint text-[0.7rem] uppercase tracking-[0.18em] font-semibold">{d.findUs.alsoOn}</span>
           {otherPlatforms.map(p => (
             <div key={p.name} className="flex items-center gap-2.5">
               <p.Mark className="w-7 h-7" />

@@ -3,7 +3,9 @@
 import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { reviews, type Review } from '@/app/data/reviews';
-import { categories, type CategoryId } from '@/app/data/tours';
+import { categoryIds, type CategoryId } from '@/app/data/tours';
+import { useT } from '@/app/i18n/LocaleProvider';
+import type { Dictionary } from '@/app/i18n';
 import { AirbnbMark, GetYourGuideMark } from './PlatformLogos';
 import SectionHeading from './SectionHeading';
 import { IconStar } from './Icons';
@@ -32,7 +34,7 @@ const PlatformBadge = ({ platform }: { platform: Review['platform'] }) => {
 
 const CLAMP_AT = 300;
 
-function ReviewCard({ review, index }: { review: Review; index: number }) {
+function ReviewCard({ review, index, d }: { review: Review; index: number; d: Dictionary }) {
   const [expanded, setExpanded] = useState(false);
   const isLong = review.text.length > CLAMP_AT;
   const shown = expanded || !isLong ? review.text : `${review.text.slice(0, CLAMP_AT).trimEnd()}…`;
@@ -66,7 +68,7 @@ function ReviewCard({ review, index }: { review: Review; index: number }) {
           onClick={() => setExpanded(v => !v)}
           className="text-xs font-semibold text-brazilian-green hover:text-brazilian-green-dark mt-2.5 self-start underline underline-offset-4 decoration-brazilian-green/30"
         >
-          {expanded ? 'Show less' : 'Read more'}
+          {expanded ? d.common.showLess : d.common.readMore}
         </button>
       )}
 
@@ -83,18 +85,19 @@ function ReviewCard({ review, index }: { review: Review; index: number }) {
 }
 
 export default function Reviews() {
+  const d = useT();
   const [filter, setFilter] = useState<CategoryId | 'all'>('all');
 
   const tabs = useMemo(
     () => [
-      { id: 'all' as const, label: 'All', count: reviews.length },
-      ...categories.map(c => ({
-        id: c.id,
-        label: c.label,
-        count: reviews.filter(r => r.category === c.id).length,
+      { id: 'all' as const, label: d.reviews.filterAll, count: reviews.length },
+      ...categoryIds.map(id => ({
+        id,
+        label: d.categories[id].label,
+        count: reviews.filter(r => r.category === id).length,
       })),
     ],
-    []
+    [d]
   );
 
   const shown = filter === 'all' ? reviews : reviews.filter(r => r.category === filter);
@@ -103,8 +106,8 @@ export default function Reviews() {
     <section id="reviews" className="py-20 sm:py-32 bg-white border-y border-sand/70 overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-9 sm:mb-11">
-          <SectionHeading eyebrow="Guest reviews">
-            What Guests <em>Say</em>
+          <SectionHeading eyebrow={d.reviews.eyebrow}>
+            {d.reviews.title} <em>{d.reviews.accent}</em>
           </SectionHeading>
           <motion.div
             initial={{ opacity: 0 }}
@@ -116,7 +119,7 @@ export default function Reviews() {
             <span className="text-ink-muted text-sm">
               <span className="font-display font-bold text-ink text-lg nums">5.0</span>
               {' · '}
-              {reviews.length} verified reviews
+              {reviews.length} {d.reviews.verified}
             </span>
           </motion.div>
         </div>
@@ -144,7 +147,7 @@ export default function Reviews() {
 
         <div className="flex gap-4 overflow-x-auto pb-4 sm:pb-0 hide-scrollbar snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-5 sm:overflow-visible items-start">
           {shown.map((review, i) => (
-            <ReviewCard key={`${review.name}-${review.tour}-${review.date}-${i}`} review={review} index={i} />
+            <ReviewCard key={`${review.name}-${review.tour}-${review.date}-${i}`} review={review} index={i} d={d} />
           ))}
         </div>
       </div>

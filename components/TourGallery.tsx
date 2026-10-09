@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useCallback, useRef, useState } from 'react';
+import { useT } from '@/app/i18n/LocaleProvider';
 
 interface Props {
   photos: string[];
@@ -25,6 +26,7 @@ export default function TourGallery({
   sizes = '(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw',
   rounded = '',
 }: Props) {
+  const d = useT();
   const trackRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
   const single = photos.length <= 1;
@@ -55,7 +57,7 @@ export default function TourGallery({
           <div key={src} className="relative h-full w-full flex-shrink-0 snap-center">
             <Image
               src={src}
-              alt={`${alt} — photo ${i + 1}`}
+              alt={`${alt} — ${i + 1}`}
               fill
               className="object-cover"
               sizes={sizes}
@@ -70,7 +72,7 @@ export default function TourGallery({
           {/* Arrows — always visible on touch, fade in on desktop hover */}
           <button
             type="button"
-            aria-label="Previous photo"
+            aria-label={d.common.previousPhoto}
             onClick={() => goTo(index - 1)}
             className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-cream/90 backdrop-blur-md text-ink shadow-md flex items-center justify-center transition-opacity duration-200 sm:opacity-0 sm:group-hover/gallery:opacity-100 hover:bg-white"
           >
@@ -80,7 +82,7 @@ export default function TourGallery({
           </button>
           <button
             type="button"
-            aria-label="Next photo"
+            aria-label={d.common.nextPhoto}
             onClick={() => goTo(index + 1)}
             className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-cream/90 backdrop-blur-md text-ink shadow-md flex items-center justify-center transition-opacity duration-200 sm:opacity-0 sm:group-hover/gallery:opacity-100 hover:bg-white"
           >
@@ -95,7 +97,7 @@ export default function TourGallery({
               <button
                 key={src}
                 type="button"
-                aria-label={`Go to photo ${i + 1}`}
+                aria-label={`${d.common.goToPhoto} ${i + 1}`}
                 onClick={() => goTo(i)}
                 className={`rounded-full transition-all duration-300 ${
                   i === index ? 'w-4 h-1.5 bg-white' : 'w-1.5 h-1.5 bg-white/55 hover:bg-white/80'
