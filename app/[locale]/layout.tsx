@@ -29,6 +29,21 @@ const meta: Record<Locale, { title: string; description: string }> = {
     description:
       'Viva o Rio de verdade com tours na favela, rolês de bar, trilhas ao nascer do sol, asa-delta e roteiros personalizados. Reserve hoje a sua experiência inesquecível.',
   },
+  de: {
+    title: 'Rio Explore — Authentische Touren & Erlebnisse in Rio de Janeiro',
+    description:
+      'Erlebe das echte Rio mit Favela-Touren, Bar-Touren, Wanderungen zum Sonnenaufgang, Drachenfliegen und individuell geplanten Reisen. Buche heute dein unvergessliches Erlebnis.',
+  },
+  fr: {
+    title: 'Rio Explore — Excursions et expériences authentiques à Rio de Janeiro',
+    description:
+      'Vivez le vrai Rio avec des visites de favela, des tournées des bars, des randonnées au lever du soleil, du deltaplane et des séjours sur mesure. Réservez votre expérience inoubliable.',
+  },
+  zh: {
+    title: 'Rio Explore — 里约热内卢地道行程与体验',
+    description:
+      '法维拉导览、酒吧巡游、日出徒步、滑翔翼，还有量身定制的多日行程，带你体验真正的里约热内卢。立即预订你的难忘之旅。',
+  },
 };
 
 export async function generateMetadata({

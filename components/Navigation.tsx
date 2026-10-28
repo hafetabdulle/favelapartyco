@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import L from './L';
 import LanguageSwitcher from './LanguageSwitcher';
+import PlatformLinks from './PlatformLinks';
 import { useT } from '@/app/i18n/LocaleProvider';
 import { isLocale } from '@/app/i18n/config';
 
@@ -193,7 +194,16 @@ export default function Navigation() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: (navLinks.length + 1) * 0.08 }}
-                className="pt-6 flex flex-col items-center gap-3"
+                className="pt-4"
+              >
+                <PlatformLinks tone="light" />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: (navLinks.length + 2) * 0.08 }}
+                className="pt-2 flex flex-col items-center gap-3"
               >
                 <span className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-ink-faint">
                   {d.nav.language}

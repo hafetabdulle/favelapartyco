@@ -53,7 +53,7 @@ export default function LanguageSwitcher({
 
   if (variant === 'inline') {
     return (
-      <div className="flex items-center gap-2" role="group" aria-label={d.nav.language}>
+      <div className="flex flex-wrap items-center justify-center gap-2 max-w-xs" role="group" aria-label={d.nav.language}>
         {locales.map(l => (
           <button
             key={l}
@@ -109,7 +109,7 @@ export default function LanguageSwitcher({
             exit={{ opacity: 0, y: -6, scale: 0.97 }}
             transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
             role="listbox"
-            className="absolute right-0 top-full mt-2 w-44 bg-cream border border-sand rounded-2xl shadow-lift overflow-hidden py-1.5 z-50"
+            className="absolute right-0 top-full mt-2 w-48 bg-cream border border-sand rounded-2xl shadow-lift overflow-hidden py-1.5 z-50"
           >
             {locales.map(l => (
               <li key={l}>

@@ -10,7 +10,9 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui,
+    /* CJK fallbacks so the Chinese locale renders in a proper face rather than a default serif */
+    'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -32,6 +34,12 @@ button, a {
   /* Large headings need tighter tracking than the system face gives by default. */
   .font-display {
     letter-spacing: -0.025em;
+  }
+  /* German compounds (Sonnenaufgangswanderung) can be wider than a phone, so
+     give every heading somewhere to break rather than overflowing. */
+  h1, h2, h3, h4 {
+    overflow-wrap: break-word;
+    hyphens: auto;
   }
 }
 

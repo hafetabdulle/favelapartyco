@@ -6,6 +6,7 @@ import L from '@/components/L';
 import Reviews from '@/components/Reviews';
 import FindUsOn from '@/components/FindUsOn';
 import SectionHeading from '@/components/SectionHeading';
+import PlatformLinks from '@/components/PlatformLinks';
 import { useT } from '@/app/i18n/LocaleProvider';
 import {
   IconLocals, IconParty, IconAdventure, IconPrice, IconSafe, IconBooking,
@@ -140,7 +141,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="mt-7"
+            className="mt-6"
           >
             <a
               href="https://wa.me/5521998477858"
@@ -151,6 +152,14 @@ export default function Home() {
               <IconWhatsApp className="w-4 h-4" />
               <span>{d.common.quickQuestion}</span>
             </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.15, duration: 0.8, ease }}
+          >
+            <PlatformLinks tone="dark" className="mt-7" />
           </motion.div>
         </div>
       </section>
